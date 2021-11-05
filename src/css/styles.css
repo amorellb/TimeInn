@@ -1,0 +1,61 @@
+body{
+    margin: auto 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+   
+}
+
+.logo{
+    width: 85px;
+}
+.search{
+    height: 20px;
+    width: 7rem;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    background-color: #A185A8;
+    color: white;
+}
+.mapa{
+    width: 50px;
+    border-radius: 1rem;
+}
+.link-footer{
+    font-size: 0.6rem;
+}
+footer>i{
+font-size: 0.7rem;
+
+}
+.social-links{
+    display: flex;
+}
+.contact p{
+    margin: 0;
+    font-size: 0.6rem;
+}
+.social-links{
+    display: flex;
+    flex-direction: column;
+}
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+}
+main{
+    height: 80vh;
+}
+a{
+    text-decoration: none;
+    color: #B6BFA8
+}
