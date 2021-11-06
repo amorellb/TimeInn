@@ -6,16 +6,20 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 10vh;
+    height: 15vh;
+    background-color: #621304;
    
 }
 
 .logo{
-    width: 85px;
+    width: 100px;
 }
 .search{
     height: 20px;
     width: 7rem;
+}
+header>i{
+    
 }
 
 footer{
@@ -23,7 +27,7 @@ footer{
     justify-content: space-around;
     align-items: center;
     height: 10vh;
-    background-color: #A185A8;
+    background-color: #621304;
     color: white;
 }
 .mapa{
@@ -53,9 +57,9 @@ font-size: 0.7rem;
     justify-content: space-between;
 }
 main{
-    height: 80vh;
+    height: 75vh;
 }
 a{
     text-decoration: none;
-    color: #B6BFA8
+    color: #e18b7a
 }
