@@ -7,64 +7,72 @@
   --dark-shadow: #5c5c5c;
 }
 
-.day-events-container {
+.week-events-container {
   height: 100vh;
   width: 100vw;
+  background-size: cover;
+  background-position: center;
 }
 
-/* Set the video as the background */
-.day-event-video {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  object-fit: cover;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.day-event-info {
+.week-event-info {
   color: var(--light-text);
   text-transform: uppercase;
   text-shadow: 1px 1px 1px var(--dark-shadow);
-  margin-top: 40vh;
-  margin-bottom: 10vh;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
 
   display: flex;
   flex-flow: column wrap;
 }
 
-.day-event-title {
+.all-events-btn {
+  background-color: var(--first-main-color);
+  color: var(--light-shadow);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.3rem;
+  width: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 33vh;
+
+  align-self: center;
+}
+
+.week-event-title {
   margin: 0;
   align-self: center;
   font-size: 2.5rem;
 }
 
-.day-event-type {
+.week-event-type {
   margin: 0;
   margin-left: 3rem;
   font-size: 1.5rem;
 }
 
-.day-event-dates {
+.week-event-author {
+  margin: 0;
+  margin-left: 3rem;
+}
+
+.week-event-dates {
   margin: 0;
   margin-top: 5rem;
   margin-left: 3rem;
   width: 6rem;
 }
 
-.day-tickets-btn {
+.week-tickets-btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
   text-transform: uppercase;
   text-align: center;
   border-radius: 0.3rem;
-  margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  margin-top: 1rem;
 
   align-self: center;
 }
