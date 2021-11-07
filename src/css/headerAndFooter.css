@@ -1,7 +1,8 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
-  --neutral-white: #ffffff;
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
 }
 
 body {
@@ -12,18 +13,28 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 15vh;
-  background-color: var(--first-main-color);
+  height: 10vh;
 }
 
+/* TODO: El logo no se ve si hay fondo negro. Tenemos que hacerle un sombreado o meterlo dentro de un círculo blanco (por ejemplo) */
 .logo {
-  width: 100px;
+  width: 3rem;
 }
+
+/* TODO: La propiedad border no se aplica*/
 .search {
-  height: 20px;
-  width: 7rem;
+  border: 1px #d3d3d3;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 3px 2px var(--light-shadow);
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-header > i {
+
+/* TODO: El icono no se ve si el fondo es oscuro. Habrá que añadir un sombreado (por ejemplo) */
+.fa-bars {
+  font-size: 2rem;
+  color: var(--light-text);
 }
 
 footer {
@@ -32,10 +43,10 @@ footer {
   align-items: center;
   height: 10vh;
   background-color: var(--first-main-color);
-  color: var(--neutral-white);
+  color: var(--light-text);
 }
 .map {
-  width: 50px;
+  width: 3rem;
   border-radius: 1rem;
 }
 .link-footer {
@@ -59,9 +70,11 @@ footer > i {
   display: flex;
   justify-content: space-between;
 }
+/* TODO: borrar esta propiedad cuando ya no sea necesaria */
 main {
   height: 75vh;
 }
+
 a {
   text-decoration: none;
   color: var(--second-main-color);
