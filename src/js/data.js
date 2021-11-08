@@ -359,7 +359,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
   ],
-  
+
   news: [
     {
       title:
@@ -369,6 +369,7 @@ export const theaterData = {
       publicationDate: '11/11/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: "Josep Pons conducts 'Mite i tragèdia d'Electra i Èdip'",
@@ -377,6 +378,7 @@ export const theaterData = {
       publicationDate: '11/04/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title:
@@ -386,6 +388,7 @@ export const theaterData = {
       publicationDate: '10/17/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title:
@@ -395,6 +398,7 @@ export const theaterData = {
       publicationDate: '10/10/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title:
@@ -404,6 +408,7 @@ export const theaterData = {
       publicationDate: '09/29/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title:
@@ -413,6 +418,7 @@ export const theaterData = {
       publicationDate: '09/19/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title:
@@ -422,6 +428,7 @@ export const theaterData = {
       publicationDate: '09/06/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title:
@@ -431,6 +438,7 @@ export const theaterData = {
       publicationDate: '08/28/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: 'Extension of the annals of the Liceu fins to 1981',
@@ -439,6 +447,7 @@ export const theaterData = {
       publicationDate: '08/02/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: 'The Futbol Club Barcelona gives its support to the Liceu',
@@ -447,6 +456,7 @@ export const theaterData = {
       publicationDate: '07/13/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: "Reading of the 'Divina Comèdia' by Dante al Liceu",
@@ -455,6 +465,7 @@ export const theaterData = {
       publicationDate: '07/01/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title: 'The Liceu launches the # LiceUnder35 Community',
@@ -463,6 +474,7 @@ export const theaterData = {
       publicationDate: '06/07/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title: "The musical 'My Fair Lady', for the first time at the Liceu",
@@ -471,6 +483,7 @@ export const theaterData = {
       publicationDate: '05/27/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
   ],
 };
