@@ -2,9 +2,12 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
+
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
+
+  --border: #d3d3d3;
 }
 
 body {
@@ -25,12 +28,16 @@ header {
 
 /* TODO: La propiedad border no se aplica*/
 .search {
-  border: 1px #d3d3d3;
+  border: 1px solid var(--border);
   border-radius: 1rem;
-  box-shadow: 1px 1px 3px 2px var(--light-shadow);
   height: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 1px 1px 3px 2px var(--light-shadow);
 }
 
 /* TODO: El icono no se ve si el fondo es oscuro. Habrá que añadir un sombreado (por ejemplo) */
@@ -71,10 +78,6 @@ footer > i {
 .social-icons {
   display: flex;
   justify-content: space-between;
-}
-/* TODO: borrar esta propiedad cuando ya no sea necesaria */
-main {
-  height: 75vh;
 }
 
 a {

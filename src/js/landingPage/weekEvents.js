@@ -1,9 +1,8 @@
 const weekEventSection = document.querySelector('.week-events-container');
 
-export const generateImgMarkup = function (events) {
+export const generateImgBkg = function (events) {
+  if (!weekEventSection) return;
   weekEventSection.style.backgroundImage = `url(${events[0].imgURL})`;
-  console.log(events[0].imgURL);
-  console.log(weekEventSection.style);
   // return `<img class="week-event-img" src="${events[0].imgURL}" alt="event">`;
 };
 
@@ -16,11 +15,12 @@ export const generateInfoMarkup = function (events) {
             <p class="week-event-author">${events[0].author}</p>
             <p class="week-event-dates">${events[0].dates[0]} - 
             ${events[0].dates[events[0].dates.length - 1]}</p>
-            <a class="week-tickets-btn" href="event.html">Tickets</a>
+            <a class="tickets-btn week-tickets-btn" href="event.html">Tickets</a>
           </div>`;
 };
 
 // TODO: refactor: same function in both day and weekEvents.js
 export const render = function (markup) {
+  if (!weekEventSection) return;
   weekEventSection.insertAdjacentHTML('afterbegin', markup);
 };

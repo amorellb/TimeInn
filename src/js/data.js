@@ -1,6 +1,7 @@
 export const theaterData = {
   events: [
     {
+      id: 'id-winterreise',
       title: 'Winterreise',
       author: 'Angelin Preljocaj',
       group: 'Ballet Preljocaj',
@@ -25,9 +26,10 @@ export const theaterData = {
       videoURL:
         'https://www.liceubarcelona.cat/sites/default/files/espectacles/temporada_2021-2022/dansa/promo_winterreise_2122_h_clean_1.mp4',
       description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ratione debitis impedit voluptate fuga dolores ullam, vitae voluptatibus quidem veniam eius, nisi odio harum nobis deserunt iure delectus? Excepturi, a?',
     },
     {
+      id: 'id-pierrot',
       title: 'Pierrot Lunaire anb un pròleg: Narcís',
       author: 'Arnold Schönberg',
       group: '',
@@ -48,6 +50,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-edip',
       title: "Mite i tragèdia d'electra i èdip",
       author: ['Richard Strauss', 'Igor Stravinsky'],
       group: [
@@ -75,6 +78,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-rigoletto',
       title: 'Rigoletto',
       author: 'Giuseppe Verdi',
       group: '',
@@ -121,6 +125,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-dudamel',
       title: 'Dudamel dirigeix la Simfònica fantàstica de Berlioz',
       author: 'Gustavo Dudamel',
       group: [
@@ -141,6 +146,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-zauberflote',
       title: 'Die Zauberflöte',
       author: 'Wolfgang Amadeus Mozart',
       group: [
@@ -177,6 +183,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-trencanous',
       title: 'El Trencanous',
       author: 'Piotr Tchaikovsky',
       group: '',
@@ -206,6 +213,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-madrigals',
       title: 'Els Madrigals de Monteverdi I',
       author: 'C. Monteverdi',
       group: 'Concerto Italiano',
@@ -223,6 +231,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-pelleas',
       title: 'Pelléas et Mélisande',
       author: 'Maurice Maeterlinck',
       group: '',
@@ -253,6 +262,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-pikovaia',
       title: 'Pikovaia Dama',
       author: 'Piotr Ilitx Txaikovski',
       group: '',
@@ -287,6 +297,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-piotr',
       title: 'Piotr Beczala',
       author: '',
       group: '',
@@ -305,6 +316,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-sonya',
       title: 'Sonya Yoncheva canta Puccini',
       author: '',
       group: 'Gran Simfònica del Gran Teatre del Liceu',
@@ -323,6 +335,7 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
     {
+      id: 'id-giselle',
       title: "Giselle D'Akram Khan",
       author: 'Adolphe Adam',
       group: 'English National Ballet',
