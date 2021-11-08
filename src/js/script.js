@@ -2,6 +2,8 @@ import * as data from './data.js';
 import * as dayEvents from './landingPage/dayEvents.js';
 import * as weekEvents from './landingPage/weekEvents.js';
 import * as event from './event.js';
+import * as news from './landingPage/news.js';
+
 
 // Render the first section: events of the day
 dayEvents.render(dayEvents.generateVideoMarkup(data.theaterData.events));
@@ -14,3 +16,7 @@ weekEvents.render(weekEvents.generateInfoMarkup(data.theaterData.events));
 // Render the event when a tickets button is clicked
 // event.ticketsBtnHandler();
 event.render(event.generateEventMarkup(data.theaterData.events));
+
+//Render the fourth section: news
+news.render(news.generateNews(data.theaterData.news))
+console.log(news.generateNews(data.theaterData.news));
