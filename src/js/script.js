@@ -2,7 +2,7 @@ import * as data from './data.js';
 import * as dayEvents from './landingPage/dayEvents.js';
 import * as weekEvents from './landingPage/weekEvents.js';
 import * as event from './event.js';
-import * as news from './landingPage/news.js';
+import * as news from './landingPage/outstandingNews.js';
 
 
 // Render the first section: events of the day
@@ -18,5 +18,9 @@ weekEvents.render(weekEvents.generateInfoMarkup(data.theaterData.events));
 event.render(event.generateEventMarkup(data.theaterData.events));
 
 //Render the fourth section: news
-news.render(news.generateNews(data.theaterData.news))
-console.log(news.generateNews(data.theaterData.news));
+
+//data.theaterData.news.forEach(singleNews => news.render(news.generateNewsMarkup(singleNews)))
+
+(data.theaterData.news).slice(0,4).forEach(singleNews => news.render(news.generateNewsMarkup(singleNews)))
+
+
