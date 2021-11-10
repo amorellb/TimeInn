@@ -20,8 +20,9 @@ weekEvents.render(weekEvents.generateInfoMarkup(data.theaterData.events));
 event.render(event.generateEventMarkup(data.theaterData.events));
 
 //Render the fourth section: news
-news.filterNews(data.theaterData.news).slice(0,4).forEach(singleNews => news.render(news.generateNewsMarkup(singleNews))); 
+news.filterNews(data.theaterData.news).slice(0,4).reverse().forEach(singleNews => news.render(news.generateNewsMarkup(singleNews))); 
 
 // Render the all News Page
 
 news.filterNews(data.theaterData.news).forEach(singleNews => newsEvents.render(newsEvents.generateAllNews(singleNews)))
+
