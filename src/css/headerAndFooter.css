@@ -21,12 +21,10 @@ header {
   height: 10vh;
 }
 
-/* TODO: El logo no se ve si hay fondo negro. Tenemos que hacerle un sombreado o meterlo dentro de un círculo blanco (por ejemplo) */
 .logo {
   width: 3rem;
 }
 
-/* TODO: La propiedad border no se aplica*/
 .search {
   border: 1px solid var(--border);
   border-radius: 1rem;
@@ -40,10 +38,9 @@ header {
   box-shadow: 1px 1px 3px 2px var(--light-shadow);
 }
 
-/* TODO: El icono no se ve si el fondo es oscuro. Habrá que añadir un sombreado (por ejemplo) */
 .fa-bars {
   font-size: 2rem;
-  color: var(--light-text);
+  color: var(--first-main-color);
 }
 
 footer {

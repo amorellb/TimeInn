@@ -1,8 +1,6 @@
 const eventContainer = document.querySelector('.event-container');
 const navIcon = document.querySelector('.fa-bars');
 
-navIcon.style.color = 'black';
-
 // TODO: Add more data to the description (author, dates, duration, price, ...)
 export const generateEventMarkup = function (events) {
   // const event = filterEvents(getDayTicketsBtnClass(), events);
