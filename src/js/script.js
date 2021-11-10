@@ -21,6 +21,7 @@ event.render(event.generateEventMarkup(data.theaterData.events));
 
 //data.theaterData.news.forEach(singleNews => news.render(news.generateNewsMarkup(singleNews)))
 
-(data.theaterData.news).slice(0,4).forEach(singleNews => news.render(news.generateNewsMarkup(singleNews)))
+/* (data.theaterData.news).slice(0,4).forEach(singleNews => news.render(news.generateNewsMarkup(singleNews))) */
 
-
+news.filterNews(data.theaterData.news).slice(0,4).forEach(singleNews => news.render(news.generateNewsMarkup(singleNews))); 
+console.log(news.filterNews(data.theaterData.news));
