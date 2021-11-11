@@ -13,5 +13,6 @@ export const generateEventsMarkup = function (event) {
 };
 
 export const render = function (markup) {
+  if (!eventsContainer) return;
   eventsContainer.insertAdjacentHTML('beforeend', markup);
-};
+}; 
