@@ -23,6 +23,5 @@ event.render(event.generateEventMarkup(data.theaterData.events));
 news.filterNews(data.theaterData.news).slice(0,4).reverse().forEach(singleNews => news.render(news.generateNewsMarkup(singleNews))); 
 
 // Render the all News Page
-
 news.filterNews(data.theaterData.news).forEach(singleNews => newsEvents.render(newsEvents.generateAllNews(singleNews)))
 
