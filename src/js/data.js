@@ -359,118 +359,131 @@ export const theaterData = {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
     },
   ],
-  
+
   news: [
     {
       title:
         'The Liceu starts a new project with the teacher Rinaldo Alessandrini',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_madrigals_noticia.png?itok=z5Yjv7n_',
-      publicationDate: '11/11/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_madrigals_noticia.png',
+      publicationDate: '12/11/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: "Josep Pons conducts 'Mite i tragèdia d'Electra i Èdip'",
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/josep_banner_01.png?itok=6N_uzNHG',
-      publicationDate: '11/04/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/josep_banner_01.png',
+      publicationDate: '12/27/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title:
         'Liceu projects financed with the support of the Department of Culture',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/sala_bastida_noticia.png?itok=QDBEn9SS',
-      publicationDate: '10/17/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/sala_bastida_noticia.png',
+      publicationDate: '12/19/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title:
         'Serena Sáenz gana el XVI Concurso Internacional de Canto Montserrat Caballé',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_noticia_serena-saenz.png?itok=1U0sV3gd',
-      publicationDate: '10/10/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_noticia_serena-saenz.png',
+      publicationDate: '12/10/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title:
         "'War Requiem' de Britten arriba al Liceu amb producció escenificada",
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/warrequiem_banner.png?itok=UoxiZhOw',
-      publicationDate: '09/29/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/warrequiem_banner.png',
+      publicationDate: '12/29/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title:
         'The Liceu hosts the Montserrat Caballé Contest for the first time',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_noticia_caballe.png?itok=aHhjxdEY',
-      publicationDate: '09/19/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_noticia_caballe.png',
+      publicationDate: '01/17/2022',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title:
         'Salvador Alemany renews as president of the Gran Teatre del Liceu Foundation',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_noticia_patronat.png?itok=M3-PI1ul',
-      publicationDate: '09/06/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_noticia_patronat.png',
+      publicationDate: '01/06/2022',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title:
         "The Liceu presents 'La noche de San Juan' with choreography by Antonio Ruz",
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/nitsantjoan_portada.png?itok=WQYdn9GB',
-      publicationDate: '08/28/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/nitsantjoan_portada.png',
+      publicationDate: '01/28/2022',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: 'Extension of the annals of the Liceu fins to 1981',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_parsifal.png?itok=XL0KQIeW',
-      publicationDate: '08/02/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/banner_parsifal.png',
+      publicationDate: '01/07/2022',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: 'The Futbol Club Barcelona gives its support to the Liceu',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/futbolclubbarcelona_banner.png?itok=h-V-Fln9',
-      publicationDate: '07/13/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/futbolclubbarcelona_banner.png',
+      publicationDate: '01/13/2022',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
     {
       title: "Reading of the 'Divina Comèdia' by Dante al Liceu",
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/1280px-dante_domenico_di_michelino_duomo_florence-1.png?itok=c9bcObJ8',
-      publicationDate: '07/01/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/1280px-dante_domenico_di_michelino_duomo_florence-1.png',
+      publicationDate: '12/01/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title: 'The Liceu launches the # LiceUnder35 Community',
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/liceu_under_35_038_1_0.jpg?itok=3rz-9Ers',
-      publicationDate: '06/07/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/liceu_under_35_038_1_0.jpg',
+      publicationDate: '01/20/2022',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: false,
     },
     {
       title: "The musical 'My Fair Lady', for the first time at the Liceu",
       imgURL:
-        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/mfl_rehearsal_07.png?itok=u5_NizhG',
-      publicationDate: '05/27/2021',
+        'https://www.liceubarcelona.cat/sites/default/files/styles/noticies/public/mfl_rehearsal_07.png',
+      publicationDate: '12/04/2021',
       content:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut amet veniam architecto quae repudiandae saepe. Ex velit alias minus vero facilis, eius officiis at architecto molestiae voluptatem recusandae soluta corrupti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quo consequatur ipsa commodi, eligendi non deleniti fugiat? Tempore et consequuntur hic. Deserunt cumque harum autem ea, laboriosam ipsum voluptate veniam!',
+      sponsored: true,
     },
   ],
 };
