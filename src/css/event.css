@@ -18,18 +18,27 @@ body {
 }
 
 .event {
+  margin-top: 2rem;
+
   display: grid;
   grid-template-areas:
+    'title form'
     'img form'
     'description description';
 }
 
-/* TODO: Aumentar la altura de la imagen: hight: 100% */
+.event-title {
+  width: 80%;
+  margin: 0;
+
+  grid-area: title;
+  justify-self: center;
+}
+
 .event-img {
   width: 80%;
 
   grid-area: img;
-  align-self: center;
   justify-self: center;
 }
 
@@ -76,6 +85,11 @@ body {
 
 .event-description {
   width: 80%;
+
   grid-area: description;
   justify-self: center;
+}
+
+.event-description h2 {
+  font-size: large;
 }

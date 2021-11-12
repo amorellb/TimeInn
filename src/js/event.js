@@ -6,6 +6,7 @@ export const generateEventMarkup = function (events) {
   // const event = filterEvents(getDayTicketsBtnClass(), events);
   return `
   <section class="event">
+        <h1 class="event-title">${events[0].title}</h1>
         <img class="event-img" src="${events[0].imgURL}" alt="${events[0].title}">
         <aside class="event-form">
           <form action="post">
@@ -18,7 +19,7 @@ export const generateEventMarkup = function (events) {
           </form>
         </aside>
         <div class="event-description">
-          <h1>Description</h1>
+          <h2>Description</h2>
           <p>${events[0].description}</p>
         </div>
       </section>
