@@ -13,9 +13,7 @@
 
   <!-- STYLES -->
   <link rel="stylesheet" href="src/css/headerAndFooter.css" />
-  <link rel="stylesheet" href="src/css/landingPage/dayEvents.css">
-  <link rel="stylesheet" href="src/css/landingPage/weekEvents.css">
-  <link rel="stylesheet" href="src/css/landingPage/outstandingNews.css">
+  <link rel="stylesheet" href="src/css/event.css" />
 
   <!-- JS -->
   <script defer type="module" src="src/js/script.js"></script>
@@ -23,29 +21,31 @@
 
 <body>
   <div class="body-container">
-    <!-- First section: Events of the day -->
-    <section class="day-events-container">
-      <header class="header">
-        <a href="index.html"><img class="logo" src="src/images/logo2.png" alt="logo"></img></a>
-        <input class="search" type="search" name="q" id="search" placeholder="Search events">
-        <i class="fas fa-bars"></i>
-        <!-- <i class="fa-light fa-bars"></i> -->
-      </header>
-    </section>
-    <!-- Second section: Events of the week -->
-    <section class="week-events-container">
 
-    </section>
-    <!-- Third section: Calendar -->
-    <section class="calendar-container">
+    <header class="header">
+      <a href="index.html"><img class="logo" src="src/images/logo2.png" alt="logo"></img></a>
+      <input type="search" name="q" id="search" placeholder="Search events" class="search">
+      <i class="fas fa-bars"></i>
+    </header>
 
-    </section>
-    <!-- Fourth section: News -->
-    <h2>Outstanding news</h2>
-    <section class="news-container">
-      
-    </section>
-    <div class="button-all-news"><a href="news.html" >All news</a></div>
+    <main class="event-container">
+      <!-- <section class="event">
+        <img class="event-img" src="" alt="">
+        <aside class="event-form">
+          <form action="post">
+            <input class="input" type="text" name="name" id="name"/>
+            <input class="input" type="text" name="lastName" id="lastName"/>
+            <input class="input" type="text" name="phone" id="phone"/>
+            <input class="input" type="text" name="email" id="email"/>
+            <input class="input" type="number" name="numTickets" id="numTickets"/>
+            <button class="btn" type="submit">Add to cart</button>
+          </form>
+        </aside>
+        <h1>Description</h1>
+        <p class="event-description"></p>
+      </section> -->
+    </main>
+
     <footer class="footer">
       <img src="src/images/map.png" alt="map" class="map">
       <div class="contact">
@@ -70,5 +70,4 @@
     </footer>
   </div>
 </body>
-
 </html>

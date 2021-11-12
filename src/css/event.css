@@ -1,0 +1,95 @@
+/* TODO: refactor: put the color pallette in one file and import it if possible */
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #e18b7a;
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+
+  --border: #d3d3d3;
+}
+
+body {
+  margin: 0;
+}
+
+.event-container {
+  width: 100vw;
+}
+
+.event {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-areas:
+    'title form'
+    'img form'
+    'description description';
+}
+
+.event-title {
+  width: 80%;
+  margin: 0;
+
+  grid-area: title;
+  justify-self: center;
+}
+
+.event-img {
+  width: 80%;
+
+  grid-area: img;
+  justify-self: center;
+}
+
+.event-form {
+  width: 80%;
+  height: 30vh;
+
+  grid-area: form;
+  align-self: center;
+  justify-self: center;
+}
+
+.event-form > form {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.event-form-input {
+  width: 90%;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.2rem;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+}
+
+.event-form-input:focus {
+  outline: none;
+  box-shadow: 1px 1px 3px 2px var(--light-shadow);
+}
+
+.event-form-btn {
+  background-color: var(--first-main-color);
+  color: var(--light-shadow);
+  width: 60%;
+  border: 0;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
+.event-description {
+  width: 80%;
+
+  grid-area: description;
+  justify-self: center;
+}
+
+.event-description h2 {
+  font-size: large;
+}

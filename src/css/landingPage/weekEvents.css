@@ -1,0 +1,78 @@
+/* TODO: refactor: put the color pallette in one file and import it if possible */
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #e18b7a;
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+}
+
+.week-events-container {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+
+.week-event-info {
+  color: var(--light-text);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px var(--dark-shadow);
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.all-events-btn {
+  background-color: var(--first-main-color);
+  color: var(--light-shadow);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.3rem;
+  width: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 33vh;
+
+  align-self: center;
+}
+
+.week-event-title {
+  margin: 0;
+  align-self: center;
+  font-size: 2.5rem;
+}
+
+.week-event-type {
+  margin: 0;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.week-event-author {
+  margin: 0;
+  margin-left: 3rem;
+}
+
+.week-event-dates {
+  margin: 0;
+  margin-top: 5rem;
+  margin-left: 3rem;
+  width: 6rem;
+}
+
+.week-tickets-btn {
+  background-color: var(--first-main-color);
+  color: var(--light-shadow);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.3rem;
+  width: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+
+  align-self: center;
+}

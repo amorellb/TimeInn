@@ -1,0 +1,83 @@
+/* TODO: refactor: put the color pallette in one file and import it if possible */
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #e18b7a;
+
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+
+  --border: #d3d3d3;
+}
+
+body {
+  margin: auto 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.search {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.search:focus {
+  outline: none;
+  box-shadow: 1px 1px 3px 2px var(--light-shadow);
+}
+
+.fa-bars {
+  font-size: 2rem;
+  color: var(--first-main-color);
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  background-color: var(--first-main-color);
+  color: var(--light-text);
+}
+.map {
+  width: 3rem;
+  border-radius: 1rem;
+}
+.link-footer {
+  font-size: 0.6rem;
+}
+footer > i {
+  font-size: 0.7rem;
+}
+.social-links {
+  display: flex;
+}
+.contact p {
+  margin: 0;
+  font-size: 0.6rem;
+}
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: var(--second-main-color);
+}
