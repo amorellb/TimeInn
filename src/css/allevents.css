@@ -38,11 +38,15 @@ body {
   display: flex;
   flex-flow: wrap column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .single-event-container {
-  width: 100%;
+  width: 95%;
   height: 7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
 
   display: grid;
   grid-template-areas:
@@ -53,9 +57,12 @@ body {
   column-gap: 2%;
 }
 
+.single-event-container:hover {
+  box-shadow: 1px 1px 3px 2px var(--light-shadow);
+}
+
 .single-event-container > img {
   width: 100%;
-  border-radius: 5px;
 
   grid-area: img;
   grid-column-start: 1;
@@ -70,11 +77,16 @@ body {
   font-size: 1rem;
 }
 
-.trash-container {
+.trash-icon {
   text-align: center;
 
   grid-area: trash;
   grid-row: 4;
+}
+
+.trash-icon:hover {
+  color: red;
+  box-shadow: 1px 1px 3px 2px var(--light-shadow);
 }
 
 .single-event-container p {
