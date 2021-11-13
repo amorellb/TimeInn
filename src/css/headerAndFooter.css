@@ -81,3 +81,35 @@ a {
   text-decoration: none;
   color: var(--second-main-color);
 }
+
+.nav-section {
+  background-color: var(--first-main-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 11rem;
+  padding-bottom: 0.5rem;
+  position: fixed;
+  left: 235px;
+  width: 35%;
+  height: 35vh;
+  transform: translateY(-100%);
+}
+.menu2 {
+  transform: translateY(0%);
+}
+nav > img {
+  align-self: self-end;
+  padding-right: 1rem;
+  padding-bottom: 0rem;
+}
+
+nav > a {
+  color: var(--light-text);
+}
+
+.menu-icono {
+  width: 3rem;
+}
