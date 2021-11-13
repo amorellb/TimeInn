@@ -5,6 +5,7 @@ import * as event from './event.js';
 import * as newsEvents from './news.js';
 import * as news from './landingPage/outstandingNews.js';
 import * as allevents from './allevents.js';
+import * as menu from './landingPage/nav.js';
 
 // Render the first section: events of the day
 dayEvents.render(dayEvents.generateVideoMarkup(data.theaterData.events));
