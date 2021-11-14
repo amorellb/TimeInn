@@ -1,9 +1,7 @@
 const eventContainer = document.querySelector('.event-container');
-const navIcon = document.querySelector('.fa-bars');
 
 // TODO: Add more data to the description (author, dates, duration, price, ...)
 export const generateEventMarkup = function (events) {
-  // const event = filterEvents(getDayTicketsBtnClass(), events);
   return `
   <section class="event">
         <h1 class="event-title">${events[0].title}</h1>
@@ -30,34 +28,3 @@ export const render = function (markup) {
   if (!eventContainer) return;
   eventContainer.insertAdjacentHTML('afterbegin', markup);
 };
-
-// export const dayTicketsBtnHandler = function (renderFunction) {
-//   const btn = document.querySelector('.day-tickets-btn');
-//   if (!btn) return;
-//   btn.addEventListener('click', renderFunction);
-// };
-
-// const weekTicketsBtnHandler = function (renderFunction) {
-//   const btn = document.querySelector('.week-tickets-btn');
-//   if (!btn) return;
-//   btn.addEventListener('click', renderFunction);
-// };
-
-// const getDayTicketsBtnClass = function () {
-//   const btn = document.querySelector('.day-tickets-btn');
-//   if (!btn) return;
-//   const btnClasses = btn.className.split(' ');
-//   return btnClasses.filter(btnClass => btnClass.startsWith('id-'));
-// };
-
-// const getWeekTicketsBtnClass = function () {
-//   const btn = document.querySelector('.week-tickets-btn');
-//   if (!btn) return;
-//   const btnClasses = btn.className.split(' ');
-//   return btnClasses.filter(btnClass => btnClass.startsWith('id-'));
-// };
-
-// const filterEvents = function (btnClass, events) {
-//   console.log(btnClass);
-//   return events.filter(event => event.id === btnClass);
-// };
