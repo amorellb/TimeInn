@@ -4,6 +4,7 @@
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
+  --title-color: #000000;
 
   --border: #d3d3d3;
 }
@@ -16,6 +17,20 @@ body {
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
+}
+
+.page-title {
+  text-align: center;
+  width: 195px;
+  color: var(--title-color);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: normal;
+  padding: 0.3rem;
+  margin-top: 3rem;
+  color: var(--light-text);
+  background-color: var(--title-color);
 }
 
 .add-event-btn {
