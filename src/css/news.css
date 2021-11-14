@@ -4,7 +4,7 @@
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
-  --title-color: rgb(0, 0, 0);
+  --title-color: #000000;
 }
 
 h2 {
@@ -32,24 +32,18 @@ h2:hover {
   justify-content: space-evenly;
   margin-bottom: 2rem;
   overflow: scroll;
-
-  
 }
 .news-info {
   display: flex;
   flex-direction: column;
   box-shadow: 0.5rem 0.5rem 0.3rem var(--dark-shadow);
   margin-top: 1rem;
-  
 }
-.news-info:hover{
+.news-info:hover {
   position: absolute;
   transform: scale(2);
   background-color: var(--first-main-color);
   color: var(--light-text);
-  
-  
-
 }
 .news-image {
   width: 30vw;
@@ -74,4 +68,3 @@ h2:hover {
   font-size: 0.7rem;
   padding-right: 0.5rem;
 }
-
