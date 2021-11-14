@@ -2,7 +2,7 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
-
+  
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -112,4 +112,17 @@ nav > a {
 
 .menu-icono {
   width: 3rem;
+}
+.scroll-up-icon {
+  background-color: var(--first-main-color);
+  border-radius: 1rem;
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: all 400ms ease;
+  transform: scale(0);
+}
+.scroll-up-icon:hover {
+  transform: scale(1.3);
 }
