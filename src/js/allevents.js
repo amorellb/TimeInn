@@ -3,7 +3,7 @@ const addEventBtn = document.querySelector('.add-event-btn');
 
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const overlay = document.querySelector('.overlay');
-const addEventWindow = document.querySelector('.add-event-window');
+const formWindow = document.querySelector('.form-window');
 const addEventForm = document.querySelector('.upload');
 const uploadBtn = document.querySelector('.upload__btn');
 
@@ -20,12 +20,12 @@ export const generateEventsMarkup = function (event) {
 export const render = function (markup) {
   if (!eventsContainer) return;
   eventsContainer.insertAdjacentHTML('beforeend', markup);
-}; 
+};
 
 const toggleWindow = function () {
-  if (!overlay || !addEventWindow) return;
+  if (!overlay || !formWindow) return;
   overlay.classList.toggle('hidden');
-  addEventWindow.classList.toggle('hidden');
+  formWindow.classList.toggle('hidden');
 };
 
 const addHandlerShowForm = function () {
@@ -46,7 +46,6 @@ const uploadEvent = function () {
   uploadBtn.addEventListener('click', e => {
     e.preventDefault();
     const formData = getFormData();
-    console.log(formData);
     const markup = generateEventsMarkup(formData);
     eventsContainer.insertAdjacentHTML('afterbegin', markup);
     toggleWindow();
