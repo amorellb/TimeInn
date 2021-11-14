@@ -71,6 +71,7 @@
   border: 1px solid var(--border);
   border-radius: 2rem;
   transition: all 0.2s;
+  width: 90%;
 }
 
 .upload input::placeholder {
