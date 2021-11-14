@@ -14,14 +14,14 @@ export const generateInfoMarkup = function (events, posNum = 0) {
   } - 
   ${nearEvents[posNum].dates[nearEvents[posNum].dates.length - 1]}</p>`;
   return `<div class="week-event-info">
-            <button class="slider-btn slider-btn-right"><i class="fas fa-chevron-right"></i></button>
-            <button class="slider-btn slider-btn-left"><i class="fas fa-chevron-left"></i></button>
-            <a class="all-events-btn" href="allEvents.html">All events</a>
+            <button class="btn slider-btn slider-btn-right"><i class="fas fa-chevron-right"></i></button>
+            <button class="btn slider-btn slider-btn-left"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn all-events-btn">All events</button>
             <p class="week-event-type">${nearEvents[posNum].type}</p>
             <h1 class="week-event-title">${nearEvents[posNum].title}</h1>
             <p class="week-event-author">${nearEvents[posNum].author}</p>
             ${nearEvents[posNum].dates.length === 1 ? eventDate : eventDates}
-            <a class="tickets-btn week-tickets-btn" href="event.html">Tickets</a>
+            <button class="btn tickets-btn week-tickets-btn" href="event.html">Tickets</button>
           </div>`;
 };
 
@@ -34,12 +34,16 @@ export const displayEventHandler = function (events) {
   if (!weekEventSection) return;
   weekEventSection.addEventListener('click', e => {
     e.preventDefault();
-    const btn = e.target.closest('.slider-btn');
+    const btn = e.target.closest('.btn');
     if (!btn) return;
     if (btn.classList.contains('slider-btn-right')) {
       renderNextEvent(events);
     } else if (btn.classList.contains('slider-btn-left')) {
       renderPrevEvent(events);
+    } else if (btn.classList.contains('all-events-btn')) {
+      window.location.replace('allevents.html');
+    } else if (btn.classList.contains('week-tickets-btn')) {
+      window.location.replace('event.html');
     }
   });
 };
