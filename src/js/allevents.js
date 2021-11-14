@@ -42,7 +42,7 @@ const addHandlerHideForm = function () {
 addHandlerHideForm();
 
 const uploadEvent = function () {
-  if (!uploadBtn) return;
+  if (!uploadBtn || !eventsContainer) return;
   uploadBtn.addEventListener('click', e => {
     e.preventDefault();
     const formData = getFormData();

@@ -26,7 +26,7 @@ export const generateInfoMarkup = function (events, posNum = 0) {
 };
 
 export const render = function (markup) {
-  if (!weekEventSection) return;
+  if (!weekEventSection || !markup) return;
   weekEventSection.insertAdjacentHTML('afterbegin', markup);
 };
 
