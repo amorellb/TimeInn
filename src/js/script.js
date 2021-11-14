@@ -1,6 +1,7 @@
 import * as data from './data.js';
 import * as dayEvents from './landingPage/dayEvents.js';
 import * as weekEvents from './landingPage/weekEvents.js';
+import * as subscription from './landingPage/subsModal.js';
 import * as event from './event.js';
 import * as newsEvents from './news.js';
 import * as news from './landingPage/outstandingNews.js';
