@@ -13,8 +13,11 @@ dayEvents.render(dayEvents.generateVideoMarkup(data.theaterData.events));
 dayEvents.render(dayEvents.generateInfoMarkup(data.theaterData.events));
 
 // Render the second section: events of the week
-weekEvents.generateImgBkg(data.theaterData.events);
-weekEvents.render(weekEvents.generateInfoMarkup(data.theaterData.events));
+window.addEventListener('load', () => {
+  weekEvents.generateImgBkg(data.theaterData.events);
+  weekEvents.render(weekEvents.generateInfoMarkup(data.theaterData.events));
+});
+weekEvents.displayEventHandler(data.theaterData.events);
 
 // Render the event when a tickets button is clicked
 // event.ticketsBtnHandler();

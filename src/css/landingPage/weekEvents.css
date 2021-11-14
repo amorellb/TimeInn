@@ -76,3 +76,31 @@
 
   align-self: center;
 }
+
+/* Slider */
+.slider-btn {
+  position: absolute;
+  top: 150%;
+  z-index: 10;
+
+  border: none;
+  /* background: #ffffffb3; */
+  background: none;
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.slider-btn-left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider-btn-right {
+  right: 6%;
+  transform: translate(50%, -50%);
+}
