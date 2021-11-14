@@ -15,11 +15,14 @@ export const filterNews = function (news) {
 };
 
 export const generateNewsMarkup = function (singleNews) {
+  const localePubDate = new Date(
+    singleNews.publicationDate
+  ).toLocaleDateString();
   return `
   <div class="news-info">
   <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
   <p class="news-title">${singleNews.title}</p>
-  <p class="news-date">${singleNews.publicationDate}</p>
+  <p class="news-date">${localePubDate}</p>
   </div>`;
 };
 

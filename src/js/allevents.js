@@ -10,12 +10,13 @@ const uploadBtn = document.querySelector('.upload__btn');
 export const generateEventsMarkup = function (event) {
   const [...dates] = event.dates;
   const eventsNearDate = dates.join('').slice(0, 10).replaceAll('-', '/');
+  const localeDate = new Date(eventsNearDate).toLocaleDateString();
   return `
     <div class="single-event-container">
       <img src="${event.imgURL}" alt="${event.title}">
       <h2>${event.title}</h2>
       <p class="event-desc">${event.description}</p>
-      <p class="event-dates">${eventsNearDate}</p>
+      <p class="event-dates">${localeDate}</p>
         <i class="fas fa-trash-alt trash-icon"></i>
     </div>`;
 };
