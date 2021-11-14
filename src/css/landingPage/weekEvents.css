@@ -30,7 +30,9 @@
   color: var(--light-shadow);
   text-transform: uppercase;
   text-align: center;
+  border: 0;
   border-radius: 0.3rem;
+  margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -68,11 +70,12 @@
   color: var(--light-shadow);
   text-transform: uppercase;
   text-align: center;
+  border: 0;
   border-radius: 0.3rem;
+  margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 1rem;
 
   align-self: center;
 }
