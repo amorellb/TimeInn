@@ -44,6 +44,7 @@ body {
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
   align-self: center;
 }
 
@@ -104,7 +105,15 @@ body {
   box-shadow: 1px 1px 3px 2px var(--light-shadow);
 }
 
-.single-event-container p {
+.single-event-container .event-desc {
+  grid-area: description;
+  grid-row: 4;
+
+  margin: 0;
+  overflow: hidden;
+}
+
+.single-event-container .event-dates {
   grid-area: description;
   grid-row: 5;
 
