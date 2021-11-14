@@ -8,11 +8,13 @@ export const generateImgBkg = function (events, posNum = 0) {
 
 export const generateInfoMarkup = function (events, posNum = 0) {
   const nearEvents = sortEventsByDate(events).slice(0, 3);
-  const eventDate = `<p class="week-event-dates">${nearEvents[posNum].dates[0]}</p>`;
-  const eventDates = `<p class="week-event-dates">${
-    nearEvents[posNum].dates[0]
-  } - 
-  ${nearEvents[posNum].dates[nearEvents[posNum].dates.length - 1]}</p>`;
+  const firstDate = new Date(nearEvents[posNum].dates[0]).toLocaleDateString();
+  const lastDate = new Date(
+    nearEvents[posNum].dates[nearEvents[posNum].dates.length - 1]
+  ).toLocaleDateString();
+  const eventDate = `<p class="week-event-dates">${firstDate}</p>`;
+  const eventDates = `<p class="week-event-dates">${firstDate} - 
+  ${lastDate}</p>`;
   return `<div class="week-event-info">
             <button class="btn slider-btn slider-btn-right"><i class="fas fa-chevron-right"></i></button>
             <button class="btn slider-btn slider-btn-left"><i class="fas fa-chevron-left"></i></button>
