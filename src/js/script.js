@@ -21,7 +21,6 @@ window.addEventListener('load', () => {
 weekEvents.displayEventHandler(data.theaterData.events);
 
 // Render the event when a tickets button is clicked
-// event.ticketsBtnHandler();
 event.render(event.generateEventMarkup(data.theaterData.events));
 
 // Render all events into all-events page
