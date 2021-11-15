@@ -13,12 +13,13 @@
 h2 {
   text-align: center;
   width: 270px;
-  color: var(--title-color);
   font-size: 1.5rem;
   text-transform: uppercase;
   font-style: italic;
   font-weight: normal;
   padding: 0.3rem;
+  color: var(--light-text);
+  background-color: var(--title-color);
 }
 .news-section{
   height: 100vh;
@@ -68,7 +69,3 @@ h2 {
   padding: 1rem;
 }
 
-h2:hover, .button-all-news:hover>a {
-  color: var(--light-text);
-  background-color: var(--title-color);
-}
