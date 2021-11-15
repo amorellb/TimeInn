@@ -5,9 +5,9 @@ const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="src/images/logo.png" alt="logo"></img></a>
     <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div>
-    <img src="src/images/menu-icon.png" alt="icono menu" class="menu-icon">
+    <img class="nav-btn menu-icon" src="src/images/menu-icon.png" alt="icono menu">
     <nav class="nav-section">
-      <img src="src/images/x-close.png" alt="icono cerrar" class="x-close">
+      <img class="nav-btn x-close" src="src/images/x-close.png" alt="icono cerrar">
       <a href="Login">Login</a>
       <a href="Programming">Programming</a>
       <a href="Calendar">Calendar</a>
@@ -51,3 +51,20 @@ export const renderFooter = function () {
   if (!footerContainer) return;
   footerContainer.insertAdjacentHTML('afterbegin', generateFooterMarkup());
 };
+
+const toggleMenu = function () {
+  const headerMenu = document.querySelector('.nav-section');
+  if (!headerMenu) return;
+  headerMenu.classList.toggle('menu2');
+  headerMenu.style.transition = 'transform 0.5s ease-in-out';
+};
+
+const menuHandler = function () {
+  if (!headerContainer) return;
+  headerContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.nav-btn');
+    if (!btn) return;
+    toggleMenu();
+  });
+};
+menuHandler();
