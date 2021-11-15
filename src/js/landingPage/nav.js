@@ -1,6 +1,6 @@
-const menu = document.getElementsByClassName('nav-section')[0];
-let iconMenu = document.getElementsByClassName('menu-icon')[0];
-let iconClose = document.getElementsByClassName('x-close')[0];
+const menu = document.querySelector('.nav-section');
+let iconMenu = document.querySelector('.menu-icon');
+let iconClose = document.querySelector('.x-close');
 
 const toggleMenu = () => {
   menu.classList.toggle('menu2');
@@ -9,12 +9,18 @@ const toggleMenu = () => {
 
 const openMenuHandler = function () {
   if (!iconMenu) return;
-  iconMenu.addEventListener('click', toggleMenu());
+  iconMenu.addEventListener('click', () => {
+    console.log(iconMenu);
+    toggleMenu();
+  });
 };
 openMenuHandler();
 
 const closeMenuHandler = function () {
   if (!iconClose) return;
-  iconClose.addEventListener('click', toggleMenu());
+  iconClose.addEventListener('click', () => {
+    console.log(iconClose);
+    toggleMenu();
+  });
 };
 closeMenuHandler();

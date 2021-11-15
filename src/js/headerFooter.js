@@ -4,7 +4,7 @@ const footerContainer = document.querySelector('.footer');
 const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="src/images/logo.png" alt="logo"></img></a>
-    <input class="search" type="search" name="q" id="search" placeholder="Search events">
+    <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div>
     <img src="src/images/menu-icon.png" alt="icono menu" class="menu-icon">
     <nav class="nav-section">
       <img src="src/images/x-close.png" alt="icono cerrar" class="x-close">
