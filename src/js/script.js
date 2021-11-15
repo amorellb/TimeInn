@@ -27,7 +27,9 @@ event.render(event.generateEventMarkup(data.theaterData.events));
 data.theaterData.events.forEach(event =>
   allevents.render(allevents.generateEventsMarkup(event))
 );
-allevents.generateFilterMarkup(data.theaterData.events);
+allevents.renderFilterButtons(
+  allevents.generateFilterMarkup(data.theaterData.events)
+);
 
 //Render the fourth section: news
 news
