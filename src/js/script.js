@@ -30,6 +30,7 @@ data.theaterData.events.forEach(event =>
 allevents.renderFilterButtons(
   allevents.generateFilterMarkup(data.theaterData.events)
 );
+allevents.filterHandler(data.theaterData.events);
 
 //Render the fourth section: news
 news

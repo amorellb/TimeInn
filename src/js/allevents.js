@@ -32,11 +32,13 @@ export const render = function (markup) {
 
 export const generateFilterMarkup = function (events) {
   if (!events) return;
-  let buttons = '<button class="btn-all-events">All events</button>';
+  let buttons = '<button class="btn-filter btn-all-events">All events</button>';
   const uniqueEventTypes = [...new Set(events.map(event => event.type))];
   uniqueEventTypes.forEach(eventType => {
     buttons += `
-    <button class="btn-${eventType}">${firstUpperLetter(eventType)}</button>
+    <button class="btn-filter btn-${eventType}">${firstUpperLetter(
+      eventType
+    )}</button>
     `;
   });
   return buttons;
@@ -45,6 +47,34 @@ export const generateFilterMarkup = function (events) {
 export const renderFilterButtons = function (markup) {
   if (!filterContainer || !markup) return;
   filterContainer.insertAdjacentHTML('afterbegin', markup);
+};
+
+export const filterHandler = function (events) {
+  if (!filterContainer) return;
+  filterContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-filter');
+    if (!btn) return;
+    if (btn.classList.contains('btn-all-events')) {
+      eventsContainer.innerHTML = '';
+      events.forEach(event => render(generateEventsMarkup(event)));
+    } else if (btn.classList.contains('btn-dance')) {
+      eventsContainer.innerHTML = '';
+      const danceEvents = filterEventsByType(events, 'dance');
+      danceEvents.forEach(event => render(generateEventsMarkup(event)));
+    } else if (btn.classList.contains('btn-concert')) {
+      eventsContainer.innerHTML = '';
+      const concertEvents = filterEventsByType(events, 'concert');
+      concertEvents.forEach(event => render(generateEventsMarkup(event)));
+    } else if (btn.classList.contains('btn-opera')) {
+      eventsContainer.innerHTML = '';
+      const operaEvents = filterEventsByType(events, 'opera');
+      operaEvents.forEach(event => render(generateEventsMarkup(event)));
+    }
+  });
+};
+
+const filterEventsByType = function (events, type) {
+  return events.filter(event => event.type === type);
 };
 
 const toggleWindow = function () {
