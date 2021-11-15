@@ -8,6 +8,10 @@
   --dark-shadow: #5c5c5c;
 
   --border: #d3d3d3;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 body {
@@ -15,10 +19,12 @@ body {
 }
 
 header {
+  font-family: var(--multipurpose-font);
+  height: 10vh;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
 }
 
 .logo {
@@ -32,7 +38,7 @@ header {
   border-radius: 1rem;
   height: 2rem;
   padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  padding-right: 0.5rem;
 
   display: flex;
   align-items: center;
@@ -46,23 +52,20 @@ header {
   outline: none;
 }
 
-/* .search:focus {
-  outline: none;
-  box-shadow: 1px 1px 3px 2px var(--light-shadow);
-} */
-
 .fa-bars {
   font-size: 2rem;
   color: var(--first-main-color);
 }
 
 footer {
+  background-color: var(--first-main-color);
+  color: var(--light-text);
+  font-family: var(--multipurpose-font);
+  height: 10vh;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
-  background-color: var(--first-main-color);
-  color: var(--light-text);
 }
 .map {
   width: 3rem;

@@ -57,3 +57,10 @@ news
     
   
   
+if (!document.cookie) {
+  document.cookie = 'name=Cookie; max-age=600; path=/; SameSite=Lax';
+
+  // Render modal form for subscription
+  subscription.obsSect();
+  subscription.addHandlerHideForm();
+}
