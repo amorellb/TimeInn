@@ -1,7 +1,7 @@
 import { firstUpperLetter } from './helper.js';
 
 const eventsContainer = document.querySelector('.allevents-container');
-const filterCOntainer = document.querySelector('.filter-container');
+const filterContainer = document.querySelector('.filter-container');
 const addEventBtn = document.querySelector('.add-event-btn');
 
 const btnCloseModal = document.querySelector('.btn--close-modal');
@@ -26,11 +26,12 @@ export const generateEventsMarkup = function (event) {
 };
 
 export const render = function (markup) {
-  if (!eventsContainer) return;
+  if (!eventsContainer || !markup) return;
   eventsContainer.insertAdjacentHTML('beforeend', markup);
 };
 
 export const generateFilterMarkup = function (events) {
+  if (!events) return;
   let buttons = '<button class="btn-all-events">All events</button>';
   const uniqueEventTypes = [...new Set(events.map(event => event.type))];
   uniqueEventTypes.forEach(eventType => {
@@ -39,6 +40,11 @@ export const generateFilterMarkup = function (events) {
     `;
   });
   return buttons;
+};
+
+export const renderFilterButtons = function (markup) {
+  if (!filterContainer || !markup) return;
+  filterContainer.insertAdjacentHTML('afterbegin', markup);
 };
 
 const toggleWindow = function () {
