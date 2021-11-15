@@ -27,17 +27,29 @@ header {
 }
 
 .search {
+  background-color: white;
   border: 1px solid var(--border);
   border-radius: 1rem;
   height: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+
+  display: flex;
+  align-items: center;
 }
 
-.search:focus {
+.search input {
+  border: 0;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+/* .search:focus {
   outline: none;
   box-shadow: 1px 1px 3px 2px var(--light-shadow);
-}
+} */
 
 .fa-bars {
   font-size: 2rem;
