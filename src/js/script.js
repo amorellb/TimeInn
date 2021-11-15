@@ -1,4 +1,5 @@
 import * as data from './data.js';
+import * as headerFooter from './headerFooter.js';
 import * as dayEvents from './landingPage/dayEvents.js';
 import * as weekEvents from './landingPage/weekEvents.js';
 import * as subscription from './landingPage/subsModal.js';
@@ -8,6 +9,10 @@ import * as news from './landingPage/outstandingNews.js';
 import * as allevents from './allevents.js';
 import * as menu from './landingPage/nav.js';
 import * as scroll from './landingPage/scroll-up.js';
+
+// Render header and footer
+headerFooter.renderHeader();
+headerFooter.renderFooter();
 
 // Render the first section: events of the day
 dayEvents.render(dayEvents.generateVideoMarkup(data.theaterData.events));
