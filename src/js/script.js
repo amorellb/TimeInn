@@ -7,7 +7,6 @@ import * as event from './event.js';
 import * as newsEvents from './news.js';
 import * as news from './landingPage/outstandingNews.js';
 import * as allevents from './allevents.js';
-import * as menu from './landingPage/nav.js';
 import * as scroll from './landingPage/scroll-up.js';
 
 // Render header and footer
