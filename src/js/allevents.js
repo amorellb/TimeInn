@@ -56,6 +56,7 @@ const uploadBtnHandler = function () {
 uploadBtnHandler();
 
 const uploadEvent = function () {
+  console.log('joijoi');
   const formData = getFormData();
   const markup = generateEventsMarkup(formData);
   eventsContainer.insertAdjacentHTML('afterbegin', markup);
@@ -77,7 +78,7 @@ const eventHandler = function () {
     if (btn.classList.contains('trash-icon')) {
       deleteEvent(btn);
     } else if (btn.classList.contains('edit-icon')) {
-      editEvent();
+      toggleWindow();
       deleteEvent(btn);
     }
   });
@@ -86,9 +87,4 @@ eventHandler();
 
 const deleteEvent = function (elem) {
   elem.parentElement.outerHTML = '';
-};
-
-const editEvent = function () {
-  toggleWindow();
-  uploadBtnHandler();
 };
