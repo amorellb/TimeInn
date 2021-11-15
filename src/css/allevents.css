@@ -5,8 +5,12 @@
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
   --title-color: #000000;
-
   --border: #d3d3d3;
+  --alert: #ff0000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 body {
@@ -20,22 +24,23 @@ body {
 }
 
 .page-title {
-  text-align: center;
-  width: 195px;
-  color: var(--title-color);
+  background-color: var(--title-color);
+  color: var(--light-text);
+  font-family: var(--title-font);
   font-size: 1.5rem;
-  text-transform: uppercase;
   font-style: italic;
   font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  width: 195px;
   padding: 0.3rem;
   margin-top: 3rem;
-  color: var(--light-text);
-  background-color: var(--title-color);
 }
 
 .add-event-btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -86,6 +91,7 @@ body {
 }
 
 .single-event-container > h2 {
+  font-family: var(--title-font);
   grid-area: title;
   grid-row-start: 2;
 
@@ -111,10 +117,11 @@ body {
 }
 
 .btn-icon:hover {
-  color: red;
+  color: var(--alert);
 }
 
 .single-event-container .event-desc {
+  font-family: var(--article-font);
   grid-area: description;
   grid-row: 4;
 
@@ -123,6 +130,7 @@ body {
 }
 
 .single-event-container .event-dates {
+  font-family: var(--article-font);
   grid-area: description;
   grid-row: 5;
 

@@ -4,37 +4,47 @@
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
-  --title-color: rgb(0, 0, 0);
+  --title-color: #000000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
-.title-news{
-  display: flex;
+.title-news {
   margin: 0;
+
+  display: flex;
 }
+
 h2 {
-  text-align: center;
-  width: 270px;
+  background-color: var(--title-color);
+  color: var(--light-text);
+  font-family: var(--title-font);
   font-size: 1.5rem;
-  text-transform: uppercase;
   font-style: italic;
   font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  width: 270px;
   padding: 0.3rem;
-  color: var(--light-text);
-  background-color: var(--title-color);
 }
-.news-section{
+.news-section {
   height: 100vh;
 }
 .news-container {
+  font-family: var(--article-font);
   width: 100vw;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .news-info {
-  display: flex;
-  flex-direction: column;
   box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
   margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
 }
 .news-image {
   width: 30vw;
@@ -59,13 +69,14 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
 .button-all-news > a {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
   text-transform: uppercase;
-  /* text-align: center; */
+  text-align: center;
   border-radius: 0.3rem;
   margin-top: 1rem;
   padding: 1rem;
 }
-

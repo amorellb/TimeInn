@@ -4,11 +4,15 @@
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
-
   --border: #d3d3d3;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 .form-window {
+  font-family: var(--multipurpose-font);
   position: fixed;
   top: 50%;
   left: 50%;

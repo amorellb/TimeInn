@@ -8,6 +8,10 @@
   --dark-shadow: #5c5c5c;
 
   --border: #d3d3d3;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 body {
@@ -15,10 +19,12 @@ body {
 }
 
 header {
+  font-family: var(--multipurpose-font);
+  height: 10vh;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
 }
 
 .logo {
@@ -52,12 +58,14 @@ header {
 }
 
 footer {
+  background-color: var(--first-main-color);
+  color: var(--light-text);
+  font-family: var(--multipurpose-font);
+  height: 10vh;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
-  background-color: var(--first-main-color);
-  color: var(--light-text);
 }
 .map {
   width: 3rem;
