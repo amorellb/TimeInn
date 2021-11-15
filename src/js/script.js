@@ -53,3 +53,7 @@ news
 
   //Render Calendar
   calendar.render(calendar.createCalendar())
+  calendar.addEventCalendar()
+    
+  
+  
