@@ -32,7 +32,7 @@ header {
   border-radius: 1rem;
   height: 2rem;
   padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  padding-right: 0.5rem;
 
   display: flex;
   align-items: center;
@@ -45,11 +45,6 @@ header {
 .search input:focus {
   outline: none;
 }
-
-/* .search:focus {
-  outline: none;
-  box-shadow: 1px 1px 3px 2px var(--light-shadow);
-} */
 
 .fa-bars {
   font-size: 2rem;

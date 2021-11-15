@@ -106,7 +106,6 @@ const uploadBtnHandler = function () {
 uploadBtnHandler();
 
 const uploadEvent = function () {
-  console.log('joijoi');
   const formData = getFormData();
   const markup = generateEventsMarkup(formData);
   eventsContainer.insertAdjacentHTML('afterbegin', markup);
