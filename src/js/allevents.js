@@ -17,7 +17,8 @@ export const generateEventsMarkup = function (event) {
       <h2>${event.title}</h2>
       <p class="event-desc">${event.description}</p>
       <p class="event-dates">${localeDate}</p>
-        <i class="fas fa-trash-alt trash-icon"></i>
+      <button class="btn-icon edit-icon"><i class="far fa-edit"></i></button>
+      <button class="btn-icon trash-icon"><i class="fas fa-trash-alt"></i></button>
     </div>`;
 };
 
@@ -45,17 +46,21 @@ const addHandlerHideForm = function () {
 };
 addHandlerHideForm();
 
-const uploadEvent = function () {
-  if (!uploadBtn || !eventsContainer) return;
+const uploadBtnHandler = function () {
+  if (!eventsContainer || !uploadBtn) return;
   uploadBtn.addEventListener('click', e => {
     e.preventDefault();
-    const formData = getFormData();
-    const markup = generateEventsMarkup(formData);
-    eventsContainer.insertAdjacentHTML('afterbegin', markup);
-    toggleWindow();
+    uploadEvent();
   });
 };
-uploadEvent();
+uploadBtnHandler();
+
+const uploadEvent = function () {
+  const formData = getFormData();
+  const markup = generateEventsMarkup(formData);
+  eventsContainer.insertAdjacentHTML('afterbegin', markup);
+  toggleWindow();
+};
 
 const getFormData = function () {
   const formData = new FormData(addEventForm);
@@ -64,12 +69,26 @@ const getFormData = function () {
   return data;
 };
 
-const deleteEvent = function () {
+const eventHandler = function () {
   if (!eventsContainer) return;
   eventsContainer.addEventListener('click', e => {
-    const trashIcon = e.target.closest('.trash-icon');
-    if (!trashIcon) return;
-    e.target.parentElement.outerHTML = '';
+    const btn = e.target.closest('.btn-icon');
+    if (!btn) return;
+    if (btn.classList.contains('trash-icon')) {
+      deleteEvent(btn);
+    } else if (btn.classList.contains('edit-icon')) {
+      editEvent();
+      deleteEvent(btn);
+    }
   });
 };
-deleteEvent();
+eventHandler();
+
+const deleteEvent = function (elem) {
+  elem.parentElement.outerHTML = '';
+};
+
+const editEvent = function () {
+  toggleWindow();
+  uploadBtnHandler();
+};
