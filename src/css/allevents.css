@@ -66,8 +66,8 @@ body {
 
   display: grid;
   grid-template-areas:
-    'img title trash'
-    'img description trash';
+    'img title icon'
+    'img description icon';
   grid-template-rows: repeat(7, 1rem);
   grid-template-columns: 30% 60% 5%;
   column-gap: 2%;
@@ -93,16 +93,25 @@ body {
   font-size: 1rem;
 }
 
-.trash-icon {
-  text-align: center;
-
-  grid-area: trash;
-  grid-row: 4;
+.edit-icon {
+  grid-area: icon;
+  grid-row: 3;
 }
 
-.trash-icon:hover {
+.trash-icon {
+  grid-area: icon;
+  grid-row: 5;
+}
+
+.btn-icon {
+  background: none;
+  text-align: center;
+  border: 0;
+  padding: 0;
+}
+
+.btn-icon:hover {
   color: red;
-  box-shadow: 1px 1px 3px 2px var(--light-shadow);
 }
 
 .single-event-container .event-desc {
