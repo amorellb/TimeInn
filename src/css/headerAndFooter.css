@@ -2,7 +2,7 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
-  
+
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -22,7 +22,8 @@ header {
 }
 
 .logo {
-  width: 3rem;
+  width: 6rem;
+  height: 2rem;
 }
 
 .search {
