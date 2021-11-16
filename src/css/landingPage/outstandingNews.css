@@ -12,7 +12,6 @@
 }
 .title-news {
   margin: 0;
-
   display: flex;
 }
 
@@ -52,15 +51,16 @@ h2 {
 }
 .news-title {
   width: 30vw;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: -webkit-center;
   align-self: center;
   font-style: italic;
   height: -webkit-fill-available;
+  color: var(--first-main-color);
 }
 .news-date {
   align-self: flex-end;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding-right: 0.5rem;
 }
 
