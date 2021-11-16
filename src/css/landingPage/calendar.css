@@ -15,7 +15,7 @@
 }
 .calendar-container {
   border: var(--first-main-color) 1px solid;
-  width: 90vw;
+  width: 91vw;
 }
 .month-container {
   font-size: 2rem;
