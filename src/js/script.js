@@ -49,7 +49,10 @@ news
   .filterNews(data.theaterData.news)
   .forEach(singleNews =>
     newsEvents.render(newsEvents.generateAllNews(singleNews))
-  );
+    );
+  
+newsEvents.showContent();
+    
 
 //Render Calendar
 calendar.render(calendar.createCalendar());
