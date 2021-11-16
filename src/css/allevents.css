@@ -116,7 +116,7 @@ body {
   padding: 0;
 }
 
-.btn-icon:hover {
+.btn-icon > *:hover {
   color: var(--alert);
 }
 
