@@ -36,12 +36,11 @@
   flex-wrap: wrap;
 }
 .calendar-btn {
-    font-size: 1.5rem;
-    height: 7.3vh;
-    background-color: transparent;
-    border: 0;
-    flex: 1 1 14%;
-  
+  font-size: 1.5rem;
+  height: 7.3vh;
+  background-color: transparent;
+  border: 0;
+  flex: 1 1 14%;
 }
 
 .calendar-28 {
@@ -54,4 +53,3 @@
 .calendar-28:active {
   background-color: var(--first-main-color);
 }
-
