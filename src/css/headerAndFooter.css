@@ -23,7 +23,7 @@ header {
   height: 10vh;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -139,6 +139,7 @@ nav > a {
   transition: all 400ms ease;
   transform: scale(0);
 }
+
 .scroll-up-icon:hover {
   transform: scale(1.3);
 }
