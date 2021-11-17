@@ -26,29 +26,30 @@ header {
   font-family: var(--multipurpose-font);
   height: 10vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  background-color: var(--first-main-color);
 }
 
 .logo {
-  width: 6rem;
-  height: 2rem;
+  width: 9rem;
 }
 
 .search {
   background-color: white;
   border: 1px solid var(--border);
   border-radius: 1rem;
-  height: 2rem;
+  height: 1rem;
   padding-left: 0.3rem;
   padding-right: 0.5rem;
-
   display: flex;
   align-items: center;
+  width: 5rem;
 }
 
 .search input {
   border: 0;
+  width: 4rem;
 }
 
 .search input:focus {
@@ -118,39 +119,46 @@ footer > i {
 a {
   text-decoration: none;
   color: var(--second-main-color);
+
 }
 
 .nav-section {
-  background-color: var(--first-main-color);
+  background-color: var(--light-shadow);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 11rem;
+  padding-top: 36rem;
   padding-bottom: 0.5rem;
   position: fixed;
-  left: 235px;
-  width: 35%;
-  height: 35vh;
+  /* left: 65vw; */
+  border-radius: 10rem;
+  width: 100%;
+  height: 100vh;
   transform: translateY(-100%);
 }
 .menu2 {
   transform: translateY(0%);
 }
 nav > img {
-  align-self: self-end;
+  align-self:flex-end;
   padding-right: 1rem;
   padding-bottom: 0rem;
 }
 
 nav > a {
-  color: var(--light-text);
+  color: var(--first-main-color);
+  font-weight: bold;
+}
+nav > a:hover{
+  transform: scale(2);
 }
 
-.menu-icono {
-  width: 3rem;
+.menu-icon {
+  width: 1.5rem;
 }
+
 .scroll-up-icon {
   background-color: var(--first-main-color);
   border-radius: 1rem;
