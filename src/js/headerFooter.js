@@ -4,22 +4,23 @@ const footerContainer = document.querySelector('.footer');
 const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="src/images/logo.png" alt="logo"></img></a>
-    <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div>
+    
     <img class="menu-icon" src="src/images/calendar-icon.png" alt="icono menu">
     <img class="menu-icon" src="src/images/user-icon.png" alt="icono menu">
     <img class="menu-icon" src="src/images/cart-icon.png" alt="icono menu">
     <img class="nav-btn menu-icon" src="src/images/menu-icon.png" alt="icono menu">
     <nav class="nav-section">
       <img class="nav-btn x-close" src="src/images/x-close.png" alt="icono cerrar">
-      <a href="Login">Login</a>
-      <a href="Programming">Programming</a>
-      <a href="Calendar">Calendar</a>
+      <a href="./allevents.html">Events</a>
+      <a href="./news.html">News</a>
       <a href="Prices">Prices</a>
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
-    </nav>
-  `;
+      </nav>
+      `;
 };
+
+/* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */
 
 const generateFooterMarkup = function () {
   return `

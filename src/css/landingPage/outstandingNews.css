@@ -30,7 +30,7 @@ h2 {
   margin: 0;
 }
 .news-section {
-  height: 120vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url(/TimeInn/src/images/newspaper.png);
