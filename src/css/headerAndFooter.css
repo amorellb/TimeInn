@@ -11,8 +11,6 @@
 
   --border: #d3d3d3;
 
-  --hover-social-icons: rgb(13, 156, 13);
-
   --title-font: 'Cinzel', serif;
   --article-font: 'Crimson Pro', serif;
   --multipurpose-font: 'Nanum Gothic', sans-serif;
@@ -107,13 +105,6 @@ footer > i {
   display: flex;
   justify-content: space-around;
   padding-bottom: 0.2rem;
-}
-.fa-instagram:hover,
-.fa-facebook:hover,
-.fa-youtube:hover,
-.fa-twitter:hover,
-.fa-rss:hover {
-  color: var(--hover-social-icons);
 }
 
 a {
