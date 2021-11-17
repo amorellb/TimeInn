@@ -132,10 +132,10 @@ a {
   padding-top: 36rem;
   padding-bottom: 0.5rem;
   position: fixed;
-  /* left: 65vw; */
+  
   border-radius: 10rem;
   width: 100%;
-  height: 100vh;
+  height: 99vh;
   transform: translateY(-100%);
 }
 .menu2 {
@@ -174,12 +174,4 @@ nav > a:hover{
   transform: scale(1.3);
 }
 
-.day-tickets-btn:hover,
-.all-events-btn:hover,
-.week-tickets-btn:hover,
-.all-news-btn:hover {
-  background-color: var(--light-shadow);
-  color: var(--first-main-color);
-  font-weight: bold;
-  
-}
+

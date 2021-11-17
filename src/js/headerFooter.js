@@ -11,14 +11,16 @@ const generateHeaderMarkup = function () {
     <img class="nav-btn menu-icon" src="src/images/menu-icon.png" alt="icono menu">
     <nav class="nav-section">
       <img class="nav-btn x-close" src="src/images/x-close.png" alt="icono cerrar">
-      <a href="Programming">Programming</a>
+      <a href="./allevents.html">Events</a>
+      <a href="./news.html">News</a>
       <a href="Prices">Prices</a>
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
-      <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div>
-    </nav>
-  `;
+      </nav>
+      `;
 };
+
+/* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */
 
 const generateFooterMarkup = function () {
   return `
