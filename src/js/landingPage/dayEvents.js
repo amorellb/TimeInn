@@ -18,7 +18,7 @@ export const generateInfoMarkup = function (events) {
       <p class="day-event-type">${events[0].type}</p>
       <p class="day-event-dates">${firstDate} - 
       ${lastDate}</p>
-      <a class="tickets-btn day-tickets-btn" href="event.html">Tickets</a>
+      <button class="tickets-btn day-tickets-btn" href="event.html">Tickets</button>
     </div>`;
 };
 

@@ -20,6 +20,8 @@ const generateHeaderMarkup = function () {
 
 const generateFooterMarkup = function () {
   return `
+  <div class="footer-container">
+    <div class= "footer-info">
     <img src="src/images/map.png" alt="map" class="map">
     <div class="contact">
       <p>Times Square, 4th, New York</p>
@@ -35,11 +37,16 @@ const generateFooterMarkup = function () {
         <i class="fas fa-rss"></i>
       </div>
       <div class="footer-links">
-        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy</a>
-        <a href="http://webdesign" class="link-footer">Web Design</a>
+        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy - </a>
+        <a href="http://webdesign" class="link-footer">Web Design - </a>
         <a href="http://cookies" class="link-footer">Cookies</a>
       </div>
-    </div>`;
+      </div>
+      </div>
+    <div class="footer-refrn">
+    All the data and images used come from&nbsp<a href="https://www.liceubarcelona.cat/">www.liceubarcelona.cat</a>
+    </div>
+  </div>`;
 };
 
 export const renderHeader = function () {

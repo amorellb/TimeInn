@@ -1,18 +1,19 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
+  --title-background: #143603;
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
   --title-color: #000000;
-
+  --content-back-color: #e6e4df;
   --title-font: 'Cinzel', serif;
   --article-font: 'Crimson Pro', serif;
   --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 .body-container h1 {
-  background-color: var(--title-color);
+  background-color: var(--title-background);
   color: var(--light-text);
   font-family: var(--title-font);
   text-transform: uppercase;
@@ -31,12 +32,15 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 2rem;
+  
 }
 .news-info {
   display: flex;
   flex-direction: column;
   box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
   margin-top: 1rem;
+  background-image: url(/TimeInn/src/images/newspaper.png);
+  background-size: cover;
 }
  
 .news-image {
@@ -49,10 +53,10 @@
   font-family: var(--title-font);
   font-size: 0.8rem;
   font-style: italic;
+  font-weight: bolder;
   text-align: -webkit-center;
   height: -webkit-fill-available;
   width: 70vw;
-
   align-self: center;
 }
 
@@ -62,6 +66,9 @@
   width: 70vw;
   align-self: center;
   display: block;
+  margin: 0;
+  background-color:var(--content-back-color);
+  padding: 1rem;
 }
 
 .hidden {
@@ -70,20 +77,19 @@
 
 .news-date {
   font-family: var(--article-font);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding-right: 0.5rem;
   align-self: flex-end;
+  font-weight: bold;
 }
 
 .btn-readmore{
-  font-size: 0.6rem;
-  color: var(--first-main-color);
+  font-size: 0.8rem;
+  color: var(--title-background);
   align-self: center;
   padding-bottom: 0.3rem;
   border: 0;
   background-color: transparent;
-}
-
-.btn-readmore:hover{
-  color: blue;
+  align-self: flex-start;
+  font-weight: bold;
 }
