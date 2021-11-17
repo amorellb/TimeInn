@@ -178,8 +178,8 @@ nav > a:hover{
 .all-events-btn:hover,
 .week-tickets-btn:hover,
 .all-news-btn:hover {
-  transform: scale(1.1);
-  background-color: var(--title-background);
-  color: var(--light-text);
-  border: var(--title-background) 2px solid;
+  background-color: var(--light-shadow);
+  color: var(--first-main-color);
+  font-weight: bold;
+  
 }
