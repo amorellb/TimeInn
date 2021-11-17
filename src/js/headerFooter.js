@@ -5,6 +5,9 @@ const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="src/images/logo.png" alt="logo"></img></a>
     <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div>
+    <img class="menu-icon" src="src/images/calendar-icon.png" alt="icono menu">
+    <img class="menu-icon" src="src/images/user-icon.png" alt="icono menu">
+    <img class="menu-icon" src="src/images/cart-icon.png" alt="icono menu">
     <img class="nav-btn menu-icon" src="src/images/menu-icon.png" alt="icono menu">
     <nav class="nav-section">
       <img class="nav-btn x-close" src="src/images/x-close.png" alt="icono cerrar">
@@ -20,6 +23,8 @@ const generateHeaderMarkup = function () {
 
 const generateFooterMarkup = function () {
   return `
+  <div class="footer-container">
+    <div class= "footer-info">
     <img src="src/images/map.png" alt="map" class="map">
     <div class="contact">
       <p>Times Square, 4th, New York</p>
@@ -35,11 +40,16 @@ const generateFooterMarkup = function () {
         <i class="fas fa-rss"></i>
       </div>
       <div class="footer-links">
-        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy</a>
-        <a href="http://webdesign" class="link-footer">Web Design</a>
+        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy - </a>
+        <a href="http://webdesign" class="link-footer">Web Design - </a>
         <a href="http://cookies" class="link-footer">Cookies</a>
       </div>
-    </div>`;
+      </div>
+      </div>
+    <div class="footer-refrn">
+    All the data and images used come from&nbsp<a href="https://www.liceubarcelona.cat/">www.liceubarcelona.cat</a>
+    </div>
+  </div>`;
 };
 
 export const renderHeader = function () {
