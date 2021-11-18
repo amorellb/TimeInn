@@ -59,6 +59,7 @@ body {
 
 .event-form > form {
   height: 100%;
+
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -88,6 +89,10 @@ body {
   text-transform: uppercase;
   text-align: center;
   border-radius: 0.3rem;
+}
+
+.event-form-btn:hover {
+  cursor: pointer;
 }
 
 .event-description {

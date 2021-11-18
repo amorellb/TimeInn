@@ -58,6 +58,7 @@ body {
 
 .btn-filter:hover {
   box-shadow: 1px 1px 3px 2px var(--dark-shadow);
+  cursor: pointer;
 }
 
 .add-event-btn {
@@ -67,18 +68,15 @@ body {
   text-transform: uppercase;
   text-align: center;
   border: 0;
-  border-radius: 3rem;
+  border-radius: 0.3rem;
   margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   align-self: center;
 }
-.add-event-btn:hover{
-  transform: scale(1.1);
-  background-color: var(--title-background);
-  color: var(--light-text);
-  border: var(--title-background) 2px solid;
+.add-event-btn:hover {
+  cursor: pointer;
 }
 .allevents-container {
   width: 100%;
@@ -121,11 +119,11 @@ body {
 
 .single-event-container > h2 {
   font-family: var(--title-font);
-  grid-area: title;
-  grid-row-start: 2;
-
   margin: 0;
   font-size: 1rem;
+
+  grid-area: title;
+  grid-row-start: 2;
 }
 
 .btn-icon {
@@ -148,19 +146,21 @@ body {
 
 .btn-icon > *:hover {
   color: var(--alert);
+  cursor: pointer;
 }
 
 .single-event-container .event-desc {
   font-family: var(--article-font);
-  grid-area: description;
-  grid-row: 5;
-
   margin: 0;
   overflow: hidden;
+
+  grid-area: description;
+  grid-row: 5;
 }
 
 .single-event-container .event-dates {
   font-family: var(--article-font);
+
   grid-area: description;
   grid-row: 6;
 

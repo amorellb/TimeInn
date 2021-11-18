@@ -1,4 +1,5 @@
-const newsSection = document.querySelector('.news-container');
+const newsSection = document.querySelector('.news-section');
+const newsContainer = document.querySelector('.news-container');
 
 export const filterNews = function (news) {
   let sponsoredNews = news.filter(function (n) {
@@ -27,8 +28,8 @@ export const generateNewsMarkup = function (singleNews) {
 };
 
 export const render = function (markup) {
-  if (!newsSection) return;
-  newsSection.insertAdjacentHTML('afterbegin', markup);
+  if (!newsContainer) return;
+  newsContainer.insertAdjacentHTML('afterbegin', markup);
 };
 
 function filterDate(news) {
@@ -39,3 +40,13 @@ function filterDate(news) {
     );
   });
 }
+
+const loadNewsPage = function () {
+  if (!newsSection) return;
+  newsSection.addEventListener('click', e => {
+    const btn = e.target.closest('.all-news-btn');
+    if (!btn) return;
+    window.location.replace('news.html');
+  });
+};
+loadNewsPage();

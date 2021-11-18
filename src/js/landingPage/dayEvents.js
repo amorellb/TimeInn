@@ -6,7 +6,6 @@ export const generateVideoMarkup = function (events) {
           </video>`;
 };
 
-// TODO: refactor: same function in both day and weekEvents.js
 export const generateInfoMarkup = function (events) {
   const firstDate = new Date(events[0].dates[0]).toLocaleDateString();
   const lastDate = new Date(
@@ -22,8 +21,17 @@ export const generateInfoMarkup = function (events) {
     </div>`;
 };
 
-// TODO: refactor: same function in both day and weekEvents.js
 export const render = function (markup) {
   if (!dayEventSection) return;
   dayEventSection.insertAdjacentHTML('beforeend', markup);
 };
+
+const loadEventPage = function () {
+  if (!dayEventSection) return;
+  dayEventSection.addEventListener('click', e => {
+    const btn = e.target.closest('.day-tickets-btn');
+    if (!btn) return;
+    window.location.replace('event.html');
+  });
+};
+loadEventPage();
