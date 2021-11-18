@@ -5,9 +5,7 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 
 const revealSubsForm = function (entries, observer) {
   const [entry] = entries;
-
   if (!entry.isIntersecting) return;
-
   toggleWindow();
   observer.unobserve(entry.target);
 };
@@ -17,11 +15,10 @@ const sectionObserver = new IntersectionObserver(revealSubsForm, {
   threshold: 0.15,
 });
 
-const obsSect = function () {
+export const obsSect = function () {
   if (!secondSection) return;
   sectionObserver.observe(secondSection);
 };
-obsSect();
 
 const toggleWindow = function () {
   if (!overlay || !formWindow) return;
@@ -29,9 +26,8 @@ const toggleWindow = function () {
   formWindow.classList.toggle('hidden');
 };
 
-const addHandlerHideForm = function () {
+export const addHandlerHideForm = function () {
   if (!btnCloseModal) return;
   btnCloseModal.addEventListener('click', toggleWindow());
   overlay.addEventListener('click', toggleWindow());
 };
-addHandlerHideForm();

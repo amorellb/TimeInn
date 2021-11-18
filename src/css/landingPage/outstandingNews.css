@@ -1,71 +1,104 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
+
+  --title-background: #143603;
+
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
-  --title-color: rgb(0, 0, 0);
+  --title-color: #000000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
-.title-news{
-  display: flex;
+
+.title-news {
   margin: 0;
+
+  display: flex;
 }
+
 h2 {
-  text-align: center;
-  width: 270px;
+  background-color: var(--title-background);
+  color: var(--light-text);
+  font-family: var(--title-font);
   font-size: 1.5rem;
-  text-transform: uppercase;
   font-style: italic;
   font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  width: 270px;
   padding: 0.3rem;
-  color: var(--light-text);
-  background-color: var(--title-color);
+  margin: 0;
 }
-.news-section{
+.news-section {
+  background-image: url(/TimeInn/src/images/newspaper.png);
+  background-size: cover;
   height: 100vh;
+  height: 120vh;
+
+  display: flex;
+  flex-direction: column;
 }
 .news-container {
+  font-family: var(--article-font);
   width: 100vw;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
 .news-info {
-  display: flex;
-  flex-direction: column;
+  background-color: var(--light-text);
   box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
   margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
 }
+
 .news-image {
   width: 30vw;
   margin: 1rem;
 }
+
 .news-title {
-  width: 30vw;
-  font-size: 0.8rem;
-  text-align: -webkit-center;
-  align-self: center;
+  color: var(--first-main-color);
+  font-size: 0.9rem;
   font-style: italic;
+  text-align: -webkit-center;
+  width: 30vw;
   height: -webkit-fill-available;
-}
-.news-date {
-  align-self: flex-end;
-  font-size: 0.7rem;
-  padding-right: 0.5rem;
+
+  align-self: center;
 }
 
-.button-all-news {
-  height: 4rem;
-  display: flex;
-  justify-content: center;
+.news-date {
+  font-size: 0.8rem;
+  padding-right: 0.5rem;
+
+  align-self: flex-end;
 }
-.button-all-news > a {
+
+.all-news-btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
   text-transform: uppercase;
-  /* text-align: center; */
+  text-align: center;
+  border: 0;
   border-radius: 0.3rem;
   margin-top: 1rem;
-  padding: 1rem;
+  width: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  align-self: center;
 }
 
+.all-news-btn:hover {
+  cursor: pointer;
+}

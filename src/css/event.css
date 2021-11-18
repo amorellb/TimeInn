@@ -2,11 +2,15 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
+  
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
-
   --border: #d3d3d3;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 body {
@@ -28,6 +32,7 @@ body {
 }
 
 .event-title {
+  font-family: var(--title-font);
   width: 80%;
   margin: 0;
 
@@ -43,6 +48,7 @@ body {
 }
 
 .event-form {
+  font-family: var(--multipurpose-font);
   width: 80%;
   height: 30vh;
 
@@ -53,6 +59,7 @@ body {
 
 .event-form > form {
   height: 100%;
+
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -76,6 +83,7 @@ body {
 .event-form-btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
   width: 60%;
   border: 0;
   text-transform: uppercase;
@@ -83,7 +91,12 @@ body {
   border-radius: 0.3rem;
 }
 
+.event-form-btn:hover {
+  cursor: pointer;
+}
+
 .event-description {
+  font-family: var(--article-font);
   width: 80%;
 
   grid-area: description;
@@ -91,5 +104,6 @@ body {
 }
 
 .event-description h2 {
+  font-family: var(--title-font);
   font-size: large;
 }

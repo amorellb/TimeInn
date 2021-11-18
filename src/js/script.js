@@ -8,6 +8,7 @@ import * as newsEvents from './news.js';
 import * as news from './landingPage/outstandingNews.js';
 import * as allevents from './allevents.js';
 import * as scroll from './landingPage/scroll-up.js';
+import * as calendar from './landingPage/calendar.js';
 
 // Render header and footer
 headerFooter.renderHeader();
@@ -48,4 +49,19 @@ news
   .filterNews(data.theaterData.news)
   .forEach(singleNews =>
     newsEvents.render(newsEvents.generateAllNews(singleNews))
-  );
+    );
+  
+newsEvents.showContent();
+    
+
+//Render Calendar
+calendar.render(calendar.createCalendar());
+calendar.addEventCalendar();
+
+if (!document.cookie) {
+  document.cookie = 'name=Cookie; max-age=600; path=/; SameSite=Lax';
+
+  // Render modal form for subscription
+  subscription.obsSect();
+  subscription.addHandlerHideForm();
+}

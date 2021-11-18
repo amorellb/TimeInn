@@ -2,9 +2,14 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
+  
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
 .day-events-container {
@@ -12,7 +17,6 @@
   width: 100vw;
 }
 
-/* Set the video as the background */
 .day-event-video {
   height: 100vh;
   width: 100vw;
@@ -27,8 +31,8 @@
 
 .day-event-info {
   color: var(--light-text);
-  text-transform: uppercase;
   text-shadow: 1px 1px 1px var(--dark-shadow);
+  text-transform: uppercase;
   margin-top: 40vh;
   margin-bottom: 10vh;
 
@@ -37,18 +41,22 @@
 }
 
 .day-event-title {
-  margin: 0;
-  align-self: center;
+  font-family: var(--title-font);
   font-size: 2.5rem;
+  margin: 0;
+
+  align-self: center;
 }
 
 .day-event-type {
+  font-family: var(--article-font);
+  font-size: 1.5rem;
   margin: 0;
   margin-left: 3rem;
-  font-size: 1.5rem;
 }
 
 .day-event-dates {
+  font-family: var(--article-font);
   margin: 0;
   margin-top: 5rem;
   margin-left: 3rem;
@@ -58,8 +66,10 @@
 .day-tickets-btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
   text-transform: uppercase;
   text-align: center;
+  border: 0;
   border-radius: 0.3rem;
   margin-top: 1rem;
   width: 8rem;
@@ -67,4 +77,8 @@
   padding-bottom: 1rem;
 
   align-self: center;
+}
+
+.day-tickets-btn:hover {
+  cursor: pointer;
 }
