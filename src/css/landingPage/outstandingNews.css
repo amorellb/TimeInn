@@ -34,7 +34,7 @@ h2 {
   margin: 0;
 }
 .news-section {
-  background-image: url(/TimeInn/src/images/newspaper.png);
+  background-image: url(/src/images/newspaper.png);
   background-size: cover;
   height: 100vh;
   height: 120vh;

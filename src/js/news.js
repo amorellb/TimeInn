@@ -21,7 +21,6 @@ export const render = function (markup) {
 };
 
 export const showContent = function () {
- 
   if (!eventContainer) return;
   eventContainer.addEventListener('click', e => {
     const btn = e.target.closest('.btn-readmore');

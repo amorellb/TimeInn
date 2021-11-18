@@ -27,7 +27,6 @@
   margin-top: 3rem;
 }
 
-
 .all-news-container {
   width: 100vw;
   margin-bottom: 2rem;
@@ -37,7 +36,7 @@
   justify-content: space-evenly;
 }
 .news-info {
-  background-image: url(/TimeInn/src/images/newspaper.png);
+  background-image: url(/src/images/newspaper.png);
   background-size: cover;
   box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
   margin-top: 1rem;
