@@ -1,4 +1,3 @@
-/* TODO: refactor: put the color pallette in one file and import it if possible */
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
@@ -36,7 +35,7 @@
   text-transform: uppercase;
   text-align: center;
   border: 0;
-  border-radius: 3rem;/*Prueba: cambiar a boton mas redondo*/
+  border-radius: 0.3rem;
   margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
@@ -44,6 +43,10 @@
   margin-bottom: 33vh;
 
   align-self: center;
+}
+
+.all-events-btn:hover {
+  cursor: pointer;
 }
 
 .week-event-title {
@@ -82,12 +85,17 @@
   text-transform: uppercase;
   text-align: center;
   border: 0;
-  border-radius: 3rem;/*Prueba: cambiar a boton mas redondo. estaba a 0.3rem*/
+  border-radius: 0.3rem;
   margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
   align-self: center;
+}
+
+.week-tickets-btn:hover {
+  cursor: pointer;
 }
 
 /* Slider */

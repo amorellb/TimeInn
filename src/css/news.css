@@ -28,21 +28,22 @@
 
 .all-news-container {
   width: 100vw;
+  margin-bottom: 2rem;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-bottom: 2rem;
-  
 }
 .news-info {
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
-  margin-top: 1rem;
   background-image: url(/TimeInn/src/images/newspaper.png);
   background-size: cover;
+  box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
 }
- 
+
 .news-image {
   width: 70vw;
   margin: 1rem;
@@ -67,7 +68,7 @@
   align-self: center;
   display: block;
   margin: 0;
-  background-color:var(--content-back-color);
+  background-color: var(--content-back-color);
   padding: 1rem;
 }
 
@@ -83,7 +84,7 @@
   font-weight: bold;
 }
 
-.btn-readmore{
+.btn-readmore {
   font-size: 0.8rem;
   color: var(--title-background);
   align-self: center;

@@ -17,7 +17,7 @@
 }
 
 h2 {
-  background-color:var(--title-background);
+  background-color: var(--title-background);
   color: var(--light-text);
   font-family: var(--title-font);
   font-size: 1.5rem;
@@ -30,15 +30,17 @@ h2 {
   margin: 0;
 }
 .news-section {
+  background-image: url(/TimeInn/src/images/newspaper.png);
   height: 120vh;
+  background-size: cover;
+
   display: flex;
   flex-direction: column;
-  background-image: url(/TimeInn/src/images/newspaper.png);
-  background-size: cover;
 }
 .news-container {
   font-family: var(--article-font);
   width: 100vw;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -55,13 +57,14 @@ h2 {
   margin: 1rem;
 }
 .news-title {
-  width: 30vw;
-  font-size: 0.9rem;
-  text-align: -webkit-center;
-  align-self: center;
-  font-style: italic;
-  height: -webkit-fill-available;
   color: var(--first-main-color);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: -webkit-center;
+  width: 30vw;
+  height: -webkit-fill-available;
+
+  align-self: center;
 }
 .news-date {
   align-self: flex-end;
@@ -76,10 +79,14 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   border: 0;
-  border-radius: 3rem; /*Prueba: cambiar a boton mas redondo. estaba a 0.3rem*/
+  border-radius: 0.3rem;
   margin-top: 1rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   align-self: center;
+}
+
+.all-news-btn:hover {
+  cursor: pointer;
 }
