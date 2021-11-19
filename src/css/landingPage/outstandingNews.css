@@ -15,7 +15,7 @@
 }
 
 .news-section {
-  background-image: url(/src/images/newspaper.png);
+  background-image: url(../../images/newspaper.png);
   background-size: cover;
   height: 110vh;
 

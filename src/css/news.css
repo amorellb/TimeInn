@@ -37,7 +37,7 @@
   justify-content: space-evenly;
 }
 .news-info {
-  background-image: url(/src/images/newspaper.png);
+  background-image: url(../images/newspaper.png);
   background-size: cover;
   box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
   margin-top: 1rem;
