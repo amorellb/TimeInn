@@ -4,7 +4,6 @@ const footerContainer = document.querySelector('.footer');
 const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="src/images/logo.png" alt="logo"></img></a>
-    
     <img class="menu-icon" src="src/images/calendar-icon.png" alt="icono menu">
     <img class="menu-icon" src="src/images/user-icon.png" alt="icono menu">
     <img class="menu-icon" src="src/images/cart-icon.png" alt="icono menu">
