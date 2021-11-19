@@ -102,3 +102,9 @@ h2 {
 .all-news-btn:hover {
   cursor: pointer;
 }
+
+@media (min-width: 650px) {
+  .all-news-btn {
+    font-size: 1.2rem;
+  }
+}
