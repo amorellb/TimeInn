@@ -1,9 +1,9 @@
 :root {
   --first-main-color: #621304;
-  --second-main-color: #B65543;
+  --second-main-color: #b65543;
 
-  --title-background: #03481A;
-  
+  --title-background: #03481a;
+
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -160,6 +160,10 @@ body {
   cursor: pointer;
 }
 
+.single-event-container .event-title {
+  overflow: hidden;
+}
+
 .single-event-container .event-desc {
   font-family: var(--article-font);
   margin: 0;
@@ -167,21 +171,13 @@ body {
 
   grid-area: description;
   grid-row: 4;
-
-  margin: 0;
-  overflow: hidden;
-}
-
-.single-event-container .event-dates {
-  grid-area: description;
-  grid-row: 5;
 }
 
 .single-event-container .event-dates {
   font-family: var(--article-font);
 
   grid-area: description;
-  grid-row: 6;
+  grid-row: 5;
 
   margin: 0;
   overflow: hidden;
