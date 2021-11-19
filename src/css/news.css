@@ -59,6 +59,7 @@
   text-align: -webkit-center;
   height: -webkit-fill-available;
   width: 70vw;
+
   align-self: center;
 }
 
@@ -105,24 +106,32 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .all-news-container {
     max-width: 90%;
     margin: auto;
+    margin-bottom: 2rem;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
   .news-info {
     width: 60vh;
+
     justify-self: center;
   }
+
   .news-image,
   .news-title,
   .news-content {
     width: 55vh;
   }
+
   .hidden {
     display: block;
   }
+
   .btn-readmore {
     opacity: 0;
   }
