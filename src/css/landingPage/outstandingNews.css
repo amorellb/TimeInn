@@ -14,10 +14,14 @@
   --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
-.title-news {
-  margin: 0;
+.news-section {
+  background-image: url(/src/images/newspaper.png);
+  background-size: cover;
+  height: 110vh;
 
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h2 {
@@ -33,15 +37,7 @@ h2 {
   padding: 0.3rem;
   margin: 0;
 }
-.news-section {
-  background-image: url(/src/images/newspaper.png);
-  background-size: cover;
-  height: 100vh;
-  height: 120vh;
 
-  display: flex;
-  flex-direction: column;
-}
 .news-container {
   font-family: var(--article-font);
   width: 100vw;
@@ -49,6 +45,12 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.title-news {
+  margin: 0;
+
+  display: flex;
 }
 
 .news-info {
