@@ -49,17 +49,17 @@ news
   .filterNews(data.theaterData.news)
   .forEach(singleNews =>
     newsEvents.render(newsEvents.generateAllNews(singleNews))
-    );
-  
+  );
+
 newsEvents.showContent();
-    
 
 //Render Calendar
 calendar.render(calendar.createCalendar());
 calendar.addEventCalendar();
 
 if (!document.cookie) {
-  document.cookie = 'name=Cookie; max-age=600; path=/; SameSite=Lax';
+  // One week = 604800 seconds
+  document.cookie = 'name=Cookie; max-age=604800; path=/; SameSite=Lax';
 
   // Render modal form for subscription
   subscription.obsSect();
