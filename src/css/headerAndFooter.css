@@ -1,8 +1,9 @@
 :root {
   --first-main-color: #621304;
-  --second-main-color: #e18b7a;
-  --title-background: #143603;
-  --hover-social-icons: rgb(13, 156, 13);
+  --second-main-color: #B65543;
+
+  --title-background: #03481A;
+  /* --hover-social-icons: rgb(13, 156, 13); */
 
   --light-text: #ffffff;
   --light-shadow: #ececec;
