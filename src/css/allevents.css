@@ -3,7 +3,7 @@
   --second-main-color: #e18b7a;
 
   --title-background: #143603;
-  
+
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -20,10 +20,17 @@ body {
   margin: 0;
 }
 
-.main-container {
+.body-container {
   display: flex;
-  flex-flow: wrap column;
-  justify-content: center;
+  flex-flow: column wrap;
+}
+
+.main-container {
+  margin-bottom: 3rem;
+
+  flex: 1 1 100vh;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .page-title {
@@ -76,11 +83,14 @@ body {
 
   align-self: center;
 }
+
 .add-event-btn:hover {
   cursor: pointer;
 }
+
 .allevents-container {
   width: 100%;
+  margin-top: 0;
 
   display: flex;
   flex-flow: wrap column;
@@ -178,14 +188,9 @@ body {
 }
 
 @media (min-width: 650px) {
-  body {
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .allevents-container {
-    max-width: 80%;
+    max-width: 50%;
     margin: auto;
+    margin-top: 3rem;
   }
 }
