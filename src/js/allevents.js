@@ -17,7 +17,7 @@ export const generateEventsMarkup = function (event) {
   return `
     <div class="single-event-container">
       <img src="${event.imgURL}" alt="${event.title}">
-      <h2>${event.title}</h2>
+      <h2 class="event-title">${event.title}</h2>
       <p class="event-desc">${event.description}</p>
       <p class="event-dates">${localeDate}</p>
       <button class="btn-icon edit-icon"><i class="far fa-edit"></i></button>
