@@ -1,7 +1,7 @@
 :root {
   --first-main-color: #621304;
   --second-main-color: #e18b7a;
-  
+
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -121,4 +121,24 @@
 
 .upload__btn:hover {
   cursor: pointer;
+}
+
+@media (min-width: 650px) {
+  .upload {
+    height: 50vh;
+    justify-items: center;
+  }
+
+  .upload label {
+    font-size: 1.3rem;
+  }
+
+  .upload input {
+    font-size: 1.3rem;
+  }
+
+  .upload__btn {
+    font-size: 1.3rem;
+    width: 9rem;
+  }
 }
