@@ -224,6 +224,9 @@ a {
     align-self: center;
     order: 1;
   }
+  .logo{
+    padding-left: 3rem;
+  }
 
   footer {
     height: 10vh;
