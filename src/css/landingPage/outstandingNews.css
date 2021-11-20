@@ -18,7 +18,7 @@
   background-image: url(../../images/newspaper.png);
   background-size: cover;
   height: 110vh;
-
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;

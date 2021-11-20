@@ -40,8 +40,8 @@ const generateFooterMarkup = function () {
         <i class="fas fa-rss"></i>
       </div>
       <div class="footer-links">
-        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy - </a>
-        <a href="http://webdesign" class="link-footer">Web Design - </a>
+        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy</a>
+        <a href="http://webdesign" class="link-footer">Web Design</a>
         <a href="http://cookies" class="link-footer">Cookies</a>
       </div>
       </div>
