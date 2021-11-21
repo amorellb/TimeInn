@@ -1005,7 +1005,6 @@ parcelHelpers.export(exports, "renderFooter", ()=>renderFooter
 );
 const headerContainer = document.querySelector('.header');
 const footerContainer = document.querySelector('.footer');
-const headerMenu = document.querySelector('.nav-section');
 /**
  * A function that is used to generate the html of the header
  * @returns A string that has the html of the header section of the webpage
@@ -1070,6 +1069,7 @@ const renderFooter = function() {
 /**
  * A function to show or hide the header's nav menu
  */ const toggleMenu = function() {
+    const headerMenu = document.querySelector('.nav-section');
     if (!headerMenu) return;
     headerMenu.classList.toggle('menu2');
     headerMenu.style.transition = 'transform 0.5s ease-in-out';
@@ -1704,7 +1704,26 @@ deleteEventHandler();
         }
     });
 };
-editEventHandler(); /* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */ 
+editEventHandler(); /* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */  /* .search {
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  height: 1rem;
+  padding-left: 0.3rem;
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 5rem;
+}
+
+.search input {
+  border: 0;
+  width: 4rem;
+}
+
+.search input:focus {
+  outline: none;
+} */ 
 
 },{"./helper.js":"gDUlg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"iTQsS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

@@ -269,3 +269,23 @@ const editEventHandler = function () {
 editEventHandler();
 
 /* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */
+/* .search {
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  height: 1rem;
+  padding-left: 0.3rem;
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 5rem;
+}
+
+.search input {
+  border: 0;
+  width: 4rem;
+}
+
+.search input:focus {
+  outline: none;
+} */

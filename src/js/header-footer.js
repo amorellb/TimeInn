@@ -1,6 +1,5 @@
 const headerContainer = document.querySelector('.header');
 const footerContainer = document.querySelector('.footer');
-const headerMenu = document.querySelector('.nav-section');
 
 /**
  * A function that is used to generate the html of the header
@@ -79,6 +78,7 @@ export const renderFooter = function () {
  * A function to show or hide the header's nav menu
  */
 const toggleMenu = function () {
+  const headerMenu = document.querySelector('.nav-section');
   if (!headerMenu) return;
   headerMenu.classList.toggle('menu2');
   headerMenu.style.transition = 'transform 0.5s ease-in-out';
