@@ -5,7 +5,9 @@ export const generateEventMarkup = function (events) {
   return `
   <section class="event">
         <h1 class="event-title">${events[0].title}</h1>
-        <img class="event-img" src="${events[0].imgURL}" alt="${events[0].title}">
+        <img class="event-img" src="${events[0].imgURL}" alt="${
+    events[0].title
+  }">
         <aside class="event-form">
           <form action="post">
             <input class="event-form-input" type="text" name="name" id="name" placeholder="Name"/>
@@ -17,8 +19,16 @@ export const generateEventMarkup = function (events) {
           </form>
         </aside>
         <div class="event-description">
+        <h2>Price</h2>
+        <p>${events[0].price} €</p>
+        <h2>Dates</h2>
+        <p>${events[0].dates.join(', ')}</p>
+        <h2>Author</h2>
+        <p>${events[0].author}</p>
           <h2>Description</h2>
           <p>${events[0].description}</p>
+          <h2>Duration</h2>
+        <p>${events[0].duration} min</p>
         </div>
       </section>
   `;
