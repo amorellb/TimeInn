@@ -1,0 +1,120 @@
+/* TODO: refactor: put the color pallette in one file and import it if possible */
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #B65543;
+
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
+}
+
+.day-events-container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.day-event-video {
+  position: absolute;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.day-event-info {
+  color: var(--light-text);
+  text-shadow: 1px 1px 1px var(--dark-shadow);
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  width: 20rem;
+
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.day-event-title {
+  font-family: var(--title-font);
+  font-size: 2.5rem;
+  margin: 0;
+
+  align-self: center;
+}
+
+.day-event-type {
+  font-family: var(--article-font);
+  font-size: 1.5rem;
+  margin: 0;
+  margin-left: 3rem;
+
+  align-self: flex-start;
+}
+
+.day-event-dates {
+  font-family: var(--article-font);
+  margin: 0;
+  margin-top: 5rem;
+  margin-left: 3rem;
+  width: 6rem;
+
+  align-self: flex-start;
+}
+
+.day-tickets-btn {
+  background-color: var(--first-main-color);
+  color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
+  text-transform: uppercase;
+  text-align: center;
+  border: 0;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  width: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  align-self: center;
+}
+
+.day-tickets-btn:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 650px) {
+  .day-event-info {
+    width: 40rem;
+  }
+  .day-event-title {
+    font-size: 5rem;
+  }
+
+  .day-event-type {
+    font-size: 3rem;
+    margin-left: 6rem;
+  }
+
+  .day-event-dates {
+    font-size: 2rem;
+    margin-left: 6rem;
+    width: 8rem;
+  }
+
+  .day-tickets-btn {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=index.93400933.css.map */
