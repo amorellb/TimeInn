@@ -482,23 +482,13 @@ window.addEventListener('load', ()=>{
     _secondSectionJs.render(_secondSectionJs.generateInfoMarkup(_dataJs.theaterData.events));
 });
 _secondSectionJs.displayEventHandler(_dataJs.theaterData.events);
-// Render the event when a tickets button is clicked
-_eventJs.render(_eventJs.generateEventMarkup(_dataJs.theaterData.events));
-// Render all events into all-events page
-_dataJs.theaterData.events.forEach((event)=>_allEventsJs.render(_allEventsJs.generateEventsMarkup(event))
-);
-_allEventsJs.renderFilterButtons(_allEventsJs.generateFilterMarkup(_dataJs.theaterData.events));
-_allEventsJs.filterHandler(_dataJs.theaterData.events);
-//Render the fourth section: news
-_outstandingNewsJs.filterNews(_dataJs.theaterData.news).slice(0, 4).reverse().forEach((news)=>_outstandingNewsJs.render(_outstandingNewsJs.generateNewsMarkup(news))
-);
-// Render the all News Page
-_outstandingNewsJs.filterNews(_dataJs.theaterData.news).forEach((news)=>_allNewsJs.render(_allNewsJs.generateAllNews(news))
-);
-_allNewsJs.showContent();
 //Render Calendar
 _calendarJs.render(_calendarJs.createCalendar());
 _calendarJs.addEventCalendar();
+//Render the fourth section: news
+_outstandingNewsJs.filterNews(_dataJs.theaterData.news).slice(0, 4).reverse().forEach((news)=>_outstandingNewsJs.render(_outstandingNewsJs.generateNewsMarkup(news))
+);
+// Generate cookie and render subscription modal
 if (!document.cookie) {
     // One week = 604800 seconds
     document.cookie = 'name=Cookie; max-age=604800; path=/; SameSite=Lax';
@@ -506,13 +496,29 @@ if (!document.cookie) {
     _subsModalJs.obsSect();
     _subsModalJs.addHandlerHideForm();
 }
+// Render the event when a tickets button is clicked
+_eventJs.render(_eventJs.generateEventMarkup(_dataJs.theaterData.events));
+// Render all events into all-events page
+_dataJs.theaterData.events.forEach((event)=>_allEventsJs.render(_allEventsJs.generateEventsMarkup(event))
+);
+_allEventsJs.renderFilterButtons(_allEventsJs.generateFilterMarkup(_dataJs.theaterData.events));
+_allEventsJs.filterHandler(_dataJs.theaterData.events);
+// Render the all News Page
+_outstandingNewsJs.filterNews(_dataJs.theaterData.news).forEach((news)=>_allNewsJs.render(_allNewsJs.generateAllNews(news))
+);
+_allNewsJs.showContent();
 
 },{"./data.js":"lKWCw","./header-footer.js":"vGVAA","./landingPage/firstSection.js":"fOCw2","./landingPage/secondSection.js":"eHJIO","./landingPage/subsModal.js":"5YiyO","./landingPage/calendar.js":"1FA6L","./landingPage/outstandingNews.js":"a4xEc","./landingPage/scroll-up.js":"5xJk9","./event.js":"e9rOw","./all-events.js":"kC1ak","./all-news.js":"iTQsS"}],"lKWCw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "theaterData", ()=>theaterData
 );
-const generateRandomId = function(min, max) {
+/**
+ * A function that given a min and a max number will return a random number between them
+ * @param {integer} min
+ * @param {integer} max
+ * @returns An integer between the min and max numbers
+ */ const generateRandomId = function(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 };
 const theaterData = {
@@ -999,7 +1005,10 @@ parcelHelpers.export(exports, "renderFooter", ()=>renderFooter
 );
 const headerContainer = document.querySelector('.header');
 const footerContainer = document.querySelector('.footer');
-const generateHeaderMarkup = function() {
+/**
+ * A function that is used to generate the html of the header
+ * @returns A string that has the html of the header section of the webpage
+ */ const generateHeaderMarkup = function() {
     return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
     <img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu">
@@ -1008,15 +1017,18 @@ const generateHeaderMarkup = function() {
     <img class="nav-btn menu-icon" src="${require('../images/menu-icon.png')}" alt="icono menu">
     <nav class="nav-section">
       <img class="nav-btn x-close" src="${require('../images/x-close.png')}" alt="icono cerrar">
-      <a href="./allevents.html">Events</a>
-      <a href="./news.html">News</a>
+      <a href="./all-events.html">Events</a>
+      <a href="./all-news.html">News</a>
       <a href="Prices">Prices</a>
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
-      </nav>
-      `;
+    </nav>
+    `;
 };
-/* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */ const generateFooterMarkup = function() {
+/**
+ * A function that is used to generate the html of the footer
+ * @returns A string that has the html of the webpage's footer section
+ */ const generateFooterMarkup = function() {
     return `
   <div class="footer-container">
     <div class= "footer-info">
@@ -1054,13 +1066,17 @@ const renderFooter = function() {
     if (!footerContainer) return;
     footerContainer.insertAdjacentHTML('afterbegin', generateFooterMarkup());
 };
-const toggleMenu = function() {
+/**
+ * A function to show or hide the header's nav menu
+ */ const toggleMenu = function() {
     const headerMenu = document.querySelector('.nav-section');
     if (!headerMenu) return;
     headerMenu.classList.toggle('menu2');
     headerMenu.style.transition = 'transform 0.5s ease-in-out';
 };
-const menuHandler = function() {
+/**
+ * A handler for the menu icon of the header
+ */ const menuHandler = function() {
     if (!headerContainer) return;
     headerContainer.addEventListener('click', (e)=>{
         const btn = e.target.closest('.nav-btn');
@@ -1135,7 +1151,7 @@ parcelHelpers.export(exports, "generateInfoMarkup", ()=>generateInfoMarkup
 );
 parcelHelpers.export(exports, "render", ()=>render
 );
-const dayEventSection = document.querySelector('.day-events-container');
+const firstSection = document.querySelector('.day-events-container');
 const generateVideoMarkup = function(events) {
     return `<video class="day-event-video" autoplay="autoplay" loop="loop" muted="muted">
             <source src="${events[0].videoURL}" type="video/mp4">
@@ -1154,12 +1170,14 @@ const generateInfoMarkup = function(events) {
     </div>`;
 };
 const render = function(markup) {
-    if (!dayEventSection) return;
-    dayEventSection.insertAdjacentHTML('beforeend', markup);
+    if (!firstSection) return;
+    firstSection.insertAdjacentHTML('beforeend', markup);
 };
-const loadEventPage = function() {
-    if (!dayEventSection) return;
-    dayEventSection.addEventListener('click', (e)=>{
+/**
+ * A function to handle the clicks on the tickets buttons and send the user to the event page
+ */ const loadEventPage = function() {
+    if (!firstSection) return;
+    firstSection.addEventListener('click', (e)=>{
         const btn = e.target.closest('.day-tickets-btn');
         if (!btn) return;
         window.location.replace('event.html');
@@ -1178,14 +1196,15 @@ parcelHelpers.export(exports, "render", ()=>render
 );
 parcelHelpers.export(exports, "displayEventHandler", ()=>displayEventHandler
 );
-const weekEventSection = document.querySelector('.week-events-container');
+var _helperJs = require("../helper.js");
+const secondSection = document.querySelector('.week-events-container');
 let eventNum = 0;
 const generateImgBkg = function(events, posNum = 0) {
-    if (!weekEventSection) return;
-    weekEventSection.style.backgroundImage = `url(${events[posNum].imgURL})`;
+    if (!secondSection) return;
+    secondSection.style.backgroundImage = `url(${events[posNum].imgURL})`;
 };
 const generateInfoMarkup = function(events, posNum = 0) {
-    const nearEvents = sortEventsByDate(events).slice(0, 3);
+    const nearEvents = _helperJs.sortByDate(events, events[posNum].dates[0]).slice(0, 3);
     const firstDate = new Date(nearEvents[posNum].dates[0]).toLocaleDateString();
     const lastDate = new Date(nearEvents[posNum].dates[nearEvents[posNum].dates.length - 1]).toLocaleDateString();
     const eventDate = `<p class="week-event-dates">${firstDate}</p>`;
@@ -1203,38 +1222,56 @@ const generateInfoMarkup = function(events, posNum = 0) {
           </div>`;
 };
 const render = function(markup) {
-    if (!weekEventSection || !markup) return;
-    weekEventSection.insertAdjacentHTML('afterbegin', markup);
+    if (!secondSection || !markup) return;
+    secondSection.insertAdjacentHTML('afterbegin', markup);
 };
 const displayEventHandler = function(events) {
-    if (!weekEventSection) return;
-    weekEventSection.addEventListener('click', (e)=>{
+    if (!secondSection) return;
+    secondSection.addEventListener('click', (e)=>{
         e.preventDefault();
         const btn = e.target.closest('.btn');
         if (!btn) return;
         if (btn.classList.contains('slider-btn-right')) renderNextEvent(events);
         else if (btn.classList.contains('slider-btn-left')) renderPrevEvent(events);
-        else if (btn.classList.contains('all-events-btn')) window.location.replace('allevents.html');
+        else if (btn.classList.contains('all-events-btn')) window.location.replace('all-events.html');
         else if (btn.classList.contains('week-tickets-btn')) window.location.replace('event.html');
     });
 };
-const renderNextEvent = function(events) {
+/**
+ * A function to render the next event when the right arrow button is clicked
+ * @param {array} events
+ */ const renderNextEvent = function(events) {
     if (eventNum >= 2) return;
-    weekEventSection.innerHTML = '';
+    secondSection.innerHTML = '';
     eventNum += 1;
     render(generateImgBkg(events, eventNum));
     render(generateInfoMarkup(events, eventNum));
 };
-const renderPrevEvent = function(events) {
+/**
+ * A function to render the previous event when the left arrow button is clicked
+ * @param {array} events
+ */ const renderPrevEvent = function(events) {
     if (eventNum === 0) return;
-    weekEventSection.innerHTML = '';
+    secondSection.innerHTML = '';
     eventNum -= 1;
     render(generateImgBkg(events, eventNum));
     render(generateInfoMarkup(events, eventNum));
 };
-const sortEventsByDate = function(events) {
-    return events.sort((a, b)=>{
-        return new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","../helper.js":"gDUlg"}],"gDUlg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "firstUpperLetter", ()=>firstUpperLetter
+);
+parcelHelpers.export(exports, "sortByDate", ()=>sortByDate
+);
+const firstUpperLetter = function(word) {
+    const firstLetter = word.split('')[0].toUpperCase();
+    return firstLetter.concat(word.slice(1, word.length));
+};
+const sortByDate = function(array, property) {
+    return array.sort((a, b)=>{
+        return new Date(a.property).getTime() - new Date(b.property).getTime();
     });
 };
 
@@ -1249,12 +1286,18 @@ const overlay = document.querySelector('.overlay');
 const formWindow = document.querySelector('.form-window');
 const secondSection = document.querySelector('.week-events-container');
 const btnCloseModal = document.querySelector('.btn--close-modal');
-const revealSubsForm = function(entries, observer) {
+/**
+ * A function that observe an intersection within a section and the viewport when the user is scrolling
+ * @param {array} entries
+ * @param {object} observer
+ */ const revealSubsForm = function(entries, observer) {
+    console.log(observer);
     const [entry] = entries;
     if (!entry.isIntersecting) return;
     toggleWindow();
     observer.unobserve(entry.target);
 };
+// An observer object used to handle the observe of the intersection. Here is set the intersection ratio
 const sectionObserver = new IntersectionObserver(revealSubsForm, {
     root: null,
     threshold: 0.15
@@ -1263,7 +1306,9 @@ const obsSect = function() {
     if (!secondSection) return;
     sectionObserver.observe(secondSection);
 };
-const toggleWindow = function() {
+/**
+ * A function to toggle the hidden class of the subscription modal form
+ */ const toggleWindow = function() {
     if (!overlay || !formWindow) return;
     overlay.classList.toggle('hidden');
     formWindow.classList.toggle('hidden');
@@ -1281,7 +1326,9 @@ parcelHelpers.export(exports, "createCalendar", ()=>createCalendar
 );
 parcelHelpers.export(exports, "render", ()=>render
 );
-parcelHelpers.export(exports, "addEventCalendar", ()=>addEventCalendar
+/**
+ * A function to handle the clicks on the buttons (days) of the calendar
+ */ parcelHelpers.export(exports, "addEventCalendar", ()=>addEventCalendar
 );
 const dayContainer = document.querySelector('.day-container');
 const createCalendar = function() {
@@ -1302,7 +1349,7 @@ function addEventCalendar() {
         const btn = e.target.closest('.calendar-btn');
         if (!btn) return;
         if (btn.classList.contains('calendar-empty')) return;
-        if (btn.classList.contains('calendar-28')) window.location.assign('allevents.html');
+        if (btn.classList.contains('calendar-28')) window.location.assign('all-events.html');
     });
 }
 
@@ -1315,54 +1362,66 @@ parcelHelpers.export(exports, "generateNewsMarkup", ()=>generateNewsMarkup
 );
 parcelHelpers.export(exports, "render", ()=>render
 );
+var _helperJs = require("../helper.js");
 const newsSection = document.querySelector('.news-section');
 const newsContainer = document.querySelector('.news-container');
 const filterNews = function(news) {
-    let sponsoredNews = news.filter(function(n) {
+    const sponsoredNews = news.filter(function(n) {
         return n.sponsored == true;
     });
-    let notSponsoredNews = news.filter(function(n) {
+    const notSponsoredNews = news.filter(function(n) {
         return n.sponsored == false;
     });
-    filterDate(sponsoredNews);
-    filterDate(notSponsoredNews);
-    let orderedNews = sponsoredNews.concat(notSponsoredNews);
-    return orderedNews;
+    _helperJs.sortByDate(sponsoredNews, sponsoredNews.publicationDate);
+    _helperJs.sortByDate(notSponsoredNews, notSponsoredNews.publicationDate);
+    const sortedNews = sponsoredNews.concat(notSponsoredNews);
+    return sortedNews;
 };
 const generateNewsMarkup = function(singleNews) {
     const localePubDate = new Date(singleNews.publicationDate).toLocaleDateString();
     return `
-  <div class="news-info">
-  <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
-  <p class="news-title">${singleNews.title}</p>
-  <p class="news-date">${localePubDate}</p>
-  </div>`;
+    <div class="news-info">
+      <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
+      <p class="news-title">${singleNews.title}</p>
+      <p class="news-date">${localePubDate}</p>
+    </div>`;
 };
 const render = function(markup) {
     if (!newsContainer) return;
     newsContainer.insertAdjacentHTML('afterbegin', markup);
 };
-function filterDate(news) {
-    news.sort(function(a, b) {
-        return new Date(a.publicationDate).getTime() - new Date(b.publicationDate).getTime();
-    });
-}
-const loadNewsPage = function() {
+// /**
+//  * A function that sorts and array of news by date
+//  * @param {array} news
+//  */
+// function filterDate(news) {
+//   news.sort(function (a, b) {
+//     return (
+//       new Date(a.publicationDate).getTime() -
+//       new Date(b.publicationDate).getTime()
+//     );
+//   });
+// }
+/**
+ * A function to handle click on all news button and send the user to it
+ */ const loadNewsPage = function() {
     if (!newsSection) return;
     newsSection.addEventListener('click', (e)=>{
         const btn = e.target.closest('.all-news-btn');
         if (!btn) return;
-        window.location.replace('news.html');
+        window.location.replace('all-news.html');
     });
 };
 loadNewsPage();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"5xJk9":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","../helper.js":"gDUlg"}],"5xJk9":[function(require,module,exports) {
 const buttonUp = document.querySelector('.scroll-up-icon');
 document.querySelector('.scroll-up-icon').addEventListener('click', function() {
     scrollUp();
 });
-const scrollUp = function() {
+/**
+ * A function to add scroll when the scroll arrow icon is clicked
+ */ const scrollUp = function() {
     const currentScroll = document.documentElement.scrollTop;
     if (currentScroll > 0) {
         window.requestAnimationFrame(scrollUp);
@@ -1370,7 +1429,9 @@ const scrollUp = function() {
         buttonUp.style.transform = 'scale(0)';
     }
 };
-window.onscroll = function() {
+/**
+ * A function that changes the scroll icon style when scrolling
+ */ window.onscroll = function() {
     const scroll = document.documentElement.scrollTop;
     if (scroll > 200) buttonUp.style.transform = 'scale(1)';
     else if (scroll < 200) buttonUp.style.transform = 'scale(0)';
@@ -1505,16 +1566,27 @@ const filterHandler = function(events) {
         }
     });
 };
-const filterEventsByType = function(events, type) {
+/**
+ * A function that given an array of events and a string telling the event type will return an array of all
+ * the events of this type
+ * @param {array} events
+ * @param {string} type
+ * @returns An array of events
+ */ const filterEventsByType = function(events, type) {
     return events.filter((event)=>event.type === type
     );
 };
-const toggleWindow = function() {
+/**
+ * A function that toggle the hidden class to the modal form to show or hide it
+ */ const toggleWindow = function() {
     if (!overlay || !formWindow) return;
     overlay.classList.toggle('hidden');
     formWindow.classList.toggle('hidden');
 };
-const addHandlerShowForm = function() {
+/**
+ * A function to handle the clicks on the add-event button and show or hide the modal form.
+ * It also changes the button from edit to upload by toggling the class btn-hidden
+ */ const addHandlerShowForm = function() {
     if (!addEventBtn) return;
     addEventBtn.addEventListener('click', ()=>{
         if (uploadBtn.classList.contains('btn-hidden')) toggleBtnVisibility();
@@ -1522,13 +1594,17 @@ const addHandlerShowForm = function() {
     });
 };
 addHandlerShowForm();
-const addHandlerHideForm = function() {
+/**
+ * A function to handle the clicks on the x button or outside the modal to close the modal form
+ */ const addHandlerHideForm = function() {
     if (!btnCloseModal) return;
     btnCloseModal.addEventListener('click', toggleWindow);
     overlay.addEventListener('click', toggleWindow);
 };
 addHandlerHideForm();
-const uploadBtnHandler = function() {
+/**
+ * A function to handle the clicks on the modal form upload button
+ */ const uploadBtnHandler = function() {
     if (!uploadBtn) return;
     uploadBtn.addEventListener('click', (e)=>{
         e.preventDefault();
@@ -1536,19 +1612,26 @@ const uploadBtnHandler = function() {
     });
 };
 uploadBtnHandler();
-const uploadEvent = function() {
+/**
+ * A function to render the new event given the data added by the user into the modal form
+ */ const uploadEvent = function() {
     const formData = getFormData();
     const markup = generateEventsMarkup(formData);
     eventsContainer.insertAdjacentHTML('afterbegin', markup);
     toggleWindow();
 };
-const getFormData = function() {
+/**
+ * A function to extract the data from the modal form
+ * @returns An object with the form data
+ */ const getFormData = function() {
     const formData = new FormData(addEventForm);
     if (!formData) return;
     const data = Object.fromEntries(formData);
     return data;
 };
-const deleteEventHandler = function() {
+/**
+ * A function to handle the clicks on the trash icon of the event
+ */ const deleteEventHandler = function() {
     if (!eventsContainer) return;
     eventsContainer.addEventListener('click', (e)=>{
         const btn = e.target.closest('.btn-icon');
@@ -1557,15 +1640,24 @@ const deleteEventHandler = function() {
     });
 };
 deleteEventHandler();
-const deleteEvent = function(elem) {
+/**
+ * A function that deletes an element
+ * @param {element} elem
+ */ const deleteEvent = function(elem) {
     elem.parentElement.outerHTML = '';
 };
-const toggleBtnVisibility = function() {
+/**
+ * A function that toggles the btn-hidden class from the edit and upload buttons to show or hide them
+ */ const toggleBtnVisibility = function() {
     if (!editBtn || !uploadBtn) return;
     editBtn.classList.toggle('btn-hidden');
     uploadBtn.classList.toggle('btn-hidden');
 };
-const generateEditedEventMarkup = function(event) {
+/**
+ * A function that given an event object will return its html as a string
+ * @param {object} event
+ * @returns A string of the event data html
+ */ const generateEditedEventMarkup = function(event) {
     const [...dates] = event.dates;
     const eventsNearDate = dates.join('').slice(0, 10).replaceAll('-', '/');
     const localeDate = new Date(eventsNearDate).toLocaleDateString();
@@ -1578,12 +1670,18 @@ const generateEditedEventMarkup = function(event) {
       <button class="btn-icon trash-icon"><i class="fas fa-trash-alt"></i></button>
       `;
 };
-const editEvent = function(parentElem) {
+/**
+ * A function that given an element (an event container) will put the form data of the edited element within the element
+ * @param {element} parentElem
+ */ const editEvent = function(parentElem) {
     const formData = getFormData();
     const markup = generateEditedEventMarkup(formData);
     parentElem.innerHTML = markup;
 };
-const editBtnHandler = function(parentElem) {
+/**
+ * A function to handle the clicks on the modal form edit button
+ * @param {element} parentElem
+ */ const editBtnHandler = function(parentElem) {
     if (!editBtn) return;
     editBtn.addEventListener('click', (e)=>{
         e.preventDefault();
@@ -1592,7 +1690,9 @@ const editBtnHandler = function(parentElem) {
         toggleBtnVisibility();
     });
 };
-const editEventHandler = function() {
+/**
+ * A function to handle the clicks on the edit icon of the event
+ */ const editEventHandler = function() {
     if (!eventsContainer) return;
     eventsContainer.addEventListener('click', (e)=>{
         const btn = e.target.closest('.btn-icon');
@@ -1604,19 +1704,28 @@ const editEventHandler = function() {
         }
     });
 };
-editEventHandler();
+editEventHandler(); /* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */  /* .search {
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  height: 1rem;
+  padding-left: 0.3rem;
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 5rem;
+}
 
-},{"./helper.js":"gDUlg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"gDUlg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "firstUpperLetter", ()=>firstUpperLetter
-);
-const firstUpperLetter = function(word) {
-    const firstLetter = word.split('')[0].toUpperCase();
-    return firstLetter.concat(word.slice(1, word.length));
-};
+.search input {
+  border: 0;
+  width: 4rem;
+}
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"iTQsS":[function(require,module,exports) {
+.search input:focus {
+  outline: none;
+} */ 
+
+},{"./helper.js":"gDUlg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"iTQsS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "generateAllNews", ()=>generateAllNews
@@ -1629,14 +1738,14 @@ const eventContainer = document.querySelector('.all-news-container');
 const generateAllNews = function(singleNews) {
     const localePubDate = new Date(singleNews.publicationDate).toLocaleDateString();
     return `
-      <div class="news-info">
-          <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
-          <p class="news-title">${singleNews.title}</p>
-          <p class="news-content hidden">${singleNews.content}</p>
-          <p class="news-date">${localePubDate}</p>
-          <button class="btn-readmore">Read More...</button>
-          </div>
-          `;
+    <div class="news-info">
+      <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
+      <p class="news-title">${singleNews.title}</p>
+      <p class="news-content hidden">${singleNews.content}</p>
+      <p class="news-date">${localePubDate}</p>
+      <button class="btn-readmore">Read More...</button>
+    </div>
+    `;
 };
 const render = function(markup) {
     if (!eventContainer) return;
