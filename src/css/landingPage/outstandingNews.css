@@ -17,7 +17,7 @@
 .news-section {
   background-image: url(../../images/newspaper.png);
   background-size: cover;
-  height: 110vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -108,5 +108,14 @@ h2 {
 @media (min-width: 650px) {
   .all-news-btn {
     font-size: 1.2rem;
+  }
+  /* h2{
+    margin-left: 1rem;
+  } */
+  .news-section{
+    height: 120vh;
+  }
+  .title-news{
+    margin-bottom: 1rem;
   }
 }
