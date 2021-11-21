@@ -9,6 +9,7 @@ const overlay = document.querySelector('.overlay');
 const formWindow = document.querySelector('.form-window');
 const addEventForm = document.querySelector('.upload');
 const uploadBtn = document.querySelector('.upload__btn');
+const editBtn = document.querySelector('.edit__btn');
 
 export const generateEventsMarkup = function (event) {
   const [...dates] = event.dates;
@@ -85,7 +86,12 @@ const toggleWindow = function () {
 
 const addHandlerShowForm = function () {
   if (!addEventBtn) return;
-  addEventBtn.addEventListener('click', toggleWindow);
+  addEventBtn.addEventListener('click', () => {
+    if (uploadBtn.classList.contains('btn-hidden')) {
+      toggleBtnVisibility();
+    }
+    toggleWindow();
+  });
 };
 addHandlerShowForm();
 
@@ -97,7 +103,7 @@ const addHandlerHideForm = function () {
 addHandlerHideForm();
 
 const uploadBtnHandler = function () {
-  if (!eventsContainer || !uploadBtn) return;
+  if (!uploadBtn) return;
   uploadBtn.addEventListener('click', e => {
     e.preventDefault();
     uploadEvent();
@@ -119,21 +125,70 @@ const getFormData = function () {
   return data;
 };
 
-const eventHandler = function () {
+const deleteEventHandler = function () {
   if (!eventsContainer) return;
   eventsContainer.addEventListener('click', e => {
     const btn = e.target.closest('.btn-icon');
     if (!btn) return;
     if (btn.classList.contains('trash-icon')) {
       deleteEvent(btn);
-    } else if (btn.classList.contains('edit-icon')) {
-      toggleWindow();
-      deleteEvent(btn);
     }
   });
 };
-eventHandler();
+deleteEventHandler();
 
 const deleteEvent = function (elem) {
   elem.parentElement.outerHTML = '';
 };
+
+const toggleBtnVisibility = function () {
+  if (!editBtn || !uploadBtn) return;
+  editBtn.classList.toggle('btn-hidden');
+  uploadBtn.classList.toggle('btn-hidden');
+};
+
+const generateEditedEventMarkup = function (event) {
+  const [...dates] = event.dates;
+  const eventsNearDate = dates.join('').slice(0, 10).replaceAll('-', '/');
+  const localeDate = new Date(eventsNearDate).toLocaleDateString();
+  return `
+      <img src="${event.imgURL}" alt="${event.title}">
+      <h2 class="event-title">${event.title}</h2>
+      <p class="event-desc">${event.description}</p>
+      <p class="event-dates">${localeDate}</p>
+      <button class="btn-icon edit-icon"><i class="far fa-edit"></i></button>
+      <button class="btn-icon trash-icon"><i class="fas fa-trash-alt"></i></button>
+      `;
+};
+
+const editEvent = function (parentElem) {
+  const formData = getFormData();
+  const markup = generateEditedEventMarkup(formData);
+  parentElem.innerHTML = markup;
+};
+
+const editBtnHandler = function (parentElem) {
+  if (!editBtn) return;
+  editBtn.addEventListener('click', e => {
+    e.preventDefault();
+    toggleWindow();
+    editEvent(parentElem);
+    toggleBtnVisibility();
+  });
+};
+
+const editEventHandler = function () {
+  if (!eventsContainer) return;
+  eventsContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-icon');
+    if (!btn) return;
+    if (btn.classList.contains('edit-icon')) {
+      if (editBtn.classList.contains('btn-hidden')) {
+        toggleBtnVisibility();
+      }
+      toggleWindow();
+      editBtnHandler(btn.parentElement);
+    }
+  });
+};
+editEventHandler();

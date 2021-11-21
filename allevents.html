@@ -29,6 +29,19 @@
 
     <!-- JS -->
     <script defer type="module" src="src/js/script.js"></script>
+
+    <!-- Datepicker JQuery -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $('#datepicker').datepicker();
+      });
+    </script>
   </head>
 
   <body>
@@ -79,16 +92,20 @@
             />
             <label>Dates</label>
             <input
-              value="12/20/2021"
+              id="datepicker"
               required
               name="dates"
-              type="date"
+              type="text"
               placeholder="Date"
             />
 
             <button class="btn upload__btn">
               <i class="fas fa-cloud-upload-alt"></i>
               <span>Upload</span>
+            </button>
+            <button class="btn edit__btn btn-hidden">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Edit</span>
             </button>
           </form>
         </div>
