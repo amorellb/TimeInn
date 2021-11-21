@@ -187,3 +187,5 @@ $RECYCLE.BIN/
 node_modules
 
 .parcel-cache
+
+dist

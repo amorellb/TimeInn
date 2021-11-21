@@ -74,4 +74,11 @@
   background-color: var(--first-main-color);
 }
 
+@media (min-width: 650px){
+  
+  .calendar-container{
+    width: 600px;
+  }
+}
+
 /*# sourceMappingURL=index.0629452f.css.map */
