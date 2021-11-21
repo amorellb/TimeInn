@@ -44,7 +44,7 @@ export const theaterData = {
     },
     {
       id: generateRandomId(1, 999_999),
-      title: 'Pierrot Lunaire anb un pròleg: Narcís',
+      title: 'Pierrot Lunaire: Narcís',
       author: 'Arnold Schönberg',
       group: '',
       dates: ['11/16/2021', '11/17/2021', '11/18/2021'],

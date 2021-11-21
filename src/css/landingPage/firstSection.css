@@ -1,7 +1,7 @@
 /* TODO: refactor: put the color pallette in one file and import it if possible */
 :root {
   --first-main-color: #621304;
-  --second-main-color: #B65543;
+  --second-main-color: #b65543;
 
   --light-text: #ffffff;
   --light-shadow: #ececec;
@@ -97,17 +97,18 @@
   .day-event-info {
     width: 40rem;
   }
+
   .day-event-title {
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
 
   .day-event-type {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-left: 6rem;
   }
 
   .day-event-dates {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-left: 6rem;
     width: 8rem;
   }

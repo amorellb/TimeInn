@@ -1,6 +1,6 @@
 :root {
   --first-main-color: #621304;
-  --second-main-color: #B65543;
+  --second-main-color: #b65543;
 
   --light-text: #ffffff;
   --light-shadow: #ececec;
@@ -144,23 +144,23 @@
   }
 
   .week-event-type {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-left: 6rem;
   }
 
   .week-event-title {
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
 
   .week-event-author {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-left: 6rem;
   }
 
   .week-event-dates {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-left: 6rem;
-    width: 8rem;
+    width: 9rem;
   }
 
   .week-tickets-btn {
