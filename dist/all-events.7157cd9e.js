@@ -460,7 +460,7 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bBdBR":[function(require,module,exports) {
 var _dataJs = require("./data.js");
-var _headerFooterJs = require("./headerFooter.js");
+var _headerFooterJs = require("./header-footer.js");
 var _firstSectionJs = require("./landingPage/firstSection.js");
 var _secondSectionJs = require("./landingPage/secondSection.js");
 var _subsModalJs = require("./landingPage/subsModal.js");
@@ -468,8 +468,8 @@ var _calendarJs = require("./landingPage/calendar.js");
 var _outstandingNewsJs = require("./landingPage/outstandingNews.js");
 var _scrollUpJs = require("./landingPage/scroll-up.js");
 var _eventJs = require("./event.js");
-var _alleventsJs = require("./allevents.js");
-var _newsJs = require("./news.js");
+var _allEventsJs = require("./all-events.js");
+var _allNewsJs = require("./all-news.js");
 // Render header and footer
 _headerFooterJs.renderHeader();
 _headerFooterJs.renderFooter();
@@ -485,17 +485,17 @@ _secondSectionJs.displayEventHandler(_dataJs.theaterData.events);
 // Render the event when a tickets button is clicked
 _eventJs.render(_eventJs.generateEventMarkup(_dataJs.theaterData.events));
 // Render all events into all-events page
-_dataJs.theaterData.events.forEach((event)=>_alleventsJs.render(_alleventsJs.generateEventsMarkup(event))
+_dataJs.theaterData.events.forEach((event)=>_allEventsJs.render(_allEventsJs.generateEventsMarkup(event))
 );
-_alleventsJs.renderFilterButtons(_alleventsJs.generateFilterMarkup(_dataJs.theaterData.events));
-_alleventsJs.filterHandler(_dataJs.theaterData.events);
+_allEventsJs.renderFilterButtons(_allEventsJs.generateFilterMarkup(_dataJs.theaterData.events));
+_allEventsJs.filterHandler(_dataJs.theaterData.events);
 //Render the fourth section: news
 _outstandingNewsJs.filterNews(_dataJs.theaterData.news).slice(0, 4).reverse().forEach((news)=>_outstandingNewsJs.render(_outstandingNewsJs.generateNewsMarkup(news))
 );
 // Render the all News Page
-_outstandingNewsJs.filterNews(_dataJs.theaterData.news).forEach((news)=>_newsJs.render(_newsJs.generateAllNews(news))
+_outstandingNewsJs.filterNews(_dataJs.theaterData.news).forEach((news)=>_allNewsJs.render(_allNewsJs.generateAllNews(news))
 );
-_newsJs.showContent();
+_allNewsJs.showContent();
 //Render Calendar
 _calendarJs.render(_calendarJs.createCalendar());
 _calendarJs.addEventCalendar();
@@ -507,7 +507,7 @@ if (!document.cookie) {
     _subsModalJs.addHandlerHideForm();
 }
 
-},{"./data.js":"lKWCw","./headerFooter.js":"5sETY","./landingPage/subsModal.js":"5YiyO","./event.js":"e9rOw","./news.js":"4Hozf","./landingPage/outstandingNews.js":"a4xEc","./allevents.js":"5NFPk","./landingPage/scroll-up.js":"5xJk9","./landingPage/calendar.js":"1FA6L","./landingPage/firstSection.js":"fOCw2","./landingPage/secondSection.js":"eHJIO"}],"lKWCw":[function(require,module,exports) {
+},{"./data.js":"lKWCw","./header-footer.js":"vGVAA","./landingPage/firstSection.js":"fOCw2","./landingPage/secondSection.js":"eHJIO","./landingPage/subsModal.js":"5YiyO","./landingPage/calendar.js":"1FA6L","./landingPage/outstandingNews.js":"a4xEc","./landingPage/scroll-up.js":"5xJk9","./event.js":"e9rOw","./all-events.js":"kC1ak","./all-news.js":"iTQsS"}],"lKWCw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "theaterData", ()=>theaterData
@@ -990,7 +990,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"5sETY":[function(require,module,exports) {
+},{}],"vGVAA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderHeader", ()=>renderHeader
@@ -1126,7 +1126,119 @@ module.exports = require('./helpers/bundle-url').getBundleURL('2EK68') + "x-clos
 },{"./helpers/bundle-url":"chiK4"}],"dQMU8":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('2EK68') + "map.6cf315f4.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"chiK4"}],"5YiyO":[function(require,module,exports) {
+},{"./helpers/bundle-url":"chiK4"}],"fOCw2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "generateVideoMarkup", ()=>generateVideoMarkup
+);
+parcelHelpers.export(exports, "generateInfoMarkup", ()=>generateInfoMarkup
+);
+parcelHelpers.export(exports, "render", ()=>render
+);
+const dayEventSection = document.querySelector('.day-events-container');
+const generateVideoMarkup = function(events) {
+    return `<video class="day-event-video" autoplay="autoplay" loop="loop" muted="muted">
+            <source src="${events[0].videoURL}" type="video/mp4">
+          </video>`;
+};
+const generateInfoMarkup = function(events) {
+    const firstDate = new Date(events[0].dates[0]).toLocaleDateString();
+    const lastDate = new Date(events[0].dates[events[0].dates.length - 1]).toLocaleDateString();
+    return `
+    <div class="day-event-info">
+      <h1 class="day-event-title">${events[0].title}</h1>
+      <p class="day-event-type">${events[0].type}</p>
+      <p class="day-event-dates">${firstDate} - 
+      ${lastDate}</p>
+      <button class="tickets-btn day-tickets-btn" href="event.html">Tickets</button>
+    </div>`;
+};
+const render = function(markup) {
+    if (!dayEventSection) return;
+    dayEventSection.insertAdjacentHTML('beforeend', markup);
+};
+const loadEventPage = function() {
+    if (!dayEventSection) return;
+    dayEventSection.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.day-tickets-btn');
+        if (!btn) return;
+        window.location.replace('event.html');
+    });
+};
+loadEventPage();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"eHJIO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "generateImgBkg", ()=>generateImgBkg
+);
+parcelHelpers.export(exports, "generateInfoMarkup", ()=>generateInfoMarkup
+);
+parcelHelpers.export(exports, "render", ()=>render
+);
+parcelHelpers.export(exports, "displayEventHandler", ()=>displayEventHandler
+);
+const weekEventSection = document.querySelector('.week-events-container');
+let eventNum = 0;
+const generateImgBkg = function(events, posNum = 0) {
+    if (!weekEventSection) return;
+    weekEventSection.style.backgroundImage = `url(${events[posNum].imgURL})`;
+};
+const generateInfoMarkup = function(events, posNum = 0) {
+    const nearEvents = sortEventsByDate(events).slice(0, 3);
+    const firstDate = new Date(nearEvents[posNum].dates[0]).toLocaleDateString();
+    const lastDate = new Date(nearEvents[posNum].dates[nearEvents[posNum].dates.length - 1]).toLocaleDateString();
+    const eventDate = `<p class="week-event-dates">${firstDate}</p>`;
+    const eventDates = `<p class="week-event-dates">${firstDate} - 
+  ${lastDate}</p>`;
+    return `<div class="week-event-info">
+            <button class="btn slider-btn slider-btn-right"><i class="fas fa-chevron-right"></i></button>
+            <button class="btn slider-btn slider-btn-left"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn all-events-btn">All events</button>
+            <p class="week-event-type">${nearEvents[posNum].type}</p>
+            <h1 class="week-event-title">${nearEvents[posNum].title}</h1>
+            <p class="week-event-author">${nearEvents[posNum].author}</p>
+            ${nearEvents[posNum].dates.length === 1 ? eventDate : eventDates}
+            <button class="btn tickets-btn week-tickets-btn" href="event.html">Tickets</button>
+          </div>`;
+};
+const render = function(markup) {
+    if (!weekEventSection || !markup) return;
+    weekEventSection.insertAdjacentHTML('afterbegin', markup);
+};
+const displayEventHandler = function(events) {
+    if (!weekEventSection) return;
+    weekEventSection.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const btn = e.target.closest('.btn');
+        if (!btn) return;
+        if (btn.classList.contains('slider-btn-right')) renderNextEvent(events);
+        else if (btn.classList.contains('slider-btn-left')) renderPrevEvent(events);
+        else if (btn.classList.contains('all-events-btn')) window.location.replace('allevents.html');
+        else if (btn.classList.contains('week-tickets-btn')) window.location.replace('event.html');
+    });
+};
+const renderNextEvent = function(events) {
+    if (eventNum >= 2) return;
+    weekEventSection.innerHTML = '';
+    eventNum += 1;
+    render(generateImgBkg(events, eventNum));
+    render(generateInfoMarkup(events, eventNum));
+};
+const renderPrevEvent = function(events) {
+    if (eventNum === 0) return;
+    weekEventSection.innerHTML = '';
+    eventNum -= 1;
+    render(generateImgBkg(events, eventNum));
+    render(generateInfoMarkup(events, eventNum));
+};
+const sortEventsByDate = function(events) {
+    return events.sort((a, b)=>{
+        return new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime();
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"5YiyO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "obsSect", ()=>obsSect
@@ -1162,85 +1274,37 @@ const addHandlerHideForm = function() {
     overlay.addEventListener('click', toggleWindow());
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"e9rOw":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1FA6L":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "generateEventMarkup", ()=>generateEventMarkup
+parcelHelpers.export(exports, "createCalendar", ()=>createCalendar
 );
 parcelHelpers.export(exports, "render", ()=>render
 );
-const eventContainer = document.querySelector('.event-container');
-const generateEventMarkup = function(events) {
-    return `
-  <section class="event">
-        <h1 class="event-title">${events[0].title}</h1>
-        <img class="event-img" src="${events[0].imgURL}" alt="${events[0].title}">
-        <aside class="event-form">
-          <form action="post">
-            <input class="event-form-input" type="text" name="name" id="name" placeholder="Name"/>
-            <input class="event-form-input" type="text" name="lastName" id="lastName" placeholder="Last name"/>
-            <input class="event-form-input" type="text" name="phone" id="phone" placeholder="Phone"/>
-            <input class="event-form-input" type="text" name="email" id="email" placeholder="Email"/>
-            <input class="event-form-input" type="number" name="numTickets" id="numTickets" value="1" min="1"/>
-            <button class="event-form-btn" type="submit">Add to cart</button>
-          </form>
-        </aside>
-        <div class="event-description">
-        <h2>Price</h2>
-        <p>${events[0].price} €</p>
-        <h2>Dates</h2>
-        <p>${events[0].dates.join(', ')}</p>
-        <h2>Author</h2>
-        <p>${events[0].author}</p>
-          <h2>Description</h2>
-          <p>${events[0].description}</p>
-          <h2>Duration</h2>
-        <p>${events[0].duration} min</p>
-        </div>
-      </section>
-  `;
+parcelHelpers.export(exports, "addEventCalendar", ()=>addEventCalendar
+);
+const dayContainer = document.querySelector('.day-container');
+const createCalendar = function() {
+    let buttons = '';
+    for(let i = 1; i <= 35; i++){
+        if (i <= 31) buttons += `<button class="calendar-btn calendar-${i}">${i}</button>`;
+        else if (i > 31) buttons += `<button class="calendar-btn calendar-empty"></button>`;
+    }
+    return buttons;
 };
 const render = function(markup) {
-    if (!eventContainer) return;
-    eventContainer.insertAdjacentHTML('afterbegin', markup);
+    if (!dayContainer) return;
+    dayContainer.insertAdjacentHTML('beforeend', markup);
 };
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"4Hozf":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "generateAllNews", ()=>generateAllNews
-);
-parcelHelpers.export(exports, "render", ()=>render
-);
-parcelHelpers.export(exports, "showContent", ()=>showContent
-);
-const eventContainer = document.querySelector('.all-news-container');
-const generateAllNews = function(singleNews) {
-    const localePubDate = new Date(singleNews.publicationDate).toLocaleDateString();
-    return `
-      <div class="news-info">
-          <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
-          <p class="news-title">${singleNews.title}</p>
-          <p class="news-content hidden">${singleNews.content}</p>
-          <p class="news-date">${localePubDate}</p>
-          <button class="btn-readmore">Read More...</button>
-          </div>
-          `;
-};
-const render = function(markup) {
-    if (!eventContainer) return;
-    eventContainer.insertAdjacentHTML('beforeend', markup);
-};
-const showContent = function() {
-    if (!eventContainer) return;
-    eventContainer.addEventListener('click', (e)=>{
-        const btn = e.target.closest('.btn-readmore');
+function addEventCalendar() {
+    if (!dayContainer) return;
+    dayContainer.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.calendar-btn');
         if (!btn) return;
-        const newsContent = e.target.parentElement.childNodes[5];
-        if (newsContent.classList.contains('hidden')) newsContent.classList.toggle('hidden');
-        else newsContent.classList.toggle('hidden');
+        if (btn.classList.contains('calendar-empty')) return;
+        if (btn.classList.contains('calendar-28')) window.location.assign('allevents.html');
     });
-};
+}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"a4xEc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -1293,7 +1357,69 @@ const loadNewsPage = function() {
 };
 loadNewsPage();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"5NFPk":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"5xJk9":[function(require,module,exports) {
+const buttonUp = document.querySelector('.scroll-up-icon');
+document.querySelector('.scroll-up-icon').addEventListener('click', function() {
+    scrollUp();
+});
+const scrollUp = function() {
+    const currentScroll = document.documentElement.scrollTop;
+    if (currentScroll > 0) {
+        window.requestAnimationFrame(scrollUp);
+        window.scrollTo(0, currentScroll - currentScroll / 10);
+        buttonUp.style.transform = 'scale(0)';
+    }
+};
+window.onscroll = function() {
+    const scroll = document.documentElement.scrollTop;
+    if (scroll > 200) buttonUp.style.transform = 'scale(1)';
+    else if (scroll < 200) buttonUp.style.transform = 'scale(0)';
+};
+
+},{}],"e9rOw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "generateEventMarkup", ()=>generateEventMarkup
+);
+parcelHelpers.export(exports, "render", ()=>render
+);
+const eventContainer = document.querySelector('.event-container');
+const generateEventMarkup = function(events) {
+    return `
+  <section class="event">
+        <h1 class="event-title">${events[0].title}</h1>
+        <img class="event-img" src="${events[0].imgURL}" alt="${events[0].title}">
+        <aside class="event-form">
+          <form action="post">
+            <input class="event-form-input" type="text" name="name" id="name" placeholder="Name"/>
+            <input class="event-form-input" type="text" name="lastName" id="lastName" placeholder="Last name"/>
+            <input class="event-form-input" type="text" name="phone" id="phone" placeholder="Phone"/>
+            <input class="event-form-input" type="text" name="email" id="email" placeholder="Email"/>
+            <input class="event-form-input" type="number" name="numTickets" id="numTickets" value="1" min="1"/>
+            <button class="event-form-btn" type="submit">Add to cart</button>
+          </form>
+        </aside>
+        <div class="event-description">
+        <h2>Price</h2>
+        <p>${events[0].price} €</p>
+        <h2>Dates</h2>
+        <p>${events[0].dates.join(', ')}</p>
+        <h2>Author</h2>
+        <p>${events[0].author}</p>
+          <h2>Description</h2>
+          <p>${events[0].description}</p>
+          <h2>Duration</h2>
+        <p>${events[0].duration} min</p>
+        </div>
+      </section>
+  `;
+};
+const render = function(markup) {
+    if (!eventContainer) return;
+    eventContainer.insertAdjacentHTML('afterbegin', markup);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"kC1ak":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "generateEventsMarkup", ()=>generateEventsMarkup
@@ -1490,169 +1616,43 @@ const firstUpperLetter = function(word) {
     return firstLetter.concat(word.slice(1, word.length));
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"5xJk9":[function(require,module,exports) {
-const buttonUp = document.querySelector('.scroll-up-icon');
-document.querySelector('.scroll-up-icon').addEventListener('click', function() {
-    scrollUp();
-});
-const scrollUp = function() {
-    const currentScroll = document.documentElement.scrollTop;
-    if (currentScroll > 0) {
-        window.requestAnimationFrame(scrollUp);
-        window.scrollTo(0, currentScroll - currentScroll / 10);
-        buttonUp.style.transform = 'scale(0)';
-    }
-};
-window.onscroll = function() {
-    const scroll = document.documentElement.scrollTop;
-    if (scroll > 200) buttonUp.style.transform = 'scale(1)';
-    else if (scroll < 200) buttonUp.style.transform = 'scale(0)';
-};
-
-},{}],"1FA6L":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"iTQsS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createCalendar", ()=>createCalendar
+parcelHelpers.export(exports, "generateAllNews", ()=>generateAllNews
 );
 parcelHelpers.export(exports, "render", ()=>render
 );
-parcelHelpers.export(exports, "addEventCalendar", ()=>addEventCalendar
+parcelHelpers.export(exports, "showContent", ()=>showContent
 );
-const dayContainer = document.querySelector('.day-container');
-const createCalendar = function() {
-    let buttons = '';
-    for(let i = 1; i <= 35; i++){
-        if (i <= 31) buttons += `<button class="calendar-btn calendar-${i}">${i}</button>`;
-        else if (i > 31) buttons += `<button class="calendar-btn calendar-empty"></button>`;
-    }
-    return buttons;
-};
-const render = function(markup) {
-    if (!dayContainer) return;
-    dayContainer.insertAdjacentHTML('beforeend', markup);
-};
-function addEventCalendar() {
-    if (!dayContainer) return;
-    dayContainer.addEventListener('click', (e)=>{
-        const btn = e.target.closest('.calendar-btn');
-        if (!btn) return;
-        if (btn.classList.contains('calendar-empty')) return;
-        if (btn.classList.contains('calendar-28')) window.location.assign('allevents.html');
-    });
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"fOCw2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "generateVideoMarkup", ()=>generateVideoMarkup
-);
-parcelHelpers.export(exports, "generateInfoMarkup", ()=>generateInfoMarkup
-);
-parcelHelpers.export(exports, "render", ()=>render
-);
-const dayEventSection = document.querySelector('.day-events-container');
-const generateVideoMarkup = function(events) {
-    return `<video class="day-event-video" autoplay="autoplay" loop="loop" muted="muted">
-            <source src="${events[0].videoURL}" type="video/mp4">
-          </video>`;
-};
-const generateInfoMarkup = function(events) {
-    const firstDate = new Date(events[0].dates[0]).toLocaleDateString();
-    const lastDate = new Date(events[0].dates[events[0].dates.length - 1]).toLocaleDateString();
+const eventContainer = document.querySelector('.all-news-container');
+const generateAllNews = function(singleNews) {
+    const localePubDate = new Date(singleNews.publicationDate).toLocaleDateString();
     return `
-    <div class="day-event-info">
-      <h1 class="day-event-title">${events[0].title}</h1>
-      <p class="day-event-type">${events[0].type}</p>
-      <p class="day-event-dates">${firstDate} - 
-      ${lastDate}</p>
-      <button class="tickets-btn day-tickets-btn" href="event.html">Tickets</button>
-    </div>`;
+      <div class="news-info">
+          <img class="news-image" src="${singleNews.imgURL}" alt="News Image">
+          <p class="news-title">${singleNews.title}</p>
+          <p class="news-content hidden">${singleNews.content}</p>
+          <p class="news-date">${localePubDate}</p>
+          <button class="btn-readmore">Read More...</button>
+          </div>
+          `;
 };
 const render = function(markup) {
-    if (!dayEventSection) return;
-    dayEventSection.insertAdjacentHTML('beforeend', markup);
+    if (!eventContainer) return;
+    eventContainer.insertAdjacentHTML('beforeend', markup);
 };
-const loadEventPage = function() {
-    if (!dayEventSection) return;
-    dayEventSection.addEventListener('click', (e)=>{
-        const btn = e.target.closest('.day-tickets-btn');
+const showContent = function() {
+    if (!eventContainer) return;
+    eventContainer.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.btn-readmore');
         if (!btn) return;
-        window.location.replace('event.html');
-    });
-};
-loadEventPage();
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"eHJIO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "generateImgBkg", ()=>generateImgBkg
-);
-parcelHelpers.export(exports, "generateInfoMarkup", ()=>generateInfoMarkup
-);
-parcelHelpers.export(exports, "render", ()=>render
-);
-parcelHelpers.export(exports, "displayEventHandler", ()=>displayEventHandler
-);
-const weekEventSection = document.querySelector('.week-events-container');
-let eventNum = 0;
-const generateImgBkg = function(events, posNum = 0) {
-    if (!weekEventSection) return;
-    weekEventSection.style.backgroundImage = `url(${events[posNum].imgURL})`;
-};
-const generateInfoMarkup = function(events, posNum = 0) {
-    const nearEvents = sortEventsByDate(events).slice(0, 3);
-    const firstDate = new Date(nearEvents[posNum].dates[0]).toLocaleDateString();
-    const lastDate = new Date(nearEvents[posNum].dates[nearEvents[posNum].dates.length - 1]).toLocaleDateString();
-    const eventDate = `<p class="week-event-dates">${firstDate}</p>`;
-    const eventDates = `<p class="week-event-dates">${firstDate} - 
-  ${lastDate}</p>`;
-    return `<div class="week-event-info">
-            <button class="btn slider-btn slider-btn-right"><i class="fas fa-chevron-right"></i></button>
-            <button class="btn slider-btn slider-btn-left"><i class="fas fa-chevron-left"></i></button>
-            <button class="btn all-events-btn">All events</button>
-            <p class="week-event-type">${nearEvents[posNum].type}</p>
-            <h1 class="week-event-title">${nearEvents[posNum].title}</h1>
-            <p class="week-event-author">${nearEvents[posNum].author}</p>
-            ${nearEvents[posNum].dates.length === 1 ? eventDate : eventDates}
-            <button class="btn tickets-btn week-tickets-btn" href="event.html">Tickets</button>
-          </div>`;
-};
-const render = function(markup) {
-    if (!weekEventSection || !markup) return;
-    weekEventSection.insertAdjacentHTML('afterbegin', markup);
-};
-const displayEventHandler = function(events) {
-    if (!weekEventSection) return;
-    weekEventSection.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const btn = e.target.closest('.btn');
-        if (!btn) return;
-        if (btn.classList.contains('slider-btn-right')) renderNextEvent(events);
-        else if (btn.classList.contains('slider-btn-left')) renderPrevEvent(events);
-        else if (btn.classList.contains('all-events-btn')) window.location.replace('allevents.html');
-        else if (btn.classList.contains('week-tickets-btn')) window.location.replace('event.html');
-    });
-};
-const renderNextEvent = function(events) {
-    if (eventNum >= 2) return;
-    weekEventSection.innerHTML = '';
-    eventNum += 1;
-    render(generateImgBkg(events, eventNum));
-    render(generateInfoMarkup(events, eventNum));
-};
-const renderPrevEvent = function(events) {
-    if (eventNum === 0) return;
-    weekEventSection.innerHTML = '';
-    eventNum -= 1;
-    render(generateImgBkg(events, eventNum));
-    render(generateInfoMarkup(events, eventNum));
-};
-const sortEventsByDate = function(events) {
-    return events.sort((a, b)=>{
-        return new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime();
+        const newsContent = e.target.parentElement.childNodes[5];
+        if (newsContent.classList.contains('hidden')) newsContent.classList.toggle('hidden');
+        else newsContent.classList.toggle('hidden');
     });
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["h10ks","bBdBR"], "bBdBR", "parcelRequire2340")
 
-//# sourceMappingURL=allevents.7157cd9e.js.map
+//# sourceMappingURL=all-events.7157cd9e.js.map

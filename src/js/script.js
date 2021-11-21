@@ -1,57 +1,56 @@
 import * as data from './data.js';
-import * as headerFooter from './headerFooter.js';
-import * as dayEvents from './landingPage/dayEvents.js';
-import * as weekEvents from './landingPage/weekEvents.js';
+import * as headerFooter from './header-footer.js';
+import * as firstSection from './landingPage/firstSection.js';
+import * as secondSection from './landingPage/secondSection.js';
 import * as subscription from './landingPage/subsModal.js';
-import * as event from './event.js';
-import * as newsEvents from './news.js';
-import * as news from './landingPage/outstandingNews.js';
-import * as allevents from './allevents.js';
-import * as scroll from './landingPage/scroll-up.js';
 import * as calendar from './landingPage/calendar.js';
+import * as newsSection from './landingPage/outstandingNews.js';
+import * as scroll from './landingPage/scroll-up.js';
+import * as eventPage from './event.js';
+import * as allEventsPage from './all-events.js';
+import * as newsPage from './all-news.js';
 
 // Render header and footer
 headerFooter.renderHeader();
 headerFooter.renderFooter();
 
 // Render the first section: events of the day
-dayEvents.render(dayEvents.generateVideoMarkup(data.theaterData.events));
-dayEvents.render(dayEvents.generateInfoMarkup(data.theaterData.events));
+firstSection.render(firstSection.generateVideoMarkup(data.theaterData.events));
+firstSection.render(firstSection.generateInfoMarkup(data.theaterData.events));
 
 // Render the second section: events of the week
 window.addEventListener('load', () => {
-  weekEvents.generateImgBkg(data.theaterData.events);
-  weekEvents.render(weekEvents.generateInfoMarkup(data.theaterData.events));
+  secondSection.generateImgBkg(data.theaterData.events);
+  secondSection.render(
+    secondSection.generateInfoMarkup(data.theaterData.events)
+  );
 });
-weekEvents.displayEventHandler(data.theaterData.events);
+secondSection.displayEventHandler(data.theaterData.events);
 
 // Render the event when a tickets button is clicked
-event.render(event.generateEventMarkup(data.theaterData.events));
+eventPage.render(eventPage.generateEventMarkup(data.theaterData.events));
 
 // Render all events into all-events page
 data.theaterData.events.forEach(event =>
-  allevents.render(allevents.generateEventsMarkup(event))
+  allEventsPage.render(allEventsPage.generateEventsMarkup(event))
 );
-allevents.renderFilterButtons(
-  allevents.generateFilterMarkup(data.theaterData.events)
+allEventsPage.renderFilterButtons(
+  allEventsPage.generateFilterMarkup(data.theaterData.events)
 );
-allevents.filterHandler(data.theaterData.events);
+allEventsPage.filterHandler(data.theaterData.events);
 
 //Render the fourth section: news
-news
+newsSection
   .filterNews(data.theaterData.news)
   .slice(0, 4)
   .reverse()
-  .forEach(singleNews => news.render(news.generateNewsMarkup(singleNews)));
+  .forEach(news => newsSection.render(newsSection.generateNewsMarkup(news)));
 
 // Render the all News Page
-news
+newsSection
   .filterNews(data.theaterData.news)
-  .forEach(singleNews =>
-    newsEvents.render(newsEvents.generateAllNews(singleNews))
-  );
-
-newsEvents.showContent();
+  .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
+newsPage.showContent();
 
 //Render Calendar
 calendar.render(calendar.createCalendar());
