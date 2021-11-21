@@ -1,7 +1,17 @@
+/**
+ * A function that given a min and a max number will return a random number between them
+ * @param {integer} min
+ * @param {integer} max
+ * @returns An integer between the min and max numbers
+ */
 const generateRandomId = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+/**
+ * The data object to build all the webpage. It contains two arrays: events (with the events data objects)
+ * and news (with the news data objects)
+ */
 export const theaterData = {
   events: [
     {

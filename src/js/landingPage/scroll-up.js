@@ -6,6 +6,9 @@ document
     scrollUp();
   });
 
+/**
+ * A function to add scroll when the scroll arrow icon is clicked
+ */
 const scrollUp = function () {
   const currentScroll = document.documentElement.scrollTop;
   if (currentScroll > 0) {
@@ -15,6 +18,9 @@ const scrollUp = function () {
   }
 };
 
+/**
+ * A function that changes the scroll icon style when scrolling
+ */
 window.onscroll = function () {
   const scroll = document.documentElement.scrollTop;
   if (scroll > 200) {

@@ -1,6 +1,10 @@
 const eventContainer = document.querySelector('.event-container');
 
-// TODO: Add more data to the description (author, dates, duration, price, ...)
+/**
+ * A function that given an array of objects, will return a html as a string with all the data of an event
+ * @param {array} events
+ * @returns
+ */
 export const generateEventMarkup = function (events) {
   return `
   <section class="event">
@@ -34,6 +38,11 @@ export const generateEventMarkup = function (events) {
   `;
 };
 
+/**
+ * A function that given a string containing the html will render it within the event container of the event page
+ * @param {string} markup
+ * @returns
+ */
 export const render = function (markup) {
   if (!eventContainer) return;
   eventContainer.insertAdjacentHTML('afterbegin', markup);
