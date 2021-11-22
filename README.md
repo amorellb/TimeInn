@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2dec0de1-0855-497e-8b80-cffde481f69e/deploy-status)](https://app.netlify.com/sites/focused-neumann-3c3171/deploys)
+
 # TimeInn
 
 P2+Pc2: TimeInn
