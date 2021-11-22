@@ -64,6 +64,8 @@ allEventsPage.renderFilterButtons(
 allEventsPage.filterHandler(data.theaterData.events);
 // Search events
 allEventsPage.searchHandler(data.theaterData.events);
+// Filter events by date
+allEventsPage.btnFindHandler(data.theaterData.events);
 // Upload and save new event
 allEventsPage.uploadBtnHandler(eventsDataCopy);
 
