@@ -107,6 +107,7 @@ export const filterHandler = function (events) {
  * @returns An array of events
  */
 const filterEventsByType = function (events, type) {
+  if (!events || !type) return;
   return events.filter(event => event.type === type);
 };
 
@@ -277,6 +278,7 @@ editEventHandler();
  * @param {array} events
  */
 export const searchHandler = function (events) {
+  if (!events) return;
   try {
     searchBtn.addEventListener('click', () => {
       const filteredEvents = events.filter(event => {
