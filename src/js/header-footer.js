@@ -8,7 +8,7 @@ const footerContainer = document.querySelector('.footer');
 const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
-    <img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu">
+    <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
     <img class="menu-icon" src="${require('../images/user-icon.png')}" alt="icono menu">
     <img class="menu-icon" src="${require('../images/cart-icon.png')}" alt="icono menu">
     <img class="nav-btn menu-icon" src="${require('../images/menu-icon.png')}" alt="icono menu">
