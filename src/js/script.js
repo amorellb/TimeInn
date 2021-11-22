@@ -10,6 +10,8 @@ import * as eventPage from './event.js';
 import * as allEventsPage from './all-events.js';
 import * as newsPage from './all-news.js';
 
+const eventsDataCopy = [...data.theaterData.events];
+
 // Render header and footer
 headerFooter.renderHeader();
 headerFooter.renderFooter();
@@ -62,8 +64,10 @@ allEventsPage.renderFilterButtons(
 allEventsPage.filterHandler(data.theaterData.events);
 // Search events
 allEventsPage.searchHandler(data.theaterData.events);
+// Upload and save new event
+allEventsPage.uploadBtnHandler(eventsDataCopy);
 
-// Render the all News Page
+// Render the all-news Page
 newsSection
   .filterNews(data.theaterData.news)
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));

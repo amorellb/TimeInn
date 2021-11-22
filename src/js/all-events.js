@@ -147,21 +147,21 @@ addHandlerHideForm();
 /**
  * A function to handle the clicks on the modal form upload button
  */
-const uploadBtnHandler = function () {
+export const uploadBtnHandler = function (data) {
   if (!uploadBtn) return;
   uploadBtn.addEventListener('click', e => {
     e.preventDefault();
-    uploadEvent();
+    uploadEvent(data);
   });
 };
-uploadBtnHandler();
 
 /**
  * A function to render the new event given the data added by the user into the modal form
  */
-const uploadEvent = function () {
+const uploadEvent = function (data) {
   const formData = getFormData();
   const markup = generateEventsMarkup(formData);
+  data.push(formData);
   eventsContainer.insertAdjacentHTML('afterbegin', markup);
   toggleWindow();
 };
@@ -197,7 +197,6 @@ deleteEventHandler();
  * @param {element} elem
  */
 const deleteEvent = function (elem) {
-  // elem.parentElement.outerHTML = '';
   elem.parentElement.remove();
 };
 
