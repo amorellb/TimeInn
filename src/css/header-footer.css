@@ -194,13 +194,14 @@ a {
   }
 
   .menu-icon {
-    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     width: 2rem;
     height: 2rem;
 
     align-self: center;
     order: 1;
   }
+ 
 
   .logo {
     padding-left: 3rem;

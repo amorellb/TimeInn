@@ -37,7 +37,7 @@ export const generateInfoMarkup = function (events, posNum = 0) {
             <h1 class="week-event-title">${nearEvents[posNum].title}</h1>
             <p class="week-event-author">${nearEvents[posNum].author}</p>
             ${nearEvents[posNum].dates.length === 1 ? eventDate : eventDates}
-            <button class="btn tickets-btn week-tickets-btn" href="event.html">Tickets</button>
+            <button class="btn tickets-btn week-tickets-btn" href="event.html" id="toCalendar">Tickets</button>
           </div>`;
 };
 
