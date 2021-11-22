@@ -1,17 +1,23 @@
 import { firstUpperLetter } from './helper.js';
 
 const eventsContainer = document.querySelector('.allevents-container');
-const filterContainer = document.querySelector('.filter-container');
-const addEventBtn = document.querySelector('.add-event-btn');
 
+const addEventBtn = document.querySelector('.add-event-btn');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const overlay = document.querySelector('.overlay');
 const formWindow = document.querySelector('.form-window');
 const addEventForm = document.querySelector('.upload');
 const uploadBtn = document.querySelector('.upload__btn');
+
 const editBtn = document.querySelector('.edit__btn');
+
+const filterContainer = document.querySelector('.filter-container');
 const searchInput = document.querySelector('#search');
 const searchBtn = document.querySelector('.fa-search');
+
+const btnFind = document.querySelector('.btn-find');
+const dateFromInput = document.querySelector('.date-from');
+const dateToInput = document.querySelector('.date-to');
 
 /**
  * A function that given an event object will return the html with the event data
@@ -296,4 +302,28 @@ export const searchHandler = function (events) {
   } catch (err) {
     console.error(err);
   }
+};
+
+export const btnFindHandler = function (events) {
+  if (!btnFind) return;
+  try {
+    btnFind.addEventListener('click', e => {
+      e.preventDefault();
+      filterEventsByDate(events);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const filterEventsByDate = function (events) {
+  const dateFrom = new Date(dateFromInput.value);
+  const dateTo = new Date(dateToInput.value);
+  const filteredEvents = events.filter(event => {
+    return event.dates.some(date => {
+      return new Date(date) >= dateFrom && new Date(date) <= dateTo;
+    });
+  });
+  eventsContainer.innerHTML = '';
+  filteredEvents.forEach(event => render(generateEventsMarkup(event)));
 };
