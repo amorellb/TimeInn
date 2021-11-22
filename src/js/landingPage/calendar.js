@@ -35,6 +35,6 @@ export function addEventCalendar() {
     if (!btn) return;
     if (btn.classList.contains('calendar-empty')) return;
     if (btn.classList.contains('calendar-28'))
-      window.location.assign('all-events.html');
+      window.location.assign('event.html');
   });
 }
