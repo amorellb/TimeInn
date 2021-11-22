@@ -226,7 +226,8 @@ a {
   .footer-refrn {
     font-size: 0.8rem;
     margin-right: 1rem;
-  
+    margin-left: 3rem;
+
     display: flex;
     flex-direction: column;
     align-self: center;
