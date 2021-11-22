@@ -1,10 +1,7 @@
-/* TODO: refactor: put the color pallette in one file and import it if possible */
 :root {
   --first-main-color: #621304;
-  --second-main-color: #B65543;
+  --second-main-color: #b65543;
 
-  --title-background: #03481A;
-  
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -86,7 +83,7 @@ body {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
   font-family: var(--multipurpose-font);
-  width: 60%;
+  width: 8rem;
   border: 0;
   text-transform: uppercase;
   text-align: center;
@@ -108,4 +105,11 @@ body {
 .event-description h2 {
   font-family: var(--title-font);
   font-size: large;
+}
+
+@media (min-width: 650px) {
+  .event-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
 }

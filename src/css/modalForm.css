@@ -1,7 +1,6 @@
 :root {
   --first-main-color: #621304;
-  --second-main-color: #B65543;
-  
+  --second-main-color: #b65543;
   --light-text: #ffffff;
   --light-shadow: #ececec;
   --dark-shadow: #5c5c5c;
@@ -103,7 +102,8 @@
   grid-column: 1/-1;
 }
 
-.upload__btn {
+.upload__btn,
+.edit__btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
   text-transform: uppercase;
@@ -119,6 +119,32 @@
   justify-self: center;
 }
 
-.upload__btn:hover {
+.btn-hidden {
+  display: none;
+}
+
+.upload__btn:hover,
+.edit__btn:hover {
   cursor: pointer;
+}
+
+@media (min-width: 650px) {
+  .upload {
+    height: 50vh;
+    justify-items: center;
+  }
+
+  .upload label {
+    font-size: 1.3rem;
+  }
+
+  .upload input {
+    font-size: 1.3rem;
+  }
+
+  .upload__btn,
+  .edit__btn {
+    font-size: 1.3rem;
+    width: 9rem;
+  }
 }

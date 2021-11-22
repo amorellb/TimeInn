@@ -1,8 +1,8 @@
 :root {
   --first-main-color: #621304;
-  --second-main-color: #B65543;
+  --second-main-color: #b65543;
 
-  --title-background: #03481A;
+  --title-background: #03481a;
 
   --light-text: #ffffff;
   --light-shadow: #ececec;
@@ -14,10 +14,13 @@
   --multipurpose-font: 'Nanum Gothic', sans-serif;
 }
 
-.title-news {
-  margin: 0;
-
+.news-section {
+  background-image: url(../../images/newspaper.png);
+  background-size: cover;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h2 {
@@ -29,40 +32,41 @@ h2 {
   font-weight: normal;
   text-transform: uppercase;
   text-align: center;
-  width: 270px;
+  width: 20rem;
   padding: 0.3rem;
   margin: 0;
 }
-.news-section {
-  background-image: url(../../images/newspaper.png);
-  background-size: cover;
-  height: 100vh;
-  height: 120vh;
 
-  display: flex;
-  flex-direction: column;
-}
 .news-container {
   font-family: var(--article-font);
-  width: 100vw;
+  width: 100%;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
+.title-news {
+  margin: 0;
+  margin-top: 3rem;
+
+  display: flex;
+}
+
 .news-info {
   background-color: var(--light-text);
   box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
   margin: 1rem;
+  max-width: 270px;
 
   display: flex;
   flex-direction: column;
 }
 
 .news-image {
-  width: 30vw;
-  margin: 1rem;
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
 }
 
 .news-title {
@@ -70,7 +74,7 @@ h2 {
   font-size: 0.9rem;
   font-style: italic;
   text-align: -webkit-center;
-  width: 30vw;
+  width: 90%;
   height: -webkit-fill-available;
 
   align-self: center;
@@ -92,6 +96,7 @@ h2 {
   border: 0;
   border-radius: 0.3rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -101,4 +106,22 @@ h2 {
 
 .all-news-btn:hover {
   cursor: pointer;
+}
+
+@media (min-width: 650px) {
+  .news-info {
+    max-width: 250px;
+  }
+
+  .all-news-btn {
+    font-size: 1.2rem;
+  }
+
+  /* h2{
+    margin-left: 1rem;
+  } */
+
+  .title-news {
+    margin-bottom: 1rem;
+  }
 }

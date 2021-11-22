@@ -23,12 +23,25 @@
     />
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="src/css/headerAndFooter.css" />
-    <link rel="stylesheet" href="src/css/allevents.css" />
+    <link rel="stylesheet" href="src/css/header-footer.css" />
+    <link rel="stylesheet" href="src/css/all-events.css" />
     <link rel="stylesheet" href="src/css/modalForm.css" />
 
     <!-- JS -->
     <script defer type="module" src="src/js/script.js"></script>
+
+    <!-- Datepicker JQuery -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $('#datepicker').datepicker();
+      });
+    </script>
   </head>
 
   <body>
@@ -39,9 +52,33 @@
       <main class="main-container">
         <h1 class="page-title">All Events</h1>
 
-        <!-- Filter buttons -->
-        <div class="filter-container"></div>
+        <div class="filter-section">
+          <!-- Filter buttons -->
+          <div class="filter-container"></div>
+          <!-- Search-bar -->
+          <div class="search">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search events"
+            /><i class="fas fa-search"></i>
+          </div>
+        </div>
+        <!-- Filter by dates -->
+        <div class="date-filter-container">
+          <label for="from-input"
+            >From:
+            <input class="date-from" type="date" name="from-input" />
+          </label>
+          <label for="to-input"
+            >To:
+            <input class="date-to" type="date" name="to-input" />
+          </label>
+          <button class="btn-find">Find</button>
+        </div>
 
+        <!-- Ad event button -->
         <button class="add-event-btn">Add event</button>
 
         <!-- Events section -->
@@ -54,24 +91,16 @@
           <form class="upload">
             <h3 class="upload__heading">Event data</h3>
             <label>Title</label>
-            <input
-              value="Little John when dancing"
-              required
-              name="title"
-              type="text"
-              placeholder="Title"
-            />
+            <input required name="title" type="text" placeholder="Title" />
             <label>Image URL</label>
             <input
-              value="https://www.liceubarcelona.cat/sites/default/files/front_web_winterreise.jpg"
               required
               name="imgURL"
               type="text"
-              placeholder="Img URL"
+              placeholder="Img URL (check data.js file)"
             />
             <label>Description</label>
             <input
-              value="Lorem blah blah blah"
               required
               name="description"
               type="text"
@@ -79,16 +108,20 @@
             />
             <label>Dates</label>
             <input
-              value="12/20/2021"
+              id="datepicker"
               required
               name="dates"
-              type="date"
+              type="text"
               placeholder="Date"
             />
 
             <button class="btn upload__btn">
               <i class="fas fa-cloud-upload-alt"></i>
               <span>Upload</span>
+            </button>
+            <button class="btn edit__btn btn-hidden">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Edit</span>
             </button>
           </form>
         </div>

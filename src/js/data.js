@@ -1,7 +1,17 @@
+/**
+ * A function that given a min and a max number will return a random number between them
+ * @param {integer} min
+ * @param {integer} max
+ * @returns An integer between the min and max numbers
+ */
 const generateRandomId = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+/**
+ * The data object to build all the webpage. It contains two arrays: events (with the events data objects)
+ * and news (with the news data objects)
+ */
 export const theaterData = {
   events: [
     {
@@ -34,7 +44,7 @@ export const theaterData = {
     },
     {
       id: generateRandomId(1, 999_999),
-      title: 'Pierrot Lunaire anb un pròleg: Narcís',
+      title: 'Pierrot Lunaire: Narcís',
       author: 'Arnold Schönberg',
       group: '',
       dates: ['11/16/2021', '11/17/2021', '11/18/2021'],
@@ -102,7 +112,7 @@ export const theaterData = {
         '12/11/2021',
         '12/12/2021',
         '12/13/2021',
-        '12/014/2021',
+        '12/14/2021',
         '12/15/2021',
       ],
       type: 'opera',

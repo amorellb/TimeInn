@@ -1,32 +1,37 @@
 const headerContainer = document.querySelector('.header');
 const footerContainer = document.querySelector('.footer');
 
+/**
+ * A function that is used to generate the html of the header
+ * @returns A string that has the html of the header section of the webpage
+ */
 const generateHeaderMarkup = function () {
   return `
-    <a href="index.html"><img class="logo" src="src/images/logo.png" alt="logo"></img></a>
-    
-    <img class="menu-icon" src="src/images/calendar-icon.png" alt="icono menu">
-    <img class="menu-icon" src="src/images/user-icon.png" alt="icono menu">
-    <img class="menu-icon" src="src/images/cart-icon.png" alt="icono menu">
-    <img class="nav-btn menu-icon" src="src/images/menu-icon.png" alt="icono menu">
+    <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
+    <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
+    <img class="menu-icon" src="${require('../images/user-icon.png')}" alt="icono menu">
+    <img class="menu-icon" src="${require('../images/cart-icon.png')}" alt="icono menu">
+    <img class="nav-btn menu-icon" src="${require('../images/menu-icon.png')}" alt="icono menu">
     <nav class="nav-section">
-      <img class="nav-btn x-close" src="src/images/x-close.png" alt="icono cerrar">
-      <a href="./allevents.html">Events</a>
-      <a href="./news.html">News</a>
+      <img class="nav-btn x-close" src="${require('../images/x-close.png')}" alt="icono cerrar">
+      <a href="./all-events.html">Events</a>
+      <a href="./all-news.html">News</a>
       <a href="Prices">Prices</a>
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
-      </nav>
-      `;
+    </nav>
+    `;
 };
 
-/* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */
-
+/**
+ * A function that is used to generate the html of the footer
+ * @returns A string that has the html of the webpage's footer section
+ */
 const generateFooterMarkup = function () {
   return `
   <div class="footer-container">
     <div class= "footer-info">
-    <img src="src/images/map.png" alt="map" class="map">
+    <img src="${require('../images/map.png')}" alt="map" class="map">
     <div class="contact">
       <p>Times Square, 4th, New York</p>
       <p>555-66245567</p>
@@ -41,8 +46,8 @@ const generateFooterMarkup = function () {
         <i class="fas fa-rss"></i>
       </div>
       <div class="footer-links">
-        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy - </a>
-        <a href="http://webdesign" class="link-footer">Web Design - </a>
+        <a href="http://PrivacyPolicy" class="link-footer">Privacy Policy</a>
+        <a href="http://webdesign" class="link-footer">Web Design</a>
         <a href="http://cookies" class="link-footer">Cookies</a>
       </div>
       </div>
@@ -53,16 +58,25 @@ const generateFooterMarkup = function () {
   </div>`;
 };
 
+/**
+ * A function that add the header generated html into the header container
+ */
 export const renderHeader = function () {
   if (!headerContainer) return;
   headerContainer.insertAdjacentHTML('afterbegin', generateHeaderMarkup());
 };
 
+/**
+ * A function that add the footer generated html into the header container
+ */
 export const renderFooter = function () {
   if (!footerContainer) return;
   footerContainer.insertAdjacentHTML('afterbegin', generateFooterMarkup());
 };
 
+/**
+ * A function to show or hide the header's nav menu
+ */
 const toggleMenu = function () {
   const headerMenu = document.querySelector('.nav-section');
   if (!headerMenu) return;
@@ -70,6 +84,9 @@ const toggleMenu = function () {
   headerMenu.style.transition = 'transform 0.5s ease-in-out';
 };
 
+/**
+ * A handler for the menu icon of the header
+ */
 const menuHandler = function () {
   if (!headerContainer) return;
   headerContainer.addEventListener('click', e => {

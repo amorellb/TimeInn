@@ -1,0 +1,25 @@
+{
+  "name": "timeinn",
+  "version": "1.0.0",
+  "description": "The Code Theater events",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel *.html",
+    "build": "parcel build *.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amorellb/TimeInn.git"
+  },
+  "author": "Morell Pelaez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amorellb/TimeInn/issues"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.1",
+    "sass": "^1.39.2"
+  }
+}
