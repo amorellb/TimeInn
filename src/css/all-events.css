@@ -47,25 +47,56 @@ body {
   margin-top: 3rem;
 }
 
+.filter-section {
+  display: flex;
+  justify-content: space-around;
+}
+
 .filter-container {
   display: flex;
-  justify-content: center;
+  flex: 1 1 50%;
 }
 
 .btn-filter {
   background-color: var(--light-shadow);
   color: var(--title-background);
   border: var(--dark-shadow) 1px solid;
+  font-style: italic;
   padding: 0;
   border-radius: 2rem;
-  max-width: 5rem;
-  font-style: italic;
+  max-width: 6rem;
+
   flex: 1 1 10%;
+  justify-content: space-around;
 }
 
 .btn-filter:hover {
   box-shadow: 1px 1px 3px 2px var(--dark-shadow);
   cursor: pointer;
+}
+
+.search {
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  height: 2rem;
+  padding-left: 0.3rem;
+  padding-right: 0.5rem;
+  width: 10rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 20%;
+}
+
+.search input {
+  border: 0;
+  width: 100%;
+}
+
+.search input:focus {
+  outline: none;
 }
 
 .add-event-btn {
@@ -175,18 +206,30 @@ body {
 
 .single-event-container .event-dates {
   font-family: var(--article-font);
+  margin: 0;
+  overflow: hidden;
 
   grid-area: description;
   grid-row: 5;
-
-  margin: 0;
-  overflow: hidden;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 800px) {
   .allevents-container {
     max-width: 50%;
     margin: auto;
     margin-top: 3rem;
+  }
+
+  .filter-section {
+    width: 80%;
+    margin: auto;
+  }
+
+  .btn-filter {
+    margin-left: 1rem;
+  }
+
+  .search {
+    margin-right: 1rem;
   }
 }

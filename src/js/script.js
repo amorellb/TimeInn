@@ -55,10 +55,13 @@ eventPage.render(eventPage.generateEventMarkup(data.theaterData.events));
 data.theaterData.events.forEach(event =>
   allEventsPage.render(allEventsPage.generateEventsMarkup(event))
 );
+// Filter events by type
 allEventsPage.renderFilterButtons(
   allEventsPage.generateFilterMarkup(data.theaterData.events)
 );
 allEventsPage.filterHandler(data.theaterData.events);
+// Search events
+allEventsPage.searchHandler(data.theaterData.events);
 
 // Render the all News Page
 newsSection

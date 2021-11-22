@@ -10,6 +10,8 @@ const formWindow = document.querySelector('.form-window');
 const addEventForm = document.querySelector('.upload');
 const uploadBtn = document.querySelector('.upload__btn');
 const editBtn = document.querySelector('.edit__btn');
+const searchInput = document.querySelector('#search');
+const searchBtn = document.querySelector('.fa-search');
 
 /**
  * A function that given an event object will return the html with the event data
@@ -17,6 +19,7 @@ const editBtn = document.querySelector('.edit__btn');
  * @returns A string of an event's html
  */
 export const generateEventsMarkup = function (event) {
+  if (!event) return;
   const [...dates] = event.dates;
   const eventsNearDate = dates.join('').slice(0, 10).replaceAll('-', '/');
   const localeDate = new Date(eventsNearDate).toLocaleDateString();
@@ -194,7 +197,8 @@ deleteEventHandler();
  * @param {element} elem
  */
 const deleteEvent = function (elem) {
-  elem.parentElement.outerHTML = '';
+  // elem.parentElement.outerHTML = '';
+  elem.parentElement.remove();
 };
 
 /**
@@ -268,24 +272,26 @@ const editEventHandler = function () {
 };
 editEventHandler();
 
-/* <div class="search"><input type="search" name="q" id="search" placeholder="Search events"><i class="fas fa-search"></i></div> */
-/* .search {
-  background-color: white;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  height: 1rem;
-  padding-left: 0.3rem;
-  padding-right: 0.5rem;
-  display: flex;
-  align-items: center;
-  width: 5rem;
-}
-
-.search input {
-  border: 0;
-  width: 4rem;
-}
-
-.search input:focus {
-  outline: none;
-} */
+/**
+ * A function to handle the clicks on the search icon and the filter the events by the word given as an input.
+ * Finally, it renders the events that its title has the given word
+ * @param {array} events
+ */
+export const searchHandler = function (events) {
+  try {
+    searchBtn.addEventListener('click', () => {
+      const filteredEvents = events.filter(event => {
+        if (searchInput.value === '' || searchInput.value === ' ') return;
+        if (
+          event.title.toLowerCase().includes(searchInput.value.toLowerCase())
+        ) {
+          return event;
+        }
+      });
+      eventsContainer.innerHTML = '';
+      filteredEvents.forEach(event => render(generateEventsMarkup(event)));
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
