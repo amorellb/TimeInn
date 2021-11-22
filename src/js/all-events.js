@@ -285,7 +285,7 @@ editEventHandler();
  * @param {array} events
  */
 export const searchHandler = function (events) {
-  if (!events || searchBtn || eventsContainer) return;
+  if (!events || !searchBtn || !eventsContainer) return;
   try {
     searchBtn.addEventListener('click', () => {
       const filteredEvents = events.filter(event => {
