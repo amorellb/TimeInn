@@ -1,0 +1,84 @@
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #B65543;
+
+  --title-background: #03481A;
+  
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
+}
+
+.calendar-section {
+  margin: 2rem 0rem 2rem 0rem;
+  width: 100vw;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-container {
+  border: var(--first-main-color) 1px solid;
+  font-family: var(--multipurpose-font);
+  width: 91vw;
+}
+
+.month-container {
+  background-color: var(--first-main-color);
+  color: var(--light-text);
+  font-family: var(--title-font);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.week-container {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-btn {
+  background-color: transparent;
+  font-size: 1.5rem;
+  height: 7.3vh;
+  border: 0;
+
+  flex: 1 1 14%;
+}
+
+.calendar-btn:hover {
+  cursor: pointer;
+}
+
+.calendar-28 {
+  background-color: var(--second-main-color);
+  color: var(--light-text);
+  font-weight: bolder;
+  border-radius: 2rem;
+}
+
+.calendar-28:active {
+  background-color: var(--first-main-color);
+}
+
+@media (min-width: 650px){
+  
+  .calendar-container{
+    width: 600px;
+  }
+}
+
+/*# sourceMappingURL=index.0629452f.css.map */
