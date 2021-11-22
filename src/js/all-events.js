@@ -76,7 +76,7 @@ export const renderFilterButtons = function (markup) {
  * @param {array} events
  */
 export const filterHandler = function (events) {
-  if (!filterContainer) return;
+  if (!filterContainer || !eventsContainer) return;
   filterContainer.addEventListener('click', e => {
     const btn = e.target.closest('.btn-filter');
     if (!btn) return;
@@ -139,7 +139,7 @@ addHandlerShowForm();
  * A function to handle the clicks on the x button or outside the modal to close the modal form
  */
 const addHandlerHideForm = function () {
-  if (!btnCloseModal) return;
+  if (!btnCloseModal || !overlay) return;
   btnCloseModal.addEventListener('click', toggleWindow);
   overlay.addEventListener('click', toggleWindow);
 };
@@ -160,6 +160,7 @@ export const uploadBtnHandler = function (data) {
  * A function to render the new event given the data added by the user into the modal form
  */
 const uploadEvent = function (data) {
+  if (!eventsContainer) return;
   const formData = getFormData();
   const markup = generateEventsMarkup(formData);
   data.push(formData);
@@ -278,7 +279,7 @@ editEventHandler();
  * @param {array} events
  */
 export const searchHandler = function (events) {
-  if (!events) return;
+  if (!events || searchBtn || eventsContainer) return;
   try {
     searchBtn.addEventListener('click', () => {
       const filteredEvents = events.filter(event => {
