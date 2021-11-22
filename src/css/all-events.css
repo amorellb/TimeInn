@@ -99,6 +99,34 @@ body {
   outline: none;
 }
 
+.date-filter-container {
+  font-family: var(--multipurpose-font);
+  margin-top: 1rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.date-filter-container input {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+}
+
+.date-filter-container input:focus {
+  outline: none;
+}
+
+.date-filter-container button {
+  background-color: var(--light-shadow);
+  color: var(--title-background);
+  border: var(--dark-shadow) 1px solid;
+  font-style: italic;
+  padding: 0;
+  width: 4rem;
+  border-radius: 1rem;
+}
+
 .add-event-btn {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
