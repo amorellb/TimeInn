@@ -187,6 +187,7 @@ a {
 
   nav > a {
     color: var(--light-text);
+    font-family: var(--multipurpose-font);
   }
 
   nav > a:hover {
@@ -225,7 +226,7 @@ a {
   .footer-refrn {
     font-size: 0.8rem;
     margin-right: 1rem;
-
+  
     display: flex;
     flex-direction: column;
     align-self: center;
