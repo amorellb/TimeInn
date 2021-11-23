@@ -20,7 +20,7 @@ Team: Victoria Pelaez & Antonio Morell
 ![paleta de colores](docs/color_palette.png)
 
 ### *INSPO*
-[https://www.liceubarcelona.cat/es]
+[Liceu de Barcelona](https://www.liceubarcelona.cat/es)
 
 ### *EXTENSIONS*
 
