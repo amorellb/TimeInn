@@ -219,11 +219,11 @@ body {
   cursor: pointer;
 }
 
-.single-event-container .event-title {
+.event-title {
   overflow: hidden;
 }
 
-.single-event-container .event-desc {
+.event-dates {
   font-family: var(--article-font);
   margin: 0;
   overflow: hidden;
@@ -232,7 +232,7 @@ body {
   grid-row: 4;
 }
 
-.single-event-container .event-dates {
+.event-desc {
   font-family: var(--article-font);
   margin: 0;
   overflow: hidden;
