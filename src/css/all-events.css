@@ -90,6 +90,10 @@ body {
   flex: 1 1 20%;
 }
 
+.search:hover {
+  box-shadow: 1px 1px 3px 2px var(--dark-shadow);
+}
+
 .search input {
   border: 0;
   width: 100%;
@@ -97,6 +101,10 @@ body {
 
 .search input:focus {
   outline: none;
+}
+
+.search i:hover {
+  cursor: pointer;
 }
 
 .date-filter-container {
@@ -125,6 +133,11 @@ body {
   padding: 0;
   width: 4rem;
   border-radius: 1rem;
+}
+
+.date-filter-container button:hover {
+  box-shadow: 1px 1px 3px 2px var(--dark-shadow);
+  cursor: pointer;
 }
 
 .add-event-btn {
