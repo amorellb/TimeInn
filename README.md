@@ -14,11 +14,10 @@ Team: Victoria Pelaez & Antonio Morell
 - Used production version generator: [Parcel](https://parceljs.org/)
 
 ### *FONTS*
-![fuentes de Google](docs/font_palette.png)
-![docs/font_palette.png]
+![fuentes de Google](https://github.com/amorellb/TimeInn/blob/main/docs/font_palette.PNG)
 
 ### *COLOR PALETTE*
-![paleta de colores](docs/color_palette.png)
+![paleta de colores](https://github.com/amorellb/TimeInn/blob/main/docs/color_palette.PNG)
 
 ### *INSPO*
 [Liceu de Barcelona](https://www.liceubarcelona.cat/es)
