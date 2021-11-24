@@ -1,0 +1,129 @@
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #b65543;
+
+  --title-background: #03481a;
+
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+  --title-color: #000000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
+}
+
+.news-section {
+  background-image: url(newspaper.8c6a646e.png);
+  background-size: cover;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  background-color: var(--title-background);
+  color: var(--light-text);
+  font-family: var(--title-font);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  width: 20rem;
+  padding: 0.3rem;
+  margin: 0;
+}
+
+.news-container {
+  font-family: var(--article-font);
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.title-news {
+  margin: 0;
+  margin-top: 3rem;
+
+  display: flex;
+}
+
+.news-info {
+  background-color: var(--light-text);
+  box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
+  margin: 1rem;
+  max-width: 270px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.news-image {
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.news-title {
+  color: var(--first-main-color);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: -webkit-center;
+  width: 90%;
+  height: -webkit-fill-available;
+
+  align-self: center;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  padding-right: 0.5rem;
+
+  align-self: flex-end;
+}
+
+.all-news-btn {
+  background-color: var(--first-main-color);
+  color: var(--light-shadow);
+  font-family: var(--multipurpose-font);
+  text-transform: uppercase;
+  text-align: center;
+  border: 0;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  align-self: center;
+}
+
+.all-news-btn:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 650px) {
+  .news-info {
+    max-width: 250px;
+  }
+
+  .all-news-btn {
+    font-size: 1.2rem;
+  }
+
+  /* h2{
+    margin-left: 1rem;
+  } */
+
+  .title-news {
+    margin-bottom: 1rem;
+  }
+}
+
+/*# sourceMappingURL=index.364e1e56.css.map */
