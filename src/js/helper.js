@@ -18,3 +18,18 @@ export const sortByDate = function (array, property) {
     return new Date(a.property).getTime() - new Date(b.property).getTime();
   });
 };
+
+/**
+ * A function to empty the input values of the form
+ * @param {element} input1
+ * @param {element} input2
+ * @param {element} input3
+ * @param {element} input4
+ */
+export const emptyInputValues = function (input1, input2, input3, input4) {
+  if (!input1 || !input2 || !input3 || !input4) return;
+  input1.value = '';
+  input2.value = '';
+  input3.value = '';
+  input4.value = '';
+};

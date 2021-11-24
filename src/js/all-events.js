@@ -1,4 +1,4 @@
-import { firstUpperLetter } from './helper.js';
+import { firstUpperLetter, emptyInputValues } from './helper.js';
 
 const eventsContainer = document.querySelector('.allevents-container');
 
@@ -8,6 +8,11 @@ const overlay = document.querySelector('.overlay');
 const formWindow = document.querySelector('.form-window');
 const addEventForm = document.querySelector('.upload');
 const uploadBtn = document.querySelector('.upload__btn');
+
+const inputTitle = document.querySelector('.title');
+const inputImgURL = document.querySelector('.imgURL');
+const inputDesc = document.querySelector('.description');
+const inputDates = document.querySelector('.dates');
 
 const editBtn = document.querySelector('.edit__btn');
 
@@ -172,6 +177,7 @@ const uploadEvent = function (data) {
   data.push(formData);
   eventsContainer.insertAdjacentHTML('afterbegin', markup);
   toggleWindow();
+  emptyInputValues(inputTitle, inputImgURL, inputDesc, inputDates);
 };
 
 /**
@@ -244,6 +250,7 @@ const editEvent = function (parentElem) {
   const formData = getFormData();
   const markup = generateEditedEventMarkup(formData);
   parentElem.innerHTML = markup;
+  emptyInputValues(inputTitle, inputImgURL, inputDesc, inputDates);
 };
 
 /**

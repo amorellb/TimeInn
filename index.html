@@ -82,15 +82,15 @@
       <form class="upload">
         <h3 class="upload__heading">Subscribe</h3>
         <label>Name</label>
-        <input required name="name" type="text" placeholder="Name" />
+        <input class="name" name="name" type="text" placeholder="Name" required/>
         <label>Last name</label>
-        <input required name="lastName" type="text" placeholder="Last name" />
+        <input class="lastName" name="lastName" type="text" placeholder="Last name" required/>
         <label>Phone</label>
-        <input required name="phone" type="text" placeholder="Phone" />
+        <input class="phone" name="phone" type="text" placeholder="Phone" required/>
         <label>Email</label>
-        <input required name="email" type="text" placeholder="Email" />
+        <input class="email" name="email" type="text" placeholder="Email" required/>
 
-        <button class="btn upload__btn">
+        <button class="btn upload__btn" name="submit" type="submit">
           <i class="fas fa-cloud-upload-alt"></i>
           <span>Send</span>
         </button>

@@ -48,6 +48,7 @@ if (!document.cookie) {
   // Render modal form for subscription
   subscription.obsSect();
   subscription.addHandlerHideForm();
+  subscription.sendBtnHandler();
 }
 
 // Render the event when a tickets button is clicked
