@@ -15,6 +15,7 @@ Team: Victoria Pelaez & Antonio Morell
 
 ### *FONTS*
 ![fuentes de Google](docs/font_palette.png)
+![docs/font_palette.png]
 
 ### *COLOR PALETTE*
 ![paleta de colores](docs/color_palette.png)
