@@ -14,7 +14,7 @@ Team: Victoria Pelaez & Antonio Morell
 - Used production version generator: [Parcel](https://parceljs.org/)
 
 ### *FONTS*
-![fuentes de Google](/TimeInn/blob/main/docs/font_palette.PNG)
+![fuentes de Google](https://github.com/amorellb/TimeInn/blob/main/docs/font_palette.PNG)
 
 ### *COLOR PALETTE*
 ![paleta de colores](https://github.com/amorellb/TimeInn/blob/main/docs/color_palette.PNG)
