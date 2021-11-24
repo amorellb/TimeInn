@@ -76,6 +76,10 @@ nav > a:hover {
   width: 1.5rem;
 }
 
+.menu-icon:hover {
+  cursor: pointer;
+}
+
 footer {
   background-color: var(--first-main-color);
   color: var(--light-text);
@@ -202,7 +206,6 @@ a {
     align-self: center;
     order: 1;
   }
- 
 
   .logo {
     padding-left: 3rem;
