@@ -81,7 +81,6 @@ const toggleMenu = function () {
   const headerMenu = document.querySelector('.nav-section');
   if (!headerMenu) return;
   headerMenu.classList.toggle('menu2');
-  headerMenu.style.transition = 'transform 0.5s ease-in-out';
 };
 
 /**
