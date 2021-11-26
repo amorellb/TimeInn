@@ -19,7 +19,7 @@ Team: Victoria Pelaez & Antonio Morell
 ### *COLOR PALETTE*
 ![paleta de colores](https://github.com/amorellb/TimeInn/blob/main/docs/color_palette.PNG)
 
-### *INSPO*
+### *INSPIRATION*
 [Liceu de Barcelona](https://www.liceubarcelona.cat/es)
 
 ### *EXTENSIONS*
