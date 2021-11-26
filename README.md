@@ -40,3 +40,4 @@ Team: Victoria Pelaez & Antonio Morell
 - En los formularios, tanto el de la frontpage como el formulario de la página de eventos, se ha hecho que este se cierre tanto si se clica el botón en forma de X como si se clica fuera del formulario. Además, se ha añadido una capa entre el formulario y la página para simular un difuminado de la página al quedar detrás del formulario.
 - En la página en que se muestran todas las noticias, se ha añadido un botón a la vista móvil que permite mostrar el contenido de la noticia que se encuentra escondido inicialmente.
 - Para todos los botones y elementos clicables de la página web, se ha añadido que con la acción hover el puntero cambie de forma, indicando así al usuario que se trata de un elemento clicable.
+- Se ha añadido una transición para el botón scroll-up, de forma que el botón se esconda con una animación sencilla y que el scroll de la página se haga de forma suave.
