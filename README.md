@@ -41,3 +41,4 @@ Team: Victoria Pelaez & Antonio Morell
 - En la página en que se muestran todas las noticias, se ha añadido un botón a la vista móvil que permite mostrar el contenido de la noticia que se encuentra escondido inicialmente.
 - Para todos los botones y elementos clicables de la página web, se ha añadido que con la acción hover el puntero cambie de forma, indicando así al usuario que se trata de un elemento clicable.
 - Se ha añadido una transición para el botón scroll-up, de forma que el botón se esconda con una animación sencilla y que el scroll de la página se haga de forma suave.
+- Se ha añadido una funcionalidad para hacer que el formulario de subscripción de la frontpage aparezca cuando un determinado porcentaje de la segunda sección de la página aparece en la pantalla. Esto se hace mediante una función que comprueba la intersección entre dicha sección y el viewport.
