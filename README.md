@@ -12,6 +12,7 @@ Team: Victoria Pelaez & Antonio Morell
 - [Wireframe](https://balsamiq.cloud/sbduqxt/p36dhva)
 - [Netlify](https://focused-neumann-3c3171.netlify.app)
 - Used production version generator: [Parcel](https://parceljs.org/)
+- Vídeo explicativo sobre la web TimeInn: [enlace a Drive](https://drive.google.com/drive/folders/1JmWdMfeQHSo_J-YYPkSs5WkRkO32tXXm?usp=sharing)
 
 ### *FONTS*
 ![fuentes de Google](https://github.com/amorellb/TimeInn/blob/main/docs/font_palette.PNG)
