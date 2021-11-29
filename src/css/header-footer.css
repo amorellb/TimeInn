@@ -54,6 +54,7 @@ header {
 
 .menu2 {
   transform: translateY(0%);
+  transition: transform 0.5s ease-in-out;
 }
 
 nav > img {
@@ -74,6 +75,10 @@ nav > a:hover {
 
 .menu-icon {
   width: 1.5rem;
+}
+
+.menu-icon:hover {
+  cursor: pointer;
 }
 
 footer {
@@ -202,7 +207,6 @@ a {
     align-self: center;
     order: 1;
   }
- 
 
   .logo {
     padding-left: 3rem;

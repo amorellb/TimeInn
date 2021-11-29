@@ -145,7 +145,7 @@
 
   .week-event-type {
     font-size: 2rem;
-    margin-left: 6rem;
+    margin-left: 10rem;
   }
 
   .week-event-title {
@@ -154,12 +154,12 @@
 
   .week-event-author {
     font-size: 1.7rem;
-    margin-left: 6rem;
+    margin-left: 10rem;
   }
 
   .week-event-dates {
     font-size: 1.7rem;
-    margin-left: 6rem;
+    margin-left: 10rem;
     width: 9rem;
   }
 

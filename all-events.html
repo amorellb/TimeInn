@@ -91,23 +91,32 @@
           <form class="upload">
             <h3 class="upload__heading">Event data</h3>
             <label>Title</label>
-            <input required name="title" type="text" placeholder="Title" />
+            <input
+              class="title"
+              name="title"
+              type="text"
+              placeholder="Title"
+              required
+            />
             <label>Image URL</label>
             <input
-              required
+              class="imgURL"
               name="imgURL"
               type="text"
               placeholder="Img URL (check data.js file)"
+              required
             />
             <label>Description</label>
             <input
-              required
+              class="description"
               name="description"
               type="text"
               placeholder="Description"
+              required
             />
             <label>Dates</label>
             <input
+              class="dates"
               id="datepicker"
               required
               name="dates"
@@ -115,11 +124,15 @@
               placeholder="Date"
             />
 
-            <button class="btn upload__btn">
+            <button class="btn upload__btn" name="submit" type="submit">
               <i class="fas fa-cloud-upload-alt"></i>
               <span>Upload</span>
             </button>
-            <button class="btn edit__btn btn-hidden">
+            <button
+              class="btn edit__btn btn-hidden"
+              name="submit"
+              type="submit"
+            >
               <i class="fas fa-cloud-upload-alt"></i>
               <span>Edit</span>
             </button>
