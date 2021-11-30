@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+
+  <link rel="stylesheet" href="src/css/login.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+</head>
+
+<body>
+  <main>
+    <section class="login-container">
+
+      <div class="loginTitle">
+        <i class="fas fa-sign-in-alt"></i>
+      </div>
+
+      <div class="main-container">
+
+        <div class="register-user">
+          <h4>Are you a new user?</h4>
+          <button class="btn_register" name="submit" type="submit">
+            <span>Register </span>
+          </button>
+        </div>
+
+        <div class="logged-user">
+          <form class="login" method="post" action="" enctype="multipart/form-data">
+            <h1 class="signUpTitle">Sign In</h1>
+
+            <div class="logo_inputs">
+              <label>User name <br>
+                <input class="loginName" name="name" type="text" placeholder="User name" required />
+              </label>
+            </div>
+
+            <div class="logo_inputs">
+              <label>Email <br>
+                <input class="emailLogin" name="email" type="text" placeholder="Email" required />
+              </label>
+            </div>
+
+            <div class="logo_inputs">
+              <label>Password <br>
+                <input class="passLogin" name="pass" type="text" placeholder="*********" required />
+              </label>
+            </div>
+
+            <div class="logo_inputs">
+              <label>Repeat Password <br>
+                <input class="repeatPassLogin" name="repPass" type="text" placeholder="***********" required />
+              </label>
+            </div>
+
+            <div class="logo_inputs">
+              <button class="btn_login" name="submit" type="submit">
+                <span>Start Session </span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+
+
+      </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+  </main>
+</body>
+
+</html>
