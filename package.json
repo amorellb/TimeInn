@@ -5,7 +5,8 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel *.html",
-    "build": "parcel build *.html --dist-dir ./dist"
+    "build": "parcel build *.html --dist-dir ./dist",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
