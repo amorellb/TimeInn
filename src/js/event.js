@@ -26,7 +26,9 @@ export const generateEventMarkup = function (events) {
         <h2>Price</h2>
         <p>${events[0].price} €</p>
         <h2>Dates</h2>
-        <p>${events[0].dates.join(', ')}</p>
+        <p>${events[0].dates
+          .map(date => new Date(date).toLocaleDateString())
+          .join(', ')}</p>
         <h2>Author</h2>
         <p>${events[0].author}</p>
           <h2>Description</h2>

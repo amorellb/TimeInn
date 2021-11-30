@@ -12,6 +12,7 @@ Team: Victoria Pelaez & Antonio Morell
 - [Wireframe](https://balsamiq.cloud/sbduqxt/p36dhva)
 - [Netlify](https://focused-neumann-3c3171.netlify.app)
 - Used production version generator: [Parcel](https://parceljs.org/)
+- Vídeo explicativo sobre la web TimeInn: [enlace a Drive](https://drive.google.com/drive/folders/1JmWdMfeQHSo_J-YYPkSs5WkRkO32tXXm?usp=sharing)
 
 ### *FONTS*
 ![fuentes de Google](https://github.com/amorellb/TimeInn/blob/main/docs/font_palette.PNG)
@@ -40,3 +41,5 @@ Team: Victoria Pelaez & Antonio Morell
 - En los formularios, tanto el de la frontpage como el formulario de la página de eventos, se ha hecho que este se cierre tanto si se clica el botón en forma de X como si se clica fuera del formulario. Además, se ha añadido una capa entre el formulario y la página para simular un difuminado de la página al quedar detrás del formulario.
 - En la página en que se muestran todas las noticias, se ha añadido un botón a la vista móvil que permite mostrar el contenido de la noticia que se encuentra escondido inicialmente.
 - Para todos los botones y elementos clicables de la página web, se ha añadido que con la acción hover el puntero cambie de forma, indicando así al usuario que se trata de un elemento clicable.
+- Se ha añadido una transición para el botón scroll-up, de forma que el botón se esconda con una animación sencilla y que el scroll de la página se haga de forma suave.
+- Se ha añadido una funcionalidad para hacer que el formulario de subscripción de la frontpage aparezca cuando un determinado porcentaje de la segunda sección de la página aparece en la pantalla. Esto se hace mediante una función que comprueba la intersección entre dicha sección y el viewport.
