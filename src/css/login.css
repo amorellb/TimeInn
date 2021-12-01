@@ -81,16 +81,20 @@ main{
     align-self: center;
 }
 .btn_register{
-    background-color: var(--light-shadow);
-    color: var(--first-main-color);
+    background-color: var(--title-background);
+    color: var(--light-shadow);
     font-family: var(--multipurpose-font);
     text-transform: uppercase;
     text-align: center;
-    border-color: var(--first-main-color) 1px solid;
+    border:0;
+    /* border-color: var(--first-main-color) 1px solid; */
     border-radius: 0.3rem;
     margin-top: 1rem;
     width: 8rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     align-self: center;
+}
+.info-register{
+    margin: 3rem;
 }
