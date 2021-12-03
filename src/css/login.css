@@ -1,0 +1,100 @@
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #b65543;
+
+  --title-background: #03481a;
+
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+  --title-color: #000000;
+  --border: #d3d3d3;
+  --alert: #ff0000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
+}
+
+body {
+  background-color: var(--first-main-color);
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.main-container{
+    display: flex;
+    width: 80vw;
+    justify-content: space-around;
+}
+.login-container {
+  background-color: var(--light-shadow);
+  color: var(--first-main-color);
+  font-family: var(--multipurpose-font);
+  width: 80vw;
+  height: 80vh;
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+}
+.fa-sign-in-alt{
+    font-size: 3rem;
+    color: var(--first-main-color);
+}
+
+.register-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.logged-user{
+    width: 50%;
+    border-left: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+.logo_inputs{
+    margin: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.btn_login{
+    background-color: var(--first-main-color);
+    color: var(--light-shadow);
+    font-family: var(--multipurpose-font);
+    text-transform: uppercase;
+    text-align: center;
+    border: 0;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    width: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-self: center;
+}
+.btn_register{
+    background-color: var(--title-background);
+    color: var(--light-shadow);
+    font-family: var(--multipurpose-font);
+    text-transform: uppercase;
+    text-align: center;
+    border:0;
+    /* border-color: var(--first-main-color) 1px solid; */
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    width: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-self: center;
+}
+.info-register{
+    margin: 3rem;
+}
