@@ -14,59 +14,48 @@
 
 <body>
   <main>
-    <section class="login-container">
+    <section class="main-container">
 
-      <div class="loginTitle">
-        <i class="fas fa-sign-in-alt"></i>
-      </div>
+      <a href="index.html"><img class="logo" src="./src/images/logo.png" alt="logo"></img></a>
 
-      <div class="main-container">
+      <div class="login-container">
 
         <div class="register-user">
           <h4>Are you a new user?</h4>
-          <button class="btn_register" name="submit" type="submit">
+          <button class="btn-register" name="submit" type="submit">
             <span>Register </span>
           </button>
           <p class="info-register">Sus datos personales se utilizarán para mejorar su experiencia en este sitio web,
             para administrar el acceso a su cuenta y para otros fines descritos en nuestra <a href="">política de
               privacidad</a>.</p>
-          <label for="registration-form"><input type="checkbox" name="registration-form" value="1"
+          <label for="registration-form" class="registration-form"><input type="checkbox" name="registration-form" value="1"
               id="registration-form"><span>He leído y acepto la Política de Privacidad*</span></label>
         </div>
 
         <div class="logged-user">
           <form class="login" method="post" action="" enctype="multipart/form-data">
-            <h1 class="signUpTitle">Sign In</h1>
-
-            <div class="logo_inputs">
-              <label for="name">User name <br>
-                <input class="loginName" name="name" type="text" id="name" placeholder="User name" required />
+            <div class="login-title">
+              <h1 class="sign-in-title">Sign In</h1>
+              <i class="fas fa-sign-in-alt"></i>
+            </div>
+            
+            <div class="login-inputs">
+              <label for="email" class="label-input">Email <br>
+                <input class="email-login" name="email" type="text" placeholder="Enter you email" id="email" required />
               </label>
             </div>
 
-            <div class="logo_inputs">
-              <label for="email">Email <br>
-                <input class="emailLogin" name="email" type="text" placeholder="Email" id="email" required />
+            <div class="login-inputs">
+              <label for="password" class="label-input">Password <br>
+                <input class="pass-login" name="pass" type="text" id="email" placeholder="********" required />
               </label>
             </div>
 
-            <div class="logo_inputs">
-              <label for="password">Password <br>
-                <input class="passLogin" name="pass" type="text" id="email" placeholder="*********" required />
-              </label>
-            </div>
-
-            <div class="logo_inputs">
-              <label for="repPass">Repeat Password <br>
-                <input class="repeatPassLogin" name="repPass" type="text" id="repPass" placeholder="***********" required />
-              </label>
-            </div>
-
-            <div class="logo_inputs">
-              <button class="btn_login" name="submit" type="submit">
+                       
+              <button class="btn-login" name="submit" type="submit">
                 <span>Start Session </span>
               </button>
-            </div>
+            
           </form>
         </div>
 
