@@ -9,7 +9,7 @@ const generateHeaderMarkup = function () {
   return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
     <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
-    <img class="menu-icon" src="${require('../images/user-icon.png')}" alt="icono menu">
+    <img class="menu-icon login-icon" src="${require('../images/user-icon.png')}" alt="icono menu">
     <img class="menu-icon" src="${require('../images/cart-icon.png')}" alt="icono menu">
     <img class="nav-btn menu-icon" src="${require('../images/menu-icon.png')}" alt="icono menu">
     <nav class="nav-section">
@@ -89,9 +89,14 @@ const toggleMenu = function () {
 const menuHandler = function () {
   if (!headerContainer) return;
   headerContainer.addEventListener('click', e => {
-    const btn = e.target.closest('.nav-btn');
+    const btn = e.target;
     if (!btn) return;
-    toggleMenu();
+    if (btn.classList.contains('nav-btn')) toggleMenu();
+    if (btn.classList.contains('login-icon')) sendToLoginPage();
   });
 };
 menuHandler();
+
+const sendToLoginPage = function () {
+  window.location.replace('login.html');
+};
