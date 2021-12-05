@@ -1,5 +1,5 @@
 import { assert, expect, should } from 'chai';
-import * as validation from '../src/js/form-validation/signup-validation.js';
+import * as validation from '../../src/js/form-validation/signup-validation.js';
 
 // Test email username format
 describe('test email username format', () => {
