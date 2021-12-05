@@ -17,14 +17,15 @@
         <section class="main-container">
             <a href="index.html"><img class="logo" src="./src/images/logo.png" alt="logo"></img></a>
 
+            <div class="register-title">
+                <h1 class="sign-up-title">Sign Up</h1>
+                <i class="fas fa-user-plus"></i>
+            </div>
             <div class="register-container">
                 <form class="register-form" method="post" action="" enctype="multipart/form-data">
-                    <div class="register-title">
-                        <h1 class="sign-up-title">Sign Up</h1>
-                        <i class="fas fa-user-plus"></i>
-                    </div>
 
-                    
+
+
                     <div class="register-inputs">
                         <label for="user" class="label-input"> User Name<br>
                             <input class="register-user" name="user" type="text" placeholder="User Name" id="user"
@@ -39,8 +40,8 @@
                     </div>
                     <div class="register-inputs">
                         <label for="surname" class="label-input">Surname<br>
-                            <input class="register-surname" name="surname" type="text" placeholder="Surname" id="surname"
-                                required />
+                            <input class="register-surname" name="surname" type="text" placeholder="Surname"
+                                id="surname" required />
                         </label>
                     </div>
                     <div class="register-inputs">
@@ -51,23 +52,23 @@
                     </div>
                     <div class="register-inputs">
                         <label for="password" class="label-input">Password <br>
-                            <input class="register-password" name="password" type="text" placeholder="********" id="password"
-                                required />
+                            <input class="register-password" name="password" type="text" placeholder="********"
+                                id="password" required />
                         </label>
                     </div>
                     <div class="register-inputs">
                         <label for="password-rpt" class="label-input">Repeat Password <br>
-                            <input class="register-password-rpt" name="password-rpt" type="text" placeholder="********" id="password-rpt"
-                                required />
+                            <input class="register-password-rpt" name="password-rpt" type="text" placeholder="********"
+                                id="password-rpt" required />
                         </label>
                     </div>
-
-                    <button class="btn-register" name="submit" type="submit">
-                        <span>Register me</span>
-                    </button>
                 </form>
             </div>
+            <button class="btn-register" name="submit" type="submit">
+                <span>Register me</span>
+            </button>
         </section>
     </main>
 </body>
+
 </html>

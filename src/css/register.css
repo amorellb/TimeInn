@@ -1,0 +1,105 @@
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #b65543;
+
+  --title-background: #03481a;
+
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+  --title-color: #000000;
+  --border: #d3d3d3;
+  --alert: #ff0000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
+}
+
+body {
+  margin: auto 0;
+}
+.main-container {
+  background-color: var(--light-shadow);
+  color: var(--first-main-color);
+  font-family: var(--multipurpose-font);
+
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+}
+a  {
+  background-color: var(--first-main-color);
+}
+.logo {
+  width: 9rem;
+  margin: 2rem;
+}
+.register-container {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    align-self: center;
+    border: var(--first-main-color) 2px solid;
+    border-radius: 2rem;
+    
+}
+.register-form {
+    width: 100vw;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.register-title {
+    width: 80vw;
+    display: flex;
+    font-size: 1.5rem;
+    align-self: center;
+}
+.sign-up-title {
+    font-family: var(--title-font);
+    margin-right: 2rem;
+}
+.fa-user-plus {
+    align-self: center;
+}
+
+.register-inputs {
+    margin: 2rem;
+    
+}
+.label-input{
+    font-weight: bold;
+}
+.register-user,
+.register-name,
+.register-surname,
+.register-email,
+.register-password,
+.register-password-rpt {
+    width: 20vw;
+    border-radius: 1rem;
+    height: 1.5rem;
+    border: var(--first-main-color) 1px solid;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    
+}
+.btn-register {
+    background-color: var(--first-main-color);
+    color: var(--light-shadow);
+    font-family: var(--multipurpose-font);
+    text-transform: uppercase;
+    text-align: center;
+    border: 0;
+    border-radius: 0.3rem;
+    width: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-self: center;
+    margin-top: 2rem;
+}
