@@ -501,3 +501,5 @@ export const theaterData = {
     },
   ],
 };
+
+export const users = [];

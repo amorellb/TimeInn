@@ -1,4 +1,5 @@
 import * as data from './data.js';
+import * as helper from './helper.js';
 import * as headerFooter from './header-footer.js';
 import * as firstSection from './landingPage/firstSection.js';
 import * as secondSection from './landingPage/secondSection.js';
@@ -9,6 +10,8 @@ import * as scroll from './landingPage/scroll-up.js';
 import * as eventPage from './event.js';
 import * as allEventsPage from './all-events.js';
 import * as newsPage from './all-news.js';
+import * as loginValidation from './form-validation/login-validation.js';
+import * as signupValidation from './form-validation/signup-validation';
 
 const eventsDataCopy = [...data.theaterData.events];
 
@@ -75,3 +78,7 @@ newsSection
   .filterNews(data.theaterData.news)
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
 newsPage.showContent();
+
+// Login
+const usersData = helper.getLocalStorage(data.users);
+loginValidation.loginBtnHandler(usersData);

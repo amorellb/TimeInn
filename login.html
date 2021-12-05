@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+    <link rel="stylesheet" href="src/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
 
-  <link rel="stylesheet" href="src/css/login.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-</head>
-
-<body>
-  <main>
-    <section class="login-container">
-
-      <div class="loginTitle">
-        <i class="fas fa-sign-in-alt"></i>
-      </div>
-
-      <div class="main-container">
-
-        <div class="register-user">
-          <h4>Are you a new user?</h4>
-          <button class="btn_register" name="submit" type="submit">
-            <span>Register </span>
-          </button>
-          <p class="info-register">Sus datos personales se utilizarán para mejorar su experiencia en este sitio web, para administrar el acceso a su cuenta y para otros fines descritos en nuestra <a href="">política de privacidad</a>.</p>
-          <label><input type="checkbox" name="registration-form" value="1"><span>He leído y acepto la Política de Privacidad*</span></label>
+  <body>
+    <main>
+      <section class="login-container">
+        <div class="login-title">
+          <i class="fas fa-sign-in-alt"></i>
         </div>
 
-        <div class="logged-user">
-          <form class="login" method="post" action="" enctype="multipart/form-data">
-            <h1 class="signUpTitle">Sign In</h1>
+        <div class="main-container">
+          <div class="register-user">
+            <h4>Are you a new user?</h4>
+            <button class="btn-register" name="submit" type="submit">
+              <span>Register </span>
+            </button>
+            <p class="info-register">
+              Sus datos personales se utilizarán para mejorar su experiencia en
+              este sitio web, para administrar el acceso a su cuenta y para
+              otros fines descritos en nuestra
+              <a href="">política de privacidad</a>.
+            </p>
+            <label
+              ><input type="checkbox" name="registration-form" value="1" /><span
+                >He leído y acepto la Política de Privacidad*</span
+              ></label
+            >
+          </div>
 
-            <div class="logo_inputs">
-              <label>User name <br>
-                <input class="loginName" name="name" type="text" placeholder="User name" required />
-              </label>
-            </div>
+          <div class="logged-user">
+            <form
+              class="login-form"
+              method="post"
+              action=""
+              enctype="multipart/form-data"
+            >
+              <h1 class="signin-title">Sign In</h1>
 
-            <div class="logo_inputs">
-              <label>Email <br>
-                <input class="emailLogin" name="email" type="text" placeholder="Email" required />
-              </label>
-            </div>
+              <div class="login-input email">
+                <label
+                  >Email <br />
+                  <input
+                    class="email-input"
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    required
+                  />
+                </label>
+              </div>
 
-            <div class="logo_inputs">
-              <label>Password <br>
-                <input class="passLogin" name="pass" type="text" placeholder="*********" required />
-              </label>
-            </div>
+              <div class="login-input pass">
+                <label
+                  >Password <br />
+                  <input
+                    class="pass-input"
+                    name="pass"
+                    type="text"
+                    placeholder="*********"
+                    required
+                  />
+                </label>
+              </div>
 
-            <div class="logo_inputs">
-              <label>Repeat Password <br>
-                <input class="repeatPassLogin" name="repPass" type="text" placeholder="***********" required />
-              </label>
-            </div>
-
-            <div class="logo_inputs">
-              <button class="btn_login" name="submit" type="submit">
-                <span>Start Session </span>
+              <button class="btn-login" name="submit" type="submit">
+                <span>Start Session</span>
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-
-
-
-      </div>
-
-
-
-    </section>
-
-
-
-
-
-
-
-
-
-  </main>
-</body>
-
+      </section>
+    </main>
+  </body>
 </html>
