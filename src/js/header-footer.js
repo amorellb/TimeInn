@@ -84,7 +84,7 @@ const toggleMenu = function () {
 };
 
 /**
- * A handler for the menu icon of the header
+ * A handler for the menu icons of the header
  */
 const menuHandler = function () {
   if (!headerContainer) return;
@@ -97,6 +97,9 @@ const menuHandler = function () {
 };
 menuHandler();
 
+/**
+ * A function to send the user from the frontpage to the login page
+ */
 const sendToLoginPage = function () {
   window.location.replace('login.html');
 };
