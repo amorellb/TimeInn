@@ -9,6 +9,8 @@ import * as scroll from './landingPage/scroll-up.js';
 import * as eventPage from './event.js';
 import * as allEventsPage from './all-events.js';
 import * as newsPage from './all-news.js';
+import * as loginValidation from './form-validation/login-validation.js';
+import * as signupValidation from './form-validation/signup-validation';
 
 const eventsDataCopy = [...data.theaterData.events];
 
@@ -75,3 +77,6 @@ newsSection
   .filterNews(data.theaterData.news)
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
 newsPage.showContent();
+
+// Login
+loginValidation.loginBtnHandler(data.users);
