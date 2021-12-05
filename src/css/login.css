@@ -17,6 +17,7 @@
 }
 
 body {
+  margin: auto 0;
   background-color: var(--first-main-color);
 }
 
@@ -26,17 +27,6 @@ main {
 }
 
 .main-container {
-  display: flex;
-  width: 80vw;
-  justify-content: space-around;
-}
-
-.fa-sign-in-alt {
-  font-size: 3rem;
-  color: var(--first-main-color);
-}
-
-.login-container {
   background-color: var(--light-shadow);
   color: var(--first-main-color);
   font-family: var(--multipurpose-font);
@@ -49,6 +39,17 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 5vh;
+}
+
+.logo {
+  width: 12rem;
+  margin-bottom: 3rem;
+}
+
+.login-container {
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
 }
 
 .register-user {
@@ -66,7 +67,6 @@ main {
   text-transform: uppercase;
   text-align: center;
   border: 0;
-  /* border-color: var(--first-main-color) 1px solid; */
   border-radius: 0.3rem;
   margin-top: 1rem;
   width: 8rem;
@@ -75,11 +75,26 @@ main {
   align-self: center;
 }
 
+.info-register {
+  margin: 3rem;
+}
+
 .logged-user {
   width: 50%;
   border-left: 1px solid;
   display: flex;
   justify-content: center;
+}
+
+.login-title {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa-sign-in-alt {
+  font-size: 2rem;
+  color: var(--first-main-color);
+  align-self: center;
 }
 
 .login-input {
@@ -102,8 +117,53 @@ main {
   padding-top: 1rem;
   padding-bottom: 1rem;
   align-self: center;
+  margin-left: 3rem;
 }
 
-.info-register {
-  margin: 3rem;
+@media (max-width: 650px) {
+  main {
+    margin-top: 2rem;
+  }
+  .main-container {
+    margin: 0;
+  }
+  .logo {
+    width: 8rem;
+  }
+  .login-container {
+    width: 90vw;
+    font-size: 0.8rem;
+  }
+  .register-user {
+    margin: 0.5rem;
+  }
+
+  .info-register {
+    margin: 1.5rem;
+  }
+
+  .login-title {
+    flex-direction: column;
+  }
+
+  .sign-in-title {
+    margin-top: 3rem;
+    align-self: center;
+  }
+
+  .login-input {
+    margin: 2rem 0rem 2rem 0rem;
+    font-size: 1rem;
+  }
+  .label-input {
+    margin-left: 0.8rem;
+  }
+  .email-input,
+  .pass-input {
+    width: 80%;
+  }
+
+  .btn-login {
+    margin-left: 1.5rem;
+  }
 }
