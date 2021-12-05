@@ -1,4 +1,5 @@
 import * as data from './data.js';
+import * as helper from './helper.js';
 import * as headerFooter from './header-footer.js';
 import * as firstSection from './landingPage/firstSection.js';
 import * as secondSection from './landingPage/secondSection.js';
@@ -79,4 +80,5 @@ newsSection
 newsPage.showContent();
 
 // Login
-loginValidation.loginBtnHandler(data.users);
+const usersData = helper.getLocalStorage(data.users);
+loginValidation.loginBtnHandler(usersData);

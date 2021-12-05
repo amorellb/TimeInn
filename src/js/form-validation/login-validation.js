@@ -6,21 +6,19 @@ export const loginBtnHandler = function (usersArr) {
   if (!btnLogin || !emailInput || !passInput) return;
   btnLogin.addEventListener('click', e => {
     e.preventDefault();
-    sendMsg(
-      checkEmail(emailInput.value),
-      checkPassword(passInput.value),
-      usersArr
-    );
+    const validEmail = checkEmail(emailInput.value, usersArr);
+    const validPass = checkPassword(passInput.value, usersArr);
+    sendMsg(validEmail, validPass, usersArr);
   });
 };
 
-const checkEmail = function (emailValue) {
-  const userEmail = users.filter(user => user.email === emailValue);
+const checkEmail = function (emailValue, usersArr) {
+  const userEmail = usersArr.filter(user => user.email === emailValue);
   return userEmail;
 };
 
-const checkPassword = function (passValue) {
-  const userPass = users.filter(user => user.password === passValue);
+const checkPassword = function (passValue, usersArr) {
+  const userPass = usersArr.filter(user => user.password === passValue);
   return userPass;
 };
 
