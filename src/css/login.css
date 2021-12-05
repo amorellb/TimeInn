@@ -80,6 +80,7 @@ main {
 }
 
 .login-title {
+  font-family: var(--title-font);
   display: flex;
   justify-content: space-around;
 }
@@ -91,7 +92,8 @@ main {
 
 .login-inputs {
   margin: 2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
 }
