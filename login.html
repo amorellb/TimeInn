@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>TimeInn</title>
 
+    <!-- STYLES -->
     <link rel="stylesheet" href="src/css/login.css" />
+
+    <!-- ICONS -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+
+    <!-- JS -->
+    <script defer type="module" src="src/js/script.js"></script>
   </head>
 
   <body>
@@ -42,12 +48,9 @@
           </div>
 
           <div class="logged-user">
-            <form
-              class="login-form"
-              method="post"
-              action=""
-              enctype="multipart/form-data"
-            >
+            <!-- TODO: error: method post no está permitido -->
+            <!-- TODO: se han eliminado method, enctype y action para evitar problemas como la recarga de la página -->
+            <form class="login-form">
               <h1 class="signin-title">Sign In</h1>
 
               <div class="login-input email">
@@ -76,7 +79,7 @@
                 </label>
               </div>
 
-              <button class="btn-login" name="submit" type="submit">
+              <button class="btn-login" type="button">
                 <span>Start Session</span>
               </button>
             </form>

@@ -15,6 +15,9 @@ import * as signupValidation from './form-validation/signup-validation';
 
 const eventsDataCopy = [...data.theaterData.events];
 
+// ScrollUp handler
+scroll.scrollUpHandler();
+
 // Render header and footer
 headerFooter.renderHeader();
 headerFooter.renderFooter();
@@ -78,6 +81,11 @@ newsSection
   .filterNews(data.theaterData.news)
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
 newsPage.showContent();
+
+// Test data
+helper.setLocalStorage([
+  { name: 'Bernat', email: 'bernatmail@email.com', password: '1234' },
+]);
 
 // Login
 const usersData = helper.getLocalStorage(data.users);

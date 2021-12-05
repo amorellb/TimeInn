@@ -34,17 +34,17 @@ export const emptyInputValues = function (input1, input2, input3, input4) {
   input4.value = '';
 };
 
+// Set data into the browser's local storage
+export const setLocalStorage = function (usersArr) {
+  localStorage.setItem('users', JSON.stringify(usersArr));
+};
+
 // Get the data from the browser's local storage
 export const getLocalStorage = function (usersArr) {
   const data = JSON.parse(localStorage.getItem('users'));
   if (!data) return;
   usersArr = data;
   return usersArr;
-};
-
-// Set data into the browser's local storage
-export const setLocalStorage = function (usersArr) {
-  localStorage.setItem('users', JSON.stringify(usersArr));
 };
 
 // Delete all the data from the browser's local storage

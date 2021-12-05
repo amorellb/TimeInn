@@ -6,28 +6,24 @@ export const loginBtnHandler = function (usersArr) {
   if (!btnLogin || !emailInput || !passInput) return;
   btnLogin.addEventListener('click', e => {
     e.preventDefault();
-    const validEmail = checkEmail(emailInput.value, usersArr);
-    const validPass = checkPassword(passInput.value, usersArr);
-    sendMsg(validEmail, validPass, usersArr);
+    const user = checkUserData(emailInput.value, passInput.value, usersArr);
+    console.log(user);
+    sendMsg(user);
   });
 };
 
-const checkEmail = function (emailValue, usersArr) {
-  const userEmail = usersArr.filter(user => user.email === emailValue);
-  return userEmail;
+const checkUserData = function (emailValue, passValue, usersArr) {
+  const [user] = usersArr.filter(
+    user => user.email === emailValue && user.password === passValue
+  );
+  return user;
 };
 
-const checkPassword = function (passValue, usersArr) {
-  const userPass = usersArr.filter(user => user.password === passValue);
-  return userPass;
-};
-
-const sendMsg = function (checkedEmail, checkedPass, usersArr) {
-  if (!checkedEmail || !checkedPass) {
+const sendMsg = function (checkedUser) {
+  if (!checkedUser) {
     alert('The email or password are wrong! Please try again.');
-  } else if (checkedEmail || checkedPass) {
-    user = usersArr.filter(user => user.email === checkedEmail);
+  } else if (checkedUser) {
     window.location.replace('index.html');
-    alert(`Hello ${user.name}`);
+    alert(`Hello ${checkedUser.name}`);
   }
 };

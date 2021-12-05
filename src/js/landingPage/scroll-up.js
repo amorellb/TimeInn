@@ -1,10 +1,15 @@
 const buttonUp = document.querySelector('.scroll-up-icon');
+const scrollIcon = document.querySelector('.scroll-up-icon');
 
-document
-  .querySelector('.scroll-up-icon')
-  .addEventListener('click', function () {
+/**
+ * A function to handler the scroll button clicks
+ */
+export const scrollUpHandler = function () {
+  if (!scrollIcon) return;
+  scrollIcon.addEventListener('click', function () {
     scrollUp();
   });
+};
 
 /**
  * A function to add scroll when the scroll arrow icon is clicked
