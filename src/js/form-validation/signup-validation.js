@@ -42,11 +42,10 @@ const sendMessage = function (usersData, userEmailInput) {
   }
 };
 
-export const signupBtnHandler = function (usersData) {
+export const emailFocusHandler = function (usersData) {
   try {
-    if (!signupBtn) return;
-    signupBtn.addEventListener('focusout', e => {
-      e.preventDefault();
+    if (!emailInput) return;
+    emailInput.addEventListener('focusout', e => {
       sendMessage(usersData, emailInput);
     });
   } catch (err) {
