@@ -90,3 +90,7 @@ helper.setLocalStorage([
 // Login
 const usersData = helper.getLocalStorage(data.users);
 loginValidation.loginBtnHandler(usersData);
+
+// Signup
+signupValidation.emailFocusHandler(usersData);
+signupValidation.nameFocusHandler();

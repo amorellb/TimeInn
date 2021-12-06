@@ -27,6 +27,7 @@ const scrollUp = function () {
  * A function that changes the scroll icon style when scrolling
  */
 window.onscroll = function () {
+  if (!buttonUp) return;
   const scroll = document.documentElement.scrollTop;
   if (scroll > 200) {
     buttonUp.style.transform = 'scale(1)';

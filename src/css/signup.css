@@ -33,14 +33,17 @@ main {
   flex-direction: column;
   height: 100vh;
 }
+
 a {
   background-color: var(--first-main-color);
 }
+
 .logo {
   width: 9rem;
   margin: 1rem;
 }
-.register-container {
+
+.signup-container {
   display: flex;
   justify-content: center;
   width: 80vw;
@@ -48,7 +51,8 @@ a {
   border: var(--first-main-color) 2px solid;
   border-radius: 2rem;
 }
-.register-form {
+
+.signup-form {
   width: 100vw;
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -56,32 +60,32 @@ a {
   flex-wrap: wrap;
   justify-content: center;
 }
-.register-title {
+
+.signup-title {
   width: 80vw;
   display: flex;
   font-size: 1.5rem;
   align-self: center;
 }
-.sign-up-title {
+
+.signup-title {
   font-family: var(--title-font);
   margin-right: 2rem;
 }
+
 .fa-user-plus {
   align-self: center;
 }
 
-.register-inputs {
+.signup-input {
   margin: 1rem;
 }
+
 .label-input {
   font-weight: bold;
 }
-.register-user,
-.register-name,
-.register-surname,
-.register-email,
-.register-password,
-.register-password-rpt {
+
+input {
   width: 20vw;
   border-radius: 1rem;
   height: 1.5rem;
@@ -89,7 +93,8 @@ a {
   margin-top: 1rem;
   padding-left: 1rem;
 }
-.btn-register {
+
+.btn-signup {
   background-color: var(--first-main-color);
   color: var(--light-shadow);
   font-family: var(--multipurpose-font);
@@ -108,28 +113,27 @@ a {
   .logo {
     margin: 0.5rem;
   }
-  .register-title {
+
+  .signup-title {
     font-size: 1rem;
   }
-  .register-form {
+
+  .signup-form {
     margin: 1rem;
     display: flex;
     flex-direction: column;
   }
-  .register-inputs {
+
+  .signup-input {
     margin: 0;
   }
 
-  .register-user,
-  .register-name,
-  .register-surname,
-  .register-email,
-  .register-password,
-  .register-password-rpt {
+  input {
     width: 65vw;
     margin: 0rem 0rem 1rem 0rem;
   }
-  .btn-register {
+
+  .btn-signup {
     margin-top: 1rem;
   }
 }
