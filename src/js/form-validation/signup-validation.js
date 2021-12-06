@@ -26,13 +26,16 @@ const isEmailWellFormatted = function (userEmailInput) {
 
 const sendMessage = function (usersData, userEmailInput) {
   try {
+    if (!emailInput) return;
     // let msg = 'All right!';
     const isIntoData = isEmailIntoData(usersData, userEmailInput);
     const isValidEmail = isEmailWellFormatted(userEmailInput);
     if (isIntoData) {
+      emailInput.focus();
       // msg = 'The email is already registered';
       alert('The email is already registered');
     } else if (!isValidEmail) {
+      emailInput.focus();
       // msg = 'Not a valid email format';
       alert('Not a valid email format');
     }
