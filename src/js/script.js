@@ -11,7 +11,7 @@ import * as eventPage from './event.js';
 import * as allEventsPage from './all-events.js';
 import * as newsPage from './all-news.js';
 import * as loginValidation from './form-validation/login-validation.js';
-import * as signupValidation from './form-validation/signup-validation';
+import * as signupValidation from './form-validation/signup-validation.js';
 
 const eventsDataCopy = [...data.theaterData.events];
 
@@ -84,7 +84,13 @@ newsPage.showContent();
 
 // Test data
 helper.setLocalStorage([
-  { name: 'Bernat', email: 'bernatmail@email.com', password: '1234' },
+  {
+    user: 'ElBerny',
+    name: 'Bernat',
+    lastName: 'Smith',
+    email: 'bernatmail@email.com',
+    password: '1234',
+  },
 ]);
 
 // Login
@@ -94,3 +100,5 @@ loginValidation.loginBtnHandler(usersData);
 // Signup
 signupValidation.emailFocusHandler(usersData);
 signupValidation.nameFocusHandler();
+
+signupValidation.signupBtnHandler(usersData);

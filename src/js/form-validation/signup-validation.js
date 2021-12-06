@@ -1,3 +1,5 @@
+import { setLocalStorage } from '../helper.js';
+
 const usernameInput = document.querySelector('.signup-user');
 const nameInput = document.querySelector('.signup-name');
 const lastnameInput = document.querySelector('.signup-lastname');
@@ -5,6 +7,14 @@ const emailInput = document.querySelector('.signup-email');
 const passInput = document.querySelector('.signup-pass');
 const passRptInput = document.querySelector('.signup-pass-rpt');
 const signupBtn = document.querySelector('.btn-signup');
+
+const userData = {
+  user: '',
+  name: '',
+  lastName: '',
+  email: '',
+  password: '',
+};
 
 // Name validation
 const isNameLengthValid = function (userNameInput) {
@@ -17,6 +27,7 @@ const isNameLengthValid = function (userNameInput) {
   }
 };
 
+// FIXME: focus not working
 const sendNameMessage = function (userNameInput) {
   try {
     // let msg = 'All right!';
@@ -25,6 +36,8 @@ const sendNameMessage = function (userNameInput) {
       userNameInput.focus();
       // msg = 'Not a valid name length. Too long';
       alert('Not a valid name length!');
+    } else {
+      userData.name = userNameInput.value;
     }
     // return msg;
   } catch (err) {
@@ -62,19 +75,22 @@ const isEmailWellFormatted = function (userEmailInput) {
   return pattern.test(userEmail);
 };
 
+// FIXME: focus not working
 const sendEmailMessage = function (usersData, userEmailInput) {
   try {
     // let msg = 'All right!';
     const isIntoData = isEmailIntoData(usersData, userEmailInput);
     const isValidEmail = isEmailWellFormatted(userEmailInput);
     if (isIntoData) {
-      userEmailInput.focus();
       // msg = 'The email is already registered';
       alert('The email is already registered');
-    } else if (!isValidEmail) {
       userEmailInput.focus();
+    } else if (!isValidEmail) {
       // msg = 'Not a valid email format';
       alert('Not a valid email format');
+      userEmailInput.focus();
+    } else {
+      userData.email = userEmailInput.value;
     }
     // return msg;
   } catch (err) {
@@ -85,10 +101,44 @@ const sendEmailMessage = function (usersData, userEmailInput) {
 export const emailFocusHandler = function (usersData) {
   try {
     if (!emailInput) return;
-    emailInput.addEventListener('focusout', e => {
+    emailInput.addEventListener('focusout', () => {
       sendEmailMessage(usersData, emailInput);
     });
   } catch (err) {
     console.error(err);
   }
+};
+
+const getUserData = function () {
+  if (!usernameInput || !lastnameInput) return;
+  userData.user = usernameInput.value;
+  userData.lastName = lastnameInput.value;
+  return userData;
+};
+
+export const signupBtnHandler = function (usersData) {
+  if (
+    !signupBtn ||
+    !usernameInput ||
+    !nameInput ||
+    !lastnameInput ||
+    !emailInput ||
+    !passInput ||
+    !passRptInput
+  )
+    return;
+  signupBtn.addEventListener('click', e => {
+    e.preventDefault();
+    const data = getUserData();
+    if (data) {
+      usersData.push(data);
+      setLocalStorage(usersData);
+    }
+    usernameInput.value = '';
+    nameInput.value = '';
+    lastnameInput.value = '';
+    emailInput.value = '';
+    passInput.value = '';
+    passRptInput.value = '';
+  });
 };
