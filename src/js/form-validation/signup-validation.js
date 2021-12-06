@@ -18,91 +18,17 @@ const isEmailIntoData = function (usersData, userEmailInput) {
   }
 };
 
-const isValidEmailUsernameFormat = function (userEmailInput) {
-  try {
-    let flag = false;
-    const userEmail = userEmailInput.value;
-    const emailUsername = userEmail.split('@')[0];
-    if (emailUsername === /[A-Z][a-z]{1}[a-z]/) {
-      flag = true;
-    }
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const areValidEmailArrobaDotSymbols = function (userEmailInput) {
-  try {
-    let flag = false;
-    const userEmail = userEmailInput.value;
-    const arrobas = userEmail
-      .split('')
-      .filter(letter => letter === '@' || letter === '.')
-      .join('');
-    if (arrobas === '@.') flag = true;
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const isValidEmailServerFormat = function (userEmailInput) {
-  try {
-    let flag = false;
-    const userEmail = userEmailInput.value;
-    const serverName = userEmail.split('@')[1].split('.')[0];
-    if (
-      serverName.length >= 5 &&
-      serverName.length <= 10 &&
-      serverName === /[a-z]/
-    )
-      flag = true;
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const isValidEmailDomain = function (userEmailInput) {
-  try {
-    let flag = false;
-    const userEmail = userEmailInput.value;
-    const domain = userEmail.split('.')[1];
-    if (domain === 'com' || domain === 'net' || domain === 'gov') flag = true;
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const checkEmail = function (userEmailInput) {
-  try {
-    let flag = false;
-    switch (flag) {
-      case isValidEmailUsernameFormat(userEmailInput):
-        break;
-      case areValidEmailArrobaDotSymbols(userEmailInput):
-        break;
-      case isValidEmailServerFormat(userEmailInput):
-        break;
-      case isValidEmailDomain(userEmailInput):
-        break;
-      default:
-        flag = true;
-        break;
-    }
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
+const isEmailWellFormatted = function (userEmailInput) {
+  const pattern = /^[A-Za-z]{1}[a-z]*\@[a-z]{5,10}\.(com|net|gov)$/;
+  const userEmail = userEmailInput.value;
+  return pattern.test(userEmail);
 };
 
 const sendMessage = function (usersData, userEmailInput) {
   try {
     // let msg = 'All right!';
     const isIntoData = isEmailIntoData(usersData, userEmailInput);
-    const isValidEmail = checkEmail(userEmailInput);
+    const isValidEmail = isEmailWellFormatted(userEmailInput);
     if (isIntoData) {
       // msg = 'The email is already registered';
       alert('The email is already registered');
@@ -127,6 +53,3 @@ export const signupBtnHandler = function (usersData) {
     console.error(err);
   }
 };
-
-// bernatmail@email.com
-// miquelmail@email.com
