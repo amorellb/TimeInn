@@ -93,3 +93,4 @@ loginValidation.loginBtnHandler(usersData);
 
 // Signup
 signupValidation.emailFocusHandler(usersData);
+signupValidation.nameFocusHandler();
