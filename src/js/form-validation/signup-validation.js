@@ -45,7 +45,7 @@ const sendMessage = function (usersData, userEmailInput) {
 export const signupBtnHandler = function (usersData) {
   try {
     if (!signupBtn) return;
-    signupBtn.addEventListener('click', e => {
+    signupBtn.addEventListener('focusout', e => {
       e.preventDefault();
       sendMessage(usersData, emailInput);
     });
