@@ -66,10 +66,10 @@ a {
   display: flex;
   font-size: 1.5rem;
   align-self: center;
-}
-
-.signup-title {
   font-family: var(--title-font);
+  margin-right: 2rem;
+}
+h1{
   margin-right: 2rem;
 }
 
