@@ -14,6 +14,11 @@ import * as newsPage from './all-news.js';
 import * as loginValidation from './form-validation/login-validation.js';
 import * as signupValidation from './form-validation/signup-validation.js';
 
+// Parcel HMR
+if (module.hot) {
+  module.hot.accept();
+}
+
 const eventsDataCopy = [...data.theaterData.events];
 
 // ScrollUp handler
