@@ -47,9 +47,11 @@ newsSection
   .forEach(news => newsSection.render(newsSection.generateNewsMarkup(news)));
 
 // Generate cookie and render subscription modal
-if (!document.cookie) {
+const cookies = document.cookie.split(';').map(cookieName => cookieName.trim());
+console.log(cookies);
+if (!cookies.includes('session=Cookie')) {
   // One week = 604800 seconds
-  document.cookie = 'name=Cookie; max-age=604800; path=/; SameSite=Lax';
+  document.cookie = 'session=Cookie; max-age=604800; path=/; SameSite=Lax;';
 
   // Render modal form for subscription
   subscription.obsSect();

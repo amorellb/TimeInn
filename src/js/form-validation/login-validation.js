@@ -7,7 +7,6 @@ export const loginBtnHandler = function (usersArr) {
   btnLogin.addEventListener('click', e => {
     e.preventDefault();
     const user = checkUserData(emailInput.value, passInput.value, usersArr);
-    console.log(user);
     sendMsg(user);
   });
 };
@@ -23,7 +22,7 @@ const sendMsg = function (checkedUser) {
   if (!checkedUser) {
     alert('The email or password are wrong! Please try again.');
   } else if (checkedUser) {
+    document.cookie = `user=${checkedUser.name}; path=/; SameSite=Lax;`;
     window.location.replace('index.html');
-    alert(`Hello ${checkedUser.name}`);
   }
 };
