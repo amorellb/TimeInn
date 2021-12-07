@@ -1,5 +1,9 @@
+import * as helper from './helper.js';
+
 const headerContainer = document.querySelector('.header');
 const footerContainer = document.querySelector('.footer');
+
+const userName = helper.filterUserCookie().replace('user=', '');
 
 /**
  * A function that is used to generate the html of the header
@@ -20,6 +24,7 @@ const generateHeaderMarkup = function () {
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
     </nav>
+    ${userName ? `<p class="user-name">${userName}</p>` : ''}
     `;
 };
 

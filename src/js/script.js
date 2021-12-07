@@ -1,5 +1,6 @@
 import * as data from './data.js';
 import * as helper from './helper.js';
+
 import * as headerFooter from './header-footer.js';
 import * as firstSection from './landingPage/firstSection.js';
 import * as secondSection from './landingPage/secondSection.js';
@@ -12,6 +13,11 @@ import * as allEventsPage from './all-events.js';
 import * as newsPage from './all-news.js';
 import * as loginValidation from './form-validation/login-validation.js';
 import * as signupValidation from './form-validation/signup-validation.js';
+
+// TODO: Parcel HMR (delete)
+if (module.hot) {
+  module.hot.accept();
+}
 
 const eventsDataCopy = [...data.theaterData.events];
 
@@ -47,9 +53,10 @@ newsSection
   .forEach(news => newsSection.render(newsSection.generateNewsMarkup(news)));
 
 // Generate cookie and render subscription modal
-if (!document.cookie) {
+const cookies = helper.getCookies();
+if (!cookies.includes('session=Cookie')) {
   // One week = 604800 seconds
-  document.cookie = 'name=Cookie; max-age=604800; path=/; SameSite=Lax';
+  helper.setCookie('session=Cookie; max-age=604800; path=/; SameSite=Lax;');
 
   // Render modal form for subscription
   subscription.obsSect();
@@ -82,7 +89,7 @@ newsSection
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
 newsPage.showContent();
 
-// Test data
+// TODO: Test data (delete)
 helper.setLocalStorage([
   {
     user: 'ElBerny',
@@ -91,11 +98,23 @@ helper.setLocalStorage([
     email: 'bernatmail@email.com',
     password: '1234',
   },
+  {
+    user: 'ElMikel',
+    name: 'Miquel',
+    lastName: 'Smith',
+    email: 'miquelmail@email.com',
+    password: '1234',
+  },
 ]);
 
 // Login
 const usersData = helper.getLocalStorage(data.users);
 loginValidation.loginBtnHandler(usersData);
+// FIXME: Delete cookie not working
+window.addEventListener('close', () => {
+  const userCookie = helper.filterUserCookie();
+  helper.delCookie(userCookie);
+});
 
 // Signup
 signupValidation.emailFocusHandler(usersData);
