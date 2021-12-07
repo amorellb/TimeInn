@@ -1,3 +1,5 @@
+import * as helper from '../helper.js';
+
 const emailInput = document.querySelector('.email-input');
 const passInput = document.querySelector('.pass-input');
 const btnLogin = document.querySelector('.btn-login');
@@ -22,7 +24,7 @@ const sendMsg = function (checkedUser) {
   if (!checkedUser) {
     alert('The email or password are wrong! Please try again.');
   } else if (checkedUser) {
-    document.cookie = `user=${checkedUser.name}; path=/; SameSite=Lax;`;
+    helper.setCookie(`user=${checkedUser.name}; path=/; SameSite=Lax;`);
     window.location.replace('index.html');
   }
 };

@@ -81,6 +81,11 @@ nav > a:hover {
   cursor: pointer;
 }
 
+.user-name {
+  color: var(--light-text);
+  font-family: var(--multipurpose-font);
+}
+
 footer {
   background-color: var(--first-main-color);
   color: var(--light-text);

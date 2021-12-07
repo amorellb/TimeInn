@@ -1,5 +1,6 @@
 import * as data from './data.js';
 import * as helper from './helper.js';
+
 import * as headerFooter from './header-footer.js';
 import * as firstSection from './landingPage/firstSection.js';
 import * as secondSection from './landingPage/secondSection.js';
@@ -47,11 +48,10 @@ newsSection
   .forEach(news => newsSection.render(newsSection.generateNewsMarkup(news)));
 
 // Generate cookie and render subscription modal
-const cookies = document.cookie.split(';').map(cookieName => cookieName.trim());
-console.log(cookies);
+const cookies = helper.getCookies();
 if (!cookies.includes('session=Cookie')) {
   // One week = 604800 seconds
-  document.cookie = 'session=Cookie; max-age=604800; path=/; SameSite=Lax;';
+  helper.setCookie('session=Cookie; max-age=604800; path=/; SameSite=Lax;');
 
   // Render modal form for subscription
   subscription.obsSect();
@@ -93,11 +93,23 @@ helper.setLocalStorage([
     email: 'bernatmail@email.com',
     password: '1234',
   },
+  {
+    user: 'ElMikel',
+    name: 'Miquel',
+    lastName: 'Smith',
+    email: 'miquelmail@email.com',
+    password: '1234',
+  },
 ]);
 
 // Login
 const usersData = helper.getLocalStorage(data.users);
 loginValidation.loginBtnHandler(usersData);
+// FIXME: Delete cookie not working
+window.addEventListener('close', () => {
+  const userCookie = helper.filterUserCookie();
+  helper.delCookie(userCookie);
+});
 
 // Signup
 signupValidation.emailFocusHandler(usersData);
