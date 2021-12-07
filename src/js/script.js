@@ -14,7 +14,7 @@ import * as newsPage from './all-news.js';
 import * as loginValidation from './form-validation/login-validation.js';
 import * as signupValidation from './form-validation/signup-validation.js';
 
-// Parcel HMR
+// TODO: Parcel HMR (delete)
 if (module.hot) {
   module.hot.accept();
 }
@@ -89,7 +89,7 @@ newsSection
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
 newsPage.showContent();
 
-// Test data
+// TODO: Test data (delete)
 helper.setLocalStorage([
   {
     user: 'ElBerny',
