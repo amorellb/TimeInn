@@ -99,6 +99,10 @@ input {
   height: 1.5rem;
 }
 
+input:focus {
+  outline: none;
+}
+
 .input-container {
   border: var(--first-main-color) 1px solid;
   border-radius: 2rem;
@@ -113,11 +117,6 @@ input {
   width: 18vw;
   margin: 0;
   border: 0;
-}
-
-.signup-pass:focus,
-.signup-pass-rpt:focus {
-  outline: none;
 }
 
 .fa-eye {

@@ -29,7 +29,7 @@ const isNameLengthValid = function (userNameInput) {
   }
 };
 
-// FIXME: focus not working
+// FIXME: .focus() only works if the label is clicked
 const sendNameMessage = function (userNameInput) {
   try {
     // let msg = 'All right!';
@@ -51,6 +51,7 @@ export const nameFocusHandler = function () {
   try {
     if (!nameInput) return;
     nameInput.addEventListener('focusout', e => {
+      e.stopPropagation();
       sendNameMessage(nameInput);
     });
   } catch (err) {
@@ -78,7 +79,7 @@ const isEmailWellFormatted = function (userEmailInput) {
   return pattern.test(userEmail);
 };
 
-// FIXME: focus not working
+// FIXME: .focus() only works if the label is clicked
 const sendEmailMessage = function (usersData, userEmailInput) {
   try {
     // let msg = 'All right!';
@@ -104,7 +105,8 @@ const sendEmailMessage = function (usersData, userEmailInput) {
 export const emailFocusHandler = function (usersData) {
   try {
     if (!emailInput) return;
-    emailInput.addEventListener('focusout', () => {
+    emailInput.addEventListener('focusout', e => {
+      e.stopPropagation();
       sendEmailMessage(usersData, emailInput);
     });
   } catch (err) {
