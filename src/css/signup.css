@@ -93,6 +93,7 @@ a {
 .fa-eye{
   padding-right: 1rem;  
   align-self: center;
+  cursor: pointer
 }
 
 .label-input {

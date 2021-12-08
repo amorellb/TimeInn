@@ -5,8 +5,9 @@ const nameInput = document.querySelector('.signup-name');
 const lastnameInput = document.querySelector('.signup-lastname');
 const emailInput = document.querySelector('.signup-email');
 const passInput = document.querySelector('.signup-pass');
-const passRptInput = document.querySelector('.signup-pass-rpt');
+const passRptInput = document.querySelector('.signup-pass-rpt');  
 const signupBtn = document.querySelector('.btn-signup');
+const eyeBtn = document.querySelector('.fa-eye');
 
 const userData = {
   user: '',
@@ -107,6 +108,64 @@ export const emailFocusHandler = function (usersData) {
   } catch (err) {
     console.error(err);
   }
+};
+
+//Password Validation
+/* 
+const isPasswWellFormatted = function (userPasswInput) {
+  const pattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const userPassw = passInput.value;
+  return pattern.test(userPassw);
+};
+const isPasswIntoData = function (usersData, userPasswInput) {
+  try {
+    let flag = false;
+    const userPassw = userPasswInput.value;
+    const [user] = usersData.filter(user => user.password === userPassw);
+    if (user) flag = true;
+    return flag;
+  } catch (err) {
+    console.error(err);
+  }
+};
+const sendPasswMessage = function (userPasswData) {
+  try {
+    //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
+    const pattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (passInput.length < 8) {
+      alert('Your password must be at least 8 characters');
+    }
+    if (passInput.search(/[0-9]/) <= 0) {
+      alert('Your password must contain at least one digit');
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const passwFocusHandler = function (usersData) {
+  try {
+    if (!passInput) return;
+    passInput.addEventListener('focusout', () => {
+      sendPasswMessage(usersData, userPasswData);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+ */
+export const showPassw = function () {
+  eyeBtn.addEventListener('click', () => {
+    /* const userPassw = passInput.value; */
+    console.log(passInput.value);
+    if (passInput.type === "password") {
+      passInput.type = "text";
+    } else {
+      passInput.type = "password";
+    }
+  });
 };
 
 const getUserData = function () {

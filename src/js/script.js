@@ -99,9 +99,16 @@ loginValidation.loginBtnHandler(usersData);
 loginValidation.sendToSignUpPage();
 
 // Signup
-signupValidation.emailFocusHandler(usersData);
+/* signupValidation.emailFocusHandler(usersData);  */
 signupValidation.nameFocusHandler();
 
 signupValidation.signupBtnHandler(usersData);
+
+/* signupValidation.passwFocusHandler(usersData); */
+
+//Show passw
+signupValidation.showPassw();
+
+
 
 
