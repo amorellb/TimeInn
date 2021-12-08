@@ -78,22 +78,29 @@ a {
 .signup-input {
   margin: 1rem;
 }
-.input-container{
+
+.input-container {
   border: var(--first-main-color) 1px solid;
   border-radius: 2rem;
   background-color: var(--light-text);
   margin-top: 1rem;
   display: flex;
 }
-.signup-pass, .signup-pass-rpt{
+
+.signup-pass,
+.signup-pass-rpt {
   margin: 0;
   border: 0;
   width: 18vw;
 }
-.fa-eye{
-  padding-right: 1rem;  
+.signup-pass:focus,
+.signup-pass-rpt:focus {
+  outline: none;
+}
+.fa-eye {
+  padding-right: 1rem;
   align-self: center;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .label-input {
@@ -147,11 +154,12 @@ input {
     width: 65vw;
     margin: 0rem 0rem 1rem 0rem;
   }
-  .input-container{
-    margin:0rem 0rem 1rem 0rem;
+  .input-container {
+    margin: 0rem 0rem 1rem 0rem;
     width: 69vw;
   }
-  .signup-pass, .signup-pass-rpt{
+  .signup-pass,
+  .signup-pass-rpt {
     margin: 0;
     border: 0;
     width: 60vw;
