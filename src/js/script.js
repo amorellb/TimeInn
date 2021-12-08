@@ -111,11 +111,6 @@ helper.setLocalStorage([
 // Login
 const usersData = helper.getLocalStorage(data.users);
 loginValidation.loginBtnHandler(usersData);
-// FIXME: Delete cookie not working
-window.addEventListener('close', () => {
-  const userCookie = helper.filterUserCookie();
-  helper.delCookie(userCookie);
-});
 
 // Signup
 signupValidation.emailFocusHandler(usersData);

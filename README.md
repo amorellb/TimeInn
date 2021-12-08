@@ -54,3 +54,7 @@ Team: Victoria Pelaez & Antonio Morell
 ### Sign up
 
 User name max length: El nombre de usuario tiene una longitud máxima de 10 caracteres.
+
+### Log in
+
+El log-in genera una cookie de sesión con el nombre de usuario, que permite que se muestre el nombre del usuario en el header. Esta cookie es de sesión y por lo tanto se eliminará cuando caduque la sesión. Esto ocurre cuando se cierra compretamente el navegador que se esté utilizando, no basta solo con cerrar la ventana, se debe cerrar completamente la aplicación para que el propio navegador elimine la cookie.
