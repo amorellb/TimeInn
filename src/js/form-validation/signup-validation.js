@@ -5,9 +5,10 @@ const nameInput = document.querySelector('.signup-name');
 const lastnameInput = document.querySelector('.signup-lastname');
 const emailInput = document.querySelector('.signup-email');
 const passInput = document.querySelector('.signup-pass');
-const passRptInput = document.querySelector('.signup-pass-rpt');  
+const passRptInput = document.querySelector('.signup-pass-rpt');
 const signupBtn = document.querySelector('.btn-signup');
 const eyeBtn = document.querySelector('.fa-eye');
+const eyeBtnRpt = document.querySelector('.repeat');
 
 const userData = {
   user: '',
@@ -156,14 +157,34 @@ export const passwFocusHandler = function (usersData) {
   }
 };
  */
+//FUNCION INTENTADO HACER LOS DOS A AL AVEZ CON UN QUERYSELECTORALL
+/* export const showPassw = function () {
+  eyeBtn.forEach(boton => {
+    boton.addEventListener('click', () => {
+      if ((passInput.type && passRptInput.type) === 'password') {
+        passInput.type = 'text';
+        passRptInput.type = 'text';
+      } else {
+        passInput.type = 'password';
+        passRptInput.type = 'password';
+      }
+    });
+  });
+}; */
 export const showPassw = function () {
   eyeBtn.addEventListener('click', () => {
-    /* const userPassw = passInput.value; */
-    console.log(passInput.value);
-    if (passInput.type === "password") {
-      passInput.type = "text";
+    if (passInput.type  === 'password') {
+      passInput.type = 'text';
     } else {
-      passInput.type = "password";
+      passInput.type = 'password';
+    }
+  });
+
+  eyeBtnRpt.addEventListener('click', () => {
+    if (passRptInput.type === 'password') {
+      passRptInput.type = 'text';
+    } else {
+      passRptInput.type = 'password';
     }
   });
 };
