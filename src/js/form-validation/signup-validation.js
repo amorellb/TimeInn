@@ -173,8 +173,9 @@ export const passwFocusHandler = function (usersData) {
   });
 }; */
 export const showPassw = function () {
+  if (!eyeBtn || !eyeBtnRpt) return;
   eyeBtn.addEventListener('click', () => {
-    if (passInput.type  === 'password') {
+    if (passInput.type === 'password') {
       passInput.type = 'text';
     } else {
       passInput.type = 'password';
