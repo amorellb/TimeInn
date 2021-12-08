@@ -1,6 +1,7 @@
 const emailInput = document.querySelector('.email-input');
 const passInput = document.querySelector('.pass-input');
 const btnLogin = document.querySelector('.btn-login');
+const btnSignUp = document.querySelector('.btn-register');
 
 export const loginBtnHandler = function (usersArr) {
   if (!btnLogin || !emailInput || !passInput) return;
@@ -26,4 +27,14 @@ const sendMsg = function (checkedUser) {
     window.location.replace('index.html');
     alert(`Hello ${checkedUser.name}`);
   }
+};
+
+/**
+ * A function to send the user from the login page to the sign up page
+ */
+export const sendToSignUpPage = function () {
+  if (!btnSignUp) return;
+  btnSignUp.addEventListener('click', () => {
+    window.location.replace('signup.html');
+  });
 };
