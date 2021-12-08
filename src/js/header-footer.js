@@ -1,15 +1,11 @@
-import * as helper from './helper.js';
-
 const headerContainer = document.querySelector('.header');
 const footerContainer = document.querySelector('.footer');
-
-const userName = helper.filterUserCookie().replace('user=', '');
 
 /**
  * A function that is used to generate the html of the header
  * @returns A string that has the html of the header section of the webpage
  */
-const generateHeaderMarkup = function () {
+const generateHeaderMarkup = function (userName) {
   return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
     <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
@@ -66,9 +62,12 @@ const generateFooterMarkup = function () {
 /**
  * A function that add the header generated html into the header container
  */
-export const renderHeader = function () {
+export const renderHeader = function (userName) {
   if (!headerContainer) return;
-  headerContainer.insertAdjacentHTML('afterbegin', generateHeaderMarkup());
+  headerContainer.insertAdjacentHTML(
+    'afterbegin',
+    generateHeaderMarkup(userName)
+  );
 };
 
 /**

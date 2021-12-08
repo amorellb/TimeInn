@@ -69,7 +69,11 @@ export const delCookie = function (userCookieName) {
 
 // Filter user cookie
 export const filterUserCookie = function () {
-  const cookies = getCookies();
-  const [userCookie] = cookies.filter(cookie => cookie.startsWith('user'));
-  return userCookie;
+  try {
+    const cookies = getCookies();
+    const [userCookie] = cookies?.filter(cookie => cookie.startsWith('user'));
+    return userCookie;
+  } catch (err) {
+    console.error(err);
+  }
 };

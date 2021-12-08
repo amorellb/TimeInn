@@ -25,7 +25,8 @@ const eventsDataCopy = [...data.theaterData.events];
 scroll.scrollUpHandler();
 
 // Render header and footer
-headerFooter.renderHeader();
+const userName = helper.filterUserCookie()?.replace('user=', '');
+headerFooter.renderHeader(userName);
 headerFooter.renderFooter();
 
 // Render the first section: events of the day

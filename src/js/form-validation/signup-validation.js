@@ -63,6 +63,7 @@ const isEmailIntoData = function (usersData, userEmailInput) {
     const userEmail = userEmailInput.value;
     const [user] = usersData.filter(user => user.email === userEmail);
     if (user) flag = true;
+    if (userEmail === '') flag = false;
     return flag;
   } catch (err) {
     console.error(err);
