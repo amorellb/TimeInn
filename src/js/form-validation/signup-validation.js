@@ -19,7 +19,7 @@ const userData = {
 };
 
 // Name validation
-const isNameLengthValid = function (userNameInput) {
+export const isNameLengthValid = function (userNameInput) {
   try {
     const pattern = /^\w{1,10}$/;
     const name = userNameInput.value;

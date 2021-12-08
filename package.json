@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "The Code Theater events",
   "default": "index.html",
+  "type": "module",
   "scripts": {
     "start": "parcel *.html",
     "build": "parcel build *.html --dist-dir ./dist",
-    "test": "mocha"
+    "test": "mocha test/*/*.test.js"
   },
   "repository": {
     "type": "git",
