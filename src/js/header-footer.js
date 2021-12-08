@@ -5,7 +5,7 @@ const footerContainer = document.querySelector('.footer');
  * A function that is used to generate the html of the header
  * @returns A string that has the html of the header section of the webpage
  */
-const generateHeaderMarkup = function () {
+const generateHeaderMarkup = function (userName) {
   return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
     <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
@@ -20,6 +20,7 @@ const generateHeaderMarkup = function () {
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
     </nav>
+    ${userName ? `<p class="user-name">${userName}</p>` : ''}
     `;
 };
 
@@ -61,9 +62,12 @@ const generateFooterMarkup = function () {
 /**
  * A function that add the header generated html into the header container
  */
-export const renderHeader = function () {
+export const renderHeader = function (userName) {
   if (!headerContainer) return;
-  headerContainer.insertAdjacentHTML('afterbegin', generateHeaderMarkup());
+  headerContainer.insertAdjacentHTML(
+    'afterbegin',
+    generateHeaderMarkup(userName)
+  );
 };
 
 /**

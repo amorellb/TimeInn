@@ -51,3 +51,29 @@ export const getLocalStorage = function (usersArr) {
 export const deleteLocalStorage = function () {
   localStorage.removeItem('users');
 };
+
+// Get all the cookies in an array
+export const getCookies = function () {
+  return document.cookie.split(';').map(cookieName => cookieName.trim());
+};
+
+// Set new cookies
+export const setCookie = function (cookieParams) {
+  document.cookie = cookieParams;
+};
+
+// Delete user cookie
+export const delCookie = function (userCookieName) {
+  setCookie(`${userCookieName}; max-age=-1; path=/; SameSite=Lax;`);
+};
+
+// Filter user cookie
+export const filterUserCookie = function () {
+  try {
+    const cookies = getCookies();
+    const [userCookie] = cookies?.filter(cookie => cookie.startsWith('user'));
+    return userCookie;
+  } catch (err) {
+    console.error(err);
+  }
+};
