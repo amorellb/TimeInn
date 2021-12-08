@@ -44,63 +44,46 @@ a {
 }
 
 .signup-container {
-  display: flex;
-  justify-content: center;
-  width: 80vw;
-  align-self: center;
   border: var(--first-main-color) 2px solid;
   border-radius: 2rem;
+  width: 80vw;
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .signup-form {
   width: 100vw;
   margin-top: 5rem;
   margin-bottom: 5rem;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .signup-title {
-  width: 80vw;
-  display: flex;
-  font-size: 1.5rem;
-  align-self: center;
   font-family: var(--title-font);
+  font-size: 1.5rem;
+  width: 80vw;
   margin-right: 2rem;
+
+  display: flex;
+  align-self: center;
 }
 
 .fa-user-plus {
-  align-self: center;
   margin-left: 2rem;
+
+  align-self: center;
 }
 
 .signup-input {
   margin: 1rem;
-}
 
-.input-container {
-  border: var(--first-main-color) 1px solid;
-  border-radius: 2rem;
-  background-color: var(--light-text);
-  margin-top: 1rem;
   display: flex;
-}
-
-.signup-pass,
-.signup-pass-rpt {
-  margin: 0;
-  border: 0;
-  width: 18vw;
-}
-.signup-pass:focus,
-.signup-pass-rpt:focus {
-  outline: none;
-}
-.fa-eye {
-  padding-right: 1rem;
-  align-self: center;
-  cursor: pointer;
+  justify-content: center;
 }
 
 .label-input {
@@ -108,12 +91,40 @@ a {
 }
 
 input {
-  width: 20vw;
-  border-radius: 1rem;
-  height: 1.5rem;
   border: var(--first-main-color) 1px solid;
+  border-radius: 1rem;
   margin-top: 1rem;
   padding-left: 1rem;
+  width: 20vw;
+  height: 1.5rem;
+}
+
+.input-container {
+  border: var(--first-main-color) 1px solid;
+  border-radius: 2rem;
+  background-color: var(--light-text);
+  margin-top: 1rem;
+
+  display: flex;
+}
+
+.signup-pass,
+.signup-pass-rpt {
+  width: 18vw;
+  margin: 0;
+  border: 0;
+}
+
+.signup-pass:focus,
+.signup-pass-rpt:focus {
+  outline: none;
+}
+
+.fa-eye {
+  padding-right: 1rem;
+  cursor: pointer;
+
+  align-self: center;
 }
 
 .btn-signup {
@@ -127,8 +138,9 @@ input {
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  align-self: center;
   margin-top: 2rem;
+
+  align-self: center;
 }
 
 @media (max-width: 650px) {
@@ -142,6 +154,7 @@ input {
 
   .signup-form {
     margin: 1rem;
+
     display: flex;
     flex-direction: column;
   }
@@ -151,13 +164,15 @@ input {
   }
 
   input {
-    width: 65vw;
     margin: 0rem 0rem 1rem 0rem;
+    width: 65vw;
   }
+
   .input-container {
     margin: 0rem 0rem 1rem 0rem;
     width: 69vw;
   }
+
   .signup-pass,
   .signup-pass-rpt {
     margin: 0;
