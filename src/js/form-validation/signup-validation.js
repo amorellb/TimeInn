@@ -51,6 +51,7 @@ export const nameFocusHandler = function () {
   try {
     if (!nameInput) return;
     nameInput.addEventListener('focusout', e => {
+      e.stopPropagation();
       sendNameMessage(nameInput);
     });
   } catch (err) {
@@ -151,9 +152,9 @@ export const passwFocusHandler = function () {
 const verifyPasswordsMatch = function () {
   const passw1 = passInput.value;
   const passw2 = passRptInput.value;
-  console.log(passw1);
-  console.log(passw2);
-  return passw1 === passw2;
+  let flag = false;
+  if (passw1 === passw2) flag = true;
+  return flag;
 };
 
 const sendPasswMatchMessage = function () {
@@ -166,12 +167,11 @@ const sendPasswMatchMessage = function () {
 
 export const passwMatchFocusHandler = function () {
   try {
-    if (!passRptInput) {
-      passRptInput.addEventListener('focusout', e => {
-        e.stopPropagation();
-        sendPasswMatchMessage();
-      });
-    }
+    if (!passRptInput) return;
+    passRptInput.addEventListener('focusout', e => {
+      e.stopPropagation();
+      sendPasswMatchMessage();
+    });
   } catch (err) {
     console.error(err);
   }
