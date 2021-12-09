@@ -26,3 +26,11 @@ export const isEmailWellFormatted = function (userEmail) {
   const pattern = /^[A-Za-z]{1}[a-z]*\@[a-z]{5,10}\.(com|net|gov)$/;
   return pattern.test(userEmail);
 };
+
+// Get user with passed email and password
+export const checkUserData = function (emailValue, passValue, usersArr) {
+  const [user] = usersArr.filter(
+    user => user.email === emailValue && user.password === passValue
+  );
+  return user;
+};

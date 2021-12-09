@@ -1,4 +1,5 @@
 import * as helper from '../helper.js';
+import * as validationHelper from '../form-validation/validation-helper.js';
 
 const emailInput = document.querySelector('.email-input');
 const passInput = document.querySelector('.pass-input');
@@ -9,16 +10,13 @@ export const loginBtnHandler = function (usersArr) {
   if (!btnLogin || !emailInput || !passInput) return;
   btnLogin.addEventListener('click', e => {
     e.preventDefault();
-    const user = checkUserData(emailInput.value, passInput.value, usersArr);
+    const user = validationHelper.checkUserData(
+      emailInput.value,
+      passInput.value,
+      usersArr
+    );
     sendMsg(user);
   });
-};
-
-const checkUserData = function (emailValue, passValue, usersArr) {
-  const [user] = usersArr.filter(
-    user => user.email === emailValue && user.password === passValue
-  );
-  return user;
 };
 
 const sendMsg = function (checkedUser) {

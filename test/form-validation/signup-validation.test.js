@@ -36,33 +36,33 @@ const testData = [
 ];
 describe('Test if email is into the users array', () => {
   it('should return true if the email is into the users array', () => {
-    const usernameValidated = validation.isEmailIntoData(
+    const emailValidated = validation.isEmailIntoData(
       testData,
       'miquelmail@email.com'
     );
-    expect(usernameValidated).to.equal(true);
+    expect(emailValidated).to.equal(true);
   });
   it('should return false if the email is not into the users array', () => {
-    const usernameValidated = validation.isEmailIntoData(
+    const emailValidated = validation.isEmailIntoData(
       testData,
       'randomTestString'
     );
-    expect(usernameValidated).to.equal(false);
+    expect(emailValidated).to.equal(false);
   });
 });
 
 // Test isEmailWellFormatted
 describe('Test the email format', () => {
   it('should return true if the email is well formatted', () => {
-    const usernameValidated = validation.isEmailWellFormatted(
+    const emailValidated = validation.isEmailWellFormatted(
       'miquelmail@email.com'
     );
-    expect(usernameValidated).to.equal(true);
+    expect(emailValidated).to.equal(true);
   });
   it('should return false if the email is not well formatted', () => {
-    const usernameValidated = validation.isEmailWellFormatted(
+    const emailValidated = validation.isEmailWellFormatted(
       'randomTestString.com@email'
     );
-    expect(usernameValidated).to.equal(false);
+    expect(emailValidated).to.equal(false);
   });
 });
