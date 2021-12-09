@@ -1,4 +1,5 @@
 import { setLocalStorage } from '../helper.js';
+import * as validationHelper from './validation-helper.js';
 
 const usernameInput = document.querySelector('.signup-user');
 const nameInput = document.querySelector('.signup-name');
@@ -18,22 +19,11 @@ const userData = {
   password: '',
 };
 
-// Name validation
-export const isNameLengthValid = function (userNameInput) {
-  try {
-    const pattern = /^\w{1,10}$/;
-    const name = userNameInput.value;
-    return pattern.test(name);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 // FIXME: .focus() only works if the label is clicked
 const sendNameMessage = function (userNameInput) {
   try {
     // let msg = 'All right!';
-    const isValidName = isNameLengthValid(userNameInput);
+    const isValidName = validationHelper.isNameLengthValid(userNameInput.value);
     if (!isValidName) {
       userNameInput.focus();
       // msg = 'Not a valid name length. Too long';
@@ -59,32 +49,17 @@ export const nameFocusHandler = function () {
   }
 };
 
-// Email validation
-const isEmailIntoData = function (usersData, userEmailInput) {
-  try {
-    let flag = false;
-    const userEmail = userEmailInput.value;
-    const [user] = usersData.filter(user => user.email === userEmail);
-    if (user) flag = true;
-    if (userEmail === '') flag = false;
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const isEmailWellFormatted = function (userEmailInput) {
-  const pattern = /^[A-Za-z]{1}[a-z]*\@[a-z]{5,10}\.(com|net|gov)$/;
-  const userEmail = userEmailInput.value;
-  return pattern.test(userEmail);
-};
-
 // FIXME: .focus() only works if the label is clicked
 const sendEmailMessage = function (usersData, userEmailInput) {
   try {
     // let msg = 'All right!';
-    const isIntoData = isEmailIntoData(usersData, userEmailInput);
-    const isValidEmail = isEmailWellFormatted(userEmailInput);
+    const isIntoData = validationHelper.isEmailIntoData(
+      usersData,
+      userEmailInput.value
+    );
+    const isValidEmail = validationHelper.isEmailWellFormatted(
+      userEmailInput.value
+    );
     if (isIntoData) {
       // msg = 'The email is already registered';
       alert('The email is already registered');
@@ -174,6 +149,7 @@ export const passwFocusHandler = function (usersData) {
     });
   });
 }; */
+
 export const showPassw = function () {
   if (!eyeBtn || !eyeBtnRpt) return;
   eyeBtn.addEventListener('click', () => {

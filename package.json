@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel *.html",
     "build": "parcel build *.html --dist-dir ./dist",
-    "test": "mocha test/*/*.test.js"
+    "test": "mocha --recursive --parallel"
   },
   "repository": {
     "type": "git",
