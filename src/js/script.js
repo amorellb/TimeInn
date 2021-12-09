@@ -119,7 +119,8 @@ signupValidation.nameFocusHandler();
 
 signupValidation.signupBtnHandler(usersData);
 
-/* signupValidation.passwFocusHandler(usersData); */
+signupValidation.passwFocusHandler(); 
+signupValidation.passwMatchFocusHandler();
 
 //Show passw
 signupValidation.showPassw();

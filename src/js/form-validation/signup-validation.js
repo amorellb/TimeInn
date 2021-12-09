@@ -113,65 +113,70 @@ export const emailFocusHandler = function (usersData) {
 };
 
 //Password Validation
-/* 
-const isPasswWellFormatted = function (userPasswInput) {
+const isPasswWellFormatted = function () {
+  //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
   const pattern =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   const userPassw = passInput.value;
   return pattern.test(userPassw);
 };
-const isPasswIntoData = function (usersData, userPasswInput) {
+
+const sendPasswMessage = function () {
   try {
-    let flag = false;
-    const userPassw = userPasswInput.value;
-    const [user] = usersData.filter(user => user.password === userPassw);
-    if (user) flag = true;
-    return flag;
-  } catch (err) {
-    console.error(err);
-  }
-};
-const sendPasswMessage = function (userPasswData) {
-  try {
-    //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
-    const pattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (passInput.length < 8) {
-      alert('Your password must be at least 8 characters');
-    }
-    if (passInput.search(/[0-9]/) <= 0) {
-      alert('Your password must contain at least one digit');
+    const isValidPassw = isPasswWellFormatted();
+    if (!isValidPassw) {
+      passInput.focus();
+      alert(
+        'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)'
+      );
     }
   } catch (err) {
     console.error(err);
   }
 };
 
-export const passwFocusHandler = function (usersData) {
+export const passwFocusHandler = function () {
   try {
     if (!passInput) return;
-    passInput.addEventListener('focusout', () => {
-      sendPasswMessage(usersData, userPasswData);
+    passInput.addEventListener('focusout', e => {
+      e.stopPropagation();
+      sendPasswMessage();
     });
   } catch (err) {
     console.error(err);
   }
 };
- */
-//FUNCION INTENTADO HACER LOS DOS A AL AVEZ CON UN QUERYSELECTORALL
-/* export const showPassw = function () {
-  eyeBtn.forEach(boton => {
-    boton.addEventListener('click', () => {
-      if ((passInput.type && passRptInput.type) === 'password') {
-        passInput.type = 'text';
-        passRptInput.type = 'text';
-      } else {
-        passInput.type = 'password';
-        passRptInput.type = 'password';
-      }
-    });
-  });
-}; */
+
+//Functions to validate if passws match
+const verifyPasswordsMatch = function () {
+  const passw1 = passInput.value;
+  const passw2 = passRptInput.value;
+  console.log(passw1);
+  console.log(passw2);
+  return passw1 === passw2;
+};
+
+const sendPasswMatchMessage = function () {
+  const arepasswMatch = verifyPasswordsMatch();
+  if (!arepasswMatch) {
+    passRptInput.focus();
+    alert("Passwords doesn't match");
+  }
+};
+
+export const passwMatchFocusHandler = function () {
+  try {
+    if (!passRptInput) {
+      passRptInput.addEventListener('focusout', e => {
+        e.stopPropagation();
+        sendPasswMatchMessage();
+      });
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const showPassw = function () {
   if (!eyeBtn || !eyeBtnRpt) return;
   eyeBtn.addEventListener('click', () => {
