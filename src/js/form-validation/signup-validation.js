@@ -90,19 +90,18 @@ export const emailFocusHandler = function (usersData) {
 };
 
 //Password Validation
-const isPasswWellFormatted = function () {
+const isPasswWellFormatted = function (userPassw) {
   //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
   const pattern =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  const userPassw = passInput.value;
   return pattern.test(userPassw);
 };
 
-const sendPasswMessage = function () {
+const sendPasswMessage = function (userPassInput) {
   try {
-    const isValidPassw = isPasswWellFormatted();
+    const isValidPassw = isPasswWellFormatted(userPassInput.value);
     if (!isValidPassw) {
-      passInput.focus();
+      userPassInput.focus();
       alert(
         'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)'
       );
@@ -117,7 +116,7 @@ export const passwFocusHandler = function () {
     if (!passInput) return;
     passInput.addEventListener('focusout', e => {
       e.stopPropagation();
-      sendPasswMessage();
+      sendPasswMessage(passInput);
     });
   } catch (err) {
     console.error(err);
@@ -125,28 +124,29 @@ export const passwFocusHandler = function () {
 };
 
 //Functions to validate if passws match
-const verifyPasswordsMatch = function () {
-  const passw1 = passInput.value;
-  const passw2 = passRptInput.value;
+const verifyPasswordsMatch = function (userPass, userPassRpt) {
   let flag = false;
-  if (passw1 === passw2) flag = true;
+  if (userPass === userPassRpt) flag = true;
   return flag;
 };
 
-const sendPasswMatchMessage = function () {
-  const arepasswMatch = verifyPasswordsMatch();
-  if (!arepasswMatch) {
-    passRptInput.focus();
+const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
+  const passwMatch = verifyPasswordsMatch(
+    userPassInput.value,
+    userPassRptInput.value
+  );
+  if (!passwMatch) {
+    userPassRptInput.focus();
     alert("Passwords doesn't match");
   }
 };
 
 export const passwMatchFocusHandler = function () {
   try {
-    if (!passRptInput) return;
+    if (!passInput || !passRptInput) return;
     passRptInput.addEventListener('focusout', e => {
       e.stopPropagation();
-      sendPasswMatchMessage();
+      sendPasswMatchMessage(passInput, passRptInput);
     });
   } catch (err) {
     console.error(err);
