@@ -186,6 +186,7 @@ a {
     padding: 0;
     border-radius: 0;
     position: relative;
+    margin-right: 1rem;
 
     flex-direction: row;
     justify-content: space-around;
