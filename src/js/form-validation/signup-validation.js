@@ -15,7 +15,7 @@ const eyeBtnRpt = document.querySelector('.repeat');
 const overlay = document.querySelector('.overlay');
 const alertMsg = document.querySelector('.alert-msg');
 
-const alertContainerPasswMatch = document.querySelector('.input-container');
+const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
 
 const userData = {
   user: '',
@@ -128,15 +128,19 @@ export const passwFocusHandler = function () {
 //Functions to validate if passws match
 
 const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
+  const alertContainer = document.querySelector('.alert-container');
+  if (!inputContainerPasswMatch) return;
   const passwMatch = validationHelper.verifyPasswordsMatch(
     userPassInput.value,
     userPassRptInput.value
   );
+
   if (!passwMatch) {
     let msg = "Passwords don't match";
     userPassRptInput.focus();
-    render(alertContainerPasswMatch, generateAlert(msg));
-    console.log(msg);
+    render(inputContainerPasswMatch, alertContainer, generateAlert(msg));
+  } else {
+    alertContainer.outerHTML = '';
   }
 };
 
@@ -161,9 +165,9 @@ const generateAlert = function (msg) {
     </div>
     `;
 };
-const render = function (input, markup) {
-  if (!input) return;
-  input.insertAdjacentHTML('afterend', markup);
+const render = function (inputCont, alertCont, markup) {
+  if (alertCont) alertCont.outerHTML = '';
+  inputCont.insertAdjacentHTML('beforeend', markup);
 };
 
 export const showPassw = function () {
