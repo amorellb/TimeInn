@@ -9,6 +9,7 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="src/css/login.css" />
+    <link rel="stylesheet" href="src/css/modal-alert.css" />
 
     <!-- ICONS -->
     <link
@@ -38,7 +39,7 @@
             para administrar el acceso a su cuenta y para otros fines descritos en nuestra <a href="">política de
               privacidad</a>.</p>
           <label for="registration-form" class="registration-form">
-            <input type="checkbox" name="registration-form" value="1"
+            <input class="pp-checkbox" type="checkbox" name="registration-form" value="1"
               id="registration-form"><span>He leído y acepto la Política de Privacidad*</span>
             </label>
         </div>
@@ -68,6 +69,10 @@
               </button>
           </form>
         </div>
+
+        <!-- Overlay message -->
+      <div class="overlay hidden"></div>
+      <div class="alert-msg hidden"><p>Accept the Privacy policy, please.</p></div>
       </section>
     </main>
   </body>

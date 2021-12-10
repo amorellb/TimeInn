@@ -1,4 +1,4 @@
-import { setLocalStorage } from '../helper.js';
+import * as helper from '../helper.js';
 import * as validationHelper from './validation-helper.js';
 
 const usernameInput = document.querySelector('.signup-user');
@@ -184,7 +184,9 @@ export const signupBtnHandler = function (usersData) {
     !lastnameInput ||
     !emailInput ||
     !passInput ||
-    !passRptInput
+    !passRptInput ||
+    !overlay ||
+    !alertMsg
   )
     return;
   signupBtn.addEventListener('click', e => {
@@ -193,10 +195,10 @@ export const signupBtnHandler = function (usersData) {
     const data = getUserData();
     if (data.email) {
       usersData.push(data);
-      setLocalStorage(usersData);
-      toggleAlertVisibility();
+      helper.setLocalStorage(usersData);
+      helper.toggleAlertVisibility(overlay, alertMsg);
       setTimeout(() => {
-        toggleAlertVisibility();
+        helper.toggleAlertVisibility(overlay, alertMsg);
       }, 3000);
     }
     usernameInput.value = '';
@@ -206,10 +208,4 @@ export const signupBtnHandler = function (usersData) {
     passInput.value = '';
     passRptInput.value = '';
   });
-};
-
-const toggleAlertVisibility = function () {
-  if (!overlay || !alertMsg) return;
-  overlay.classList.toggle('hidden');
-  alertMsg.classList.toggle('hidden');
 };
