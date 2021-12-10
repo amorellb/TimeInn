@@ -17,6 +17,7 @@ const alertMsg = document.querySelector('.alert-msg');
 
 const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
 const inputContainerPassw = document.querySelector('.passw-cont');
+const inputContainerName = document.querySelector('.name-cont');
 
 const userData = {
   user: '',
@@ -28,14 +29,16 @@ const userData = {
 
 // FIXME: .focus() only works if the label is clicked
 const sendNameMessage = function (userNameInput) {
+  const alertContainer = document.querySelector('.alert-container');
   try {
     // let msg = 'All right!';
     const isValidName = validationHelper.isNameLengthValid(userNameInput.value);
     if (!isValidName) {
+      let msg = 'Not a valid name length!';
       userNameInput.focus();
-      // msg = 'Not a valid name length. Too long';
-      alert('Not a valid name length!');
+      render(inputContainerName, alertContainer, generateAlert(msg));
     } else {
+      alertContainer.outerHTML = '';
       userData.name = userNameInput.value;
     }
     // return msg;
