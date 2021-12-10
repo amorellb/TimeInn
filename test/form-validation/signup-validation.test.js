@@ -66,3 +66,33 @@ describe('Test the email format', () => {
     expect(emailValidated).to.equal(false);
   });
 });
+
+//Test isPasswWellFormatted
+describe('Test the password format', () => {
+  it('should return true if the password is well formatted', () => {
+    const passwValidated = validation.isPasswWellFormatted('A1@alualu');
+    expect(passwValidated).to.equal(true);
+  });
+  it('should return false if the password is not well formatted', () => {
+    const passwValidated = validation.isPasswWellFormatted('abc123');
+    expect(passwValidated).to.equal(false);
+  });
+});
+
+//Test verifyPasswordsMatch
+describe('Test passwords match', () => {
+  it('should return true if both passwords match', () => {
+    const userPassws = validation.verifyPasswordsMatch(
+      'A1@alualu',
+      'A1@alualu'
+    );
+    expect(userPassws).to.equal(true);
+  });
+  it("should return false if both passwords doesn't match", () => {
+    const userPassws = validation.verifyPasswordsMatch(
+      'A1@alualu',
+      'A1@elaela'
+    );
+    expect(userPassws).to.equal(false);
+  });
+});
