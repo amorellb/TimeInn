@@ -81,7 +81,6 @@ nav > a:hover {
   cursor: pointer;
 }
 
-/* FIXME: Header styles to fit username on it */
 .user-name {
   color: var(--light-text);
   font-family: var(--multipurpose-font);
