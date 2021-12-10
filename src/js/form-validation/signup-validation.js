@@ -18,6 +18,7 @@ const alertMsg = document.querySelector('.alert-msg');
 const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
 const inputContainerPassw = document.querySelector('.passw-cont');
 const inputContainerName = document.querySelector('.name-cont');
+const inputContainerEmail = document.querySelector('.email-cont');
 
 const userData = {
   user: '',
@@ -61,6 +62,7 @@ export const nameFocusHandler = function () {
 
 // FIXME: .focus() only works if the label is clicked
 const sendEmailMessage = function (usersData, userEmailInput) {
+  const alertContainer = document.querySelector('.alert-container');
   try {
     // let msg = 'All right!';
     const isIntoData = validationHelper.isEmailIntoData(
@@ -71,14 +73,15 @@ const sendEmailMessage = function (usersData, userEmailInput) {
       userEmailInput.value
     );
     if (isIntoData) {
-      // msg = 'The email is already registered';
-      alert('The email is already registered');
+      let msg = 'The email is already registered';
       userEmailInput.focus();
+      render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else if (!isValidEmail) {
-      // msg = 'Not a valid email format';
-      alert('Not a valid email format');
+      let msg = 'Not a valid email format';
       userEmailInput.focus();
+      render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else {
+      alertContainer.outerHTML = '';
       userData.email = userEmailInput.value;
     }
     // return msg;
