@@ -1,0 +1,52 @@
+:root {
+  --first-main-color: #621304;
+  --second-main-color: #b65543;
+
+  --title-background: #03481a;
+
+  --light-text: #ffffff;
+  --light-shadow: #ececec;
+  --dark-shadow: #5c5c5c;
+  --title-color: #000000;
+  --border: #d3d3d3;
+  --alert: #ff0000;
+
+  --title-font: 'Cinzel', serif;
+  --article-font: 'Crimson Pro', serif;
+  --multipurpose-font: 'Nanum Gothic', sans-serif;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.alert-msg {
+  background-color: white;
+  font-family: var(--multipurpose-font);
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  border-radius: 9px;
+  padding: 0.5rem 0.6rem;
+  z-index: 1000;
+  transition: all 0.5s;
+
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

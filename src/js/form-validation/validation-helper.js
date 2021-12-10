@@ -35,7 +35,7 @@ export const checkUserData = function (emailValue, passValue, usersArr) {
   return user;
 };
 
-//Password validation and match validation
+// Password validation and match validation
 export const isPasswWellFormatted = function (userPassw) {
   //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
   const pattern =
@@ -43,6 +43,7 @@ export const isPasswWellFormatted = function (userPassw) {
   return pattern.test(userPassw);
 };
 
+// Check if both password inputs have the same password
 export const verifyPasswordsMatch = function (userPass, userPassRpt) {
   let flag = false;
   if (userPass === userPassRpt) flag = true;

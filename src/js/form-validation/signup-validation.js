@@ -7,9 +7,13 @@ const lastnameInput = document.querySelector('.signup-lastname');
 const emailInput = document.querySelector('.signup-email');
 const passInput = document.querySelector('.signup-pass');
 const passRptInput = document.querySelector('.signup-pass-rpt');
+
 const signupBtn = document.querySelector('.btn-signup');
 const eyeBtn = document.querySelector('.fa-eye');
 const eyeBtnRpt = document.querySelector('.repeat');
+
+const overlay = document.querySelector('.overlay');
+const alertMsg = document.querySelector('.alert-msg');
 
 const userData = {
   user: '',
@@ -93,7 +97,9 @@ export const emailFocusHandler = function (usersData) {
 
 const sendPasswMessage = function (userPassInput) {
   try {
-    const isValidPassw = validationHelper.isPasswWellFormatted(userPassInput.value);
+    const isValidPassw = validationHelper.isPasswWellFormatted(
+      userPassInput.value
+    );
     if (!isValidPassw) {
       userPassInput.focus();
       alert(
@@ -126,7 +132,7 @@ const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
   );
   if (!passwMatch) {
     userPassRptInput.focus();
-    alert("Passwords doesn't match");
+    alert("Passwords don't match");
   }
 };
 
@@ -163,7 +169,7 @@ export const showPassw = function () {
 
 // Get validated data and add it to the data array
 const getUserData = function () {
-  if (!usernameInput || !lastnameInput) return;
+  if (!usernameInput || !lastnameInput || !passInput) return;
   userData.user = usernameInput.value;
   userData.lastName = lastnameInput.value;
   userData.password = passInput.value;
@@ -183,10 +189,15 @@ export const signupBtnHandler = function (usersData) {
     return;
   signupBtn.addEventListener('click', e => {
     e.preventDefault();
+    e.stopPropagation();
     const data = getUserData();
-    if (data) {
+    if (data.email) {
       usersData.push(data);
       setLocalStorage(usersData);
+      toggleAlertVisibility();
+      setTimeout(() => {
+        toggleAlertVisibility();
+      }, 3000);
     }
     usernameInput.value = '';
     nameInput.value = '';
@@ -195,4 +206,10 @@ export const signupBtnHandler = function (usersData) {
     passInput.value = '';
     passRptInput.value = '';
   });
+};
+
+const toggleAlertVisibility = function () {
+  if (!overlay || !alertMsg) return;
+  overlay.classList.toggle('hidden');
+  alertMsg.classList.toggle('hidden');
 };

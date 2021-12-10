@@ -88,7 +88,7 @@ describe('Test passwords match', () => {
     );
     expect(userPassws).to.equal(true);
   });
-  it("should return false if both passwords doesn't match", () => {
+  it("should return false if both passwords don't match", () => {
     const userPassws = validation.verifyPasswordsMatch(
       'A1@alualu',
       'A1@elaela'
