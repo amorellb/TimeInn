@@ -15,6 +15,11 @@ const eyeBtnRpt = document.querySelector('.repeat');
 const overlay = document.querySelector('.overlay');
 const alertMsg = document.querySelector('.alert-msg');
 
+const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
+const inputContainerPassw = document.querySelector('.passw-cont');
+const inputContainerName = document.querySelector('.name-cont');
+const inputContainerEmail = document.querySelector('.email-cont');
+
 const userData = {
   user: '',
   name: '',
@@ -25,14 +30,16 @@ const userData = {
 
 // FIXME: .focus() only works if the label is clicked
 const sendNameMessage = function (userNameInput) {
+  const alertContainer = document.querySelector('.alert-container');
   try {
     // let msg = 'All right!';
     const isValidName = validationHelper.isNameLengthValid(userNameInput.value);
     if (!isValidName) {
+      let msg = 'Not a valid name length!';
       userNameInput.focus();
-      // msg = 'Not a valid name length. Too long';
-      alert('Not a valid name length!');
+      render(inputContainerName, alertContainer, generateAlert(msg));
     } else {
+      alertContainer.outerHTML = '';
       userData.name = userNameInput.value;
     }
     // return msg;
@@ -55,6 +62,7 @@ export const nameFocusHandler = function () {
 
 // FIXME: .focus() only works if the label is clicked
 const sendEmailMessage = function (usersData, userEmailInput) {
+  const alertContainer = document.querySelector('.alert-container');
   try {
     // let msg = 'All right!';
     const isIntoData = validationHelper.isEmailIntoData(
@@ -65,14 +73,15 @@ const sendEmailMessage = function (usersData, userEmailInput) {
       userEmailInput.value
     );
     if (isIntoData) {
-      // msg = 'The email is already registered';
-      alert('The email is already registered');
+      let msg = 'The email is already registered';
       userEmailInput.focus();
+      render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else if (!isValidEmail) {
-      // msg = 'Not a valid email format';
-      alert('Not a valid email format');
+      let msg = 'Not a valid email format';
       userEmailInput.focus();
+      render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else {
+      alertContainer.outerHTML = '';
       userData.email = userEmailInput.value;
     }
     // return msg;
@@ -94,18 +103,18 @@ export const emailFocusHandler = function (usersData) {
 };
 
 //Password Validation
-
 const sendPasswMessage = function (userPassInput) {
   try {
+    const alertContainer = document.querySelector('.alert-container');
     const isValidPassw = validationHelper.isPasswWellFormatted(
       userPassInput.value
     );
     if (!isValidPassw) {
+      let msg =
+        'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)';
       userPassInput.focus();
-      alert(
-        'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)'
-      );
-    }
+      render(inputContainerPassw, alertContainer, generateAlert(msg));
+    } else alertContainer.outerHTML = '';
   } catch (err) {
     console.error(err);
   }
@@ -124,15 +133,20 @@ export const passwFocusHandler = function () {
 };
 
 //Functions to validate if passws match
-
 const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
+  const alertContainer = document.querySelector('.alert-container');
+  if (!inputContainerPasswMatch) return;
   const passwMatch = validationHelper.verifyPasswordsMatch(
     userPassInput.value,
     userPassRptInput.value
   );
+
   if (!passwMatch) {
+    let msg = "Passwords don't match";
     userPassRptInput.focus();
-    alert("Passwords don't match");
+    render(inputContainerPasswMatch, alertContainer, generateAlert(msg));
+  } else {
+    alertContainer.outerHTML = '';
   }
 };
 
@@ -146,6 +160,19 @@ export const passwMatchFocusHandler = function () {
   } catch (err) {
     console.error(err);
   }
+};
+
+//show error mssg
+const generateAlert = function (msg) {
+  return `
+    <div class="alert-container">
+      <p class="alert">${msg}</p>
+    </div>
+    `;
+};
+const render = function (inputCont, alertCont, markup) {
+  if (alertCont) alertCont.outerHTML = '';
+  inputCont.insertAdjacentHTML('beforeend', markup);
 };
 
 export const showPassw = function () {

@@ -35,7 +35,7 @@
               <input class="signup-user" name="user" type="text" placeholder="User Name" id="user" required />
             </label>
           </div>
-          <div class="signup-input">
+          <div class="signup-input name-cont">
             <label for="name" class="label-input">Name<br>
               <input class="signup-name" name="name" type="text" placeholder="Name" id="name" required />
             </label>
@@ -46,28 +46,26 @@
                 required />
             </label>
           </div>
-          <div class="signup-input">
+          <div class="signup-input email-cont">
             <label for="email" class="label-input">Email<br>
               <input class="signup-email" name="email" type="text" placeholder="Email" id="email" required />
             </label>
           </div>
-          <div class="signup-input">
-            <label for="password" class="label-input">Password<br>
-              <div class="input-container">
-                <input class="signup-pass" name="password" type="password" placeholder="********" id="password"
-                  required />
-                  <i class="fas fa-eye">
-              </div>
-            </label>
+          <div class="signup-input passw-cont">
+            <label for="password" class="label-input">Password</label>
+            <div class="input-container">
+              <input class="signup-pass" name="password" type="password" placeholder="********" id="password"
+                required />
+              <i class="fas fa-eye">
+            </div>
           </div>
-          <div class="signup-input">
-            <label for="password-rpt" class="label-input">Repeat Password<br>
-              <div class="input-container">
-                <input class="signup-pass-rpt" name="password-rpt" type="password" placeholder="********"
-                  id="password-rpt" required />
-                <i class="fas fa-eye repeat"></i>
-              </div>
-            </label>
+          <div class="signup-input rpt-passw-cont">
+            <label for="password-rpt" class="label-input">Repeat Password</label>
+            <div class="input-container">
+              <input class="signup-pass-rpt" name="password-rpt" type="password" placeholder="********"
+                id="password-rpt" required />
+              <i class="fas fa-eye repeat"></i>
+            </div>
           </div>
         </form>
       </div>
@@ -77,7 +75,9 @@
 
       <!-- Overlay message -->
       <div class="overlay hidden"></div>
-      <div class="alert-msg hidden"><p>Signed up successfully!</p></div>
+      <div class="alert-msg hidden">
+        <p>Signed up successfully!</p>
+      </div>
     </section>
   </main>
 </body>
