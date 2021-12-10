@@ -20,18 +20,14 @@ body {
   margin: auto 0;
 }
 
-main {
-  background-color: var(--light-shadow);
-  width: 100vw;
-}
-
 .main-container {
+  background-color: var(--light-shadow);
   color: var(--first-main-color);
   font-family: var(--multipurpose-font);
+  height: 100vh;
 
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  flex-flow: column wrap;
 }
 
 a {
@@ -41,6 +37,16 @@ a {
 .logo {
   width: 9rem;
   margin: 1rem;
+}
+
+.signup-title {
+  font-family: var(--title-font);
+  font-size: 1.5rem;
+  width: 80%;
+  margin-top: 2rem;
+
+  display: flex;
+  align-self: center;
 }
 
 .signup-container {
@@ -57,20 +63,21 @@ a {
   width: 100vw;
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  width: 100%;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.signup-title {
-  font-family: var(--title-font);
-  font-size: 1.5rem;
-  width: 80vw;
-  margin-right: 2rem;
-
-  display: flex;
-  align-self: center;
+legend {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .fa-user-plus {
@@ -91,7 +98,7 @@ a {
 }
 
 input {
-  border: var(--first-main-color) 1px solid;
+  border: 1px solid var(--first-main-color);
   border-radius: 1rem;
   margin-top: 1rem;
   padding-left: 1rem;
@@ -104,7 +111,7 @@ input:focus {
 }
 
 .input-container {
-  border: var(--first-main-color) 1px solid;
+  border: 1px solid var(--first-main-color);
   border-radius: 2rem;
   background-color: var(--light-text);
   margin-top: 1rem;
