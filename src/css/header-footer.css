@@ -85,6 +85,7 @@ nav > a:hover {
 .user-name {
   color: var(--light-text);
   font-family: var(--multipurpose-font);
+  font-weight: bold;
 }
 
 footer {
@@ -212,6 +213,11 @@ a {
 
     align-self: center;
     order: 1;
+  }
+
+  .user-name {
+    margin-right: 1.5rem;
+    order: 2;
   }
 
   .logo {
