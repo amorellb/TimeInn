@@ -16,6 +16,7 @@ const overlay = document.querySelector('.overlay');
 const alertMsg = document.querySelector('.alert-msg');
 
 const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
+const inputContainerPassw = document.querySelector('.passw-cont');
 
 const userData = {
   user: '',
@@ -96,18 +97,18 @@ export const emailFocusHandler = function (usersData) {
 };
 
 //Password Validation
-
 const sendPasswMessage = function (userPassInput) {
   try {
+    const alertContainer = document.querySelector('.alert-container');
     const isValidPassw = validationHelper.isPasswWellFormatted(
       userPassInput.value
     );
     if (!isValidPassw) {
+      let msg =
+        'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)';
       userPassInput.focus();
-      alert(
-        'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)'
-      );
-    }
+      render(inputContainerPassw, alertContainer, generateAlert(msg));
+    } else alertContainer.outerHTML = '';
   } catch (err) {
     console.error(err);
   }
@@ -126,7 +127,6 @@ export const passwFocusHandler = function () {
 };
 
 //Functions to validate if passws match
-
 const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
   const alertContainer = document.querySelector('.alert-container');
   if (!inputContainerPasswMatch) return;
@@ -157,7 +157,6 @@ export const passwMatchFocusHandler = function () {
 };
 
 //show error mssg
-
 const generateAlert = function (msg) {
   return `
     <div class="alert-container">
