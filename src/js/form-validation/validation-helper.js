@@ -34,3 +34,17 @@ export const checkUserData = function (emailValue, passValue, usersArr) {
   );
   return user;
 };
+
+//Password validation and match validation
+export const isPasswWellFormatted = function (userPassw) {
+  //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
+  const pattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return pattern.test(userPassw);
+};
+
+export const verifyPasswordsMatch = function (userPass, userPassRpt) {
+  let flag = false;
+  if (userPass === userPassRpt) flag = true;
+  return flag;
+};

@@ -90,16 +90,10 @@ export const emailFocusHandler = function (usersData) {
 };
 
 //Password Validation
-const isPasswWellFormatted = function (userPassw) {
-  //1 minuscula, 1 mayuscula,1 numero,caracter especial de los puestos, minimo 8, no pongo maximo
-  const pattern =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  return pattern.test(userPassw);
-};
 
 const sendPasswMessage = function (userPassInput) {
   try {
-    const isValidPassw = isPasswWellFormatted(userPassInput.value);
+    const isValidPassw = validationHelper.isPasswWellFormatted(userPassInput.value);
     if (!isValidPassw) {
       userPassInput.focus();
       alert(
@@ -124,14 +118,9 @@ export const passwFocusHandler = function () {
 };
 
 //Functions to validate if passws match
-const verifyPasswordsMatch = function (userPass, userPassRpt) {
-  let flag = false;
-  if (userPass === userPassRpt) flag = true;
-  return flag;
-};
 
 const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
-  const passwMatch = verifyPasswordsMatch(
+  const passwMatch = validationHelper.verifyPasswordsMatch(
     userPassInput.value,
     userPassRptInput.value
   );
