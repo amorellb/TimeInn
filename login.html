@@ -9,6 +9,7 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="src/css/login.css" />
+    <link rel="stylesheet" href="src/css/modal-alert.css" />
 
     <!-- ICONS -->
     <link
@@ -37,37 +38,48 @@
           <p class="info-register">Sus datos personales se utilizarán para mejorar su experiencia en este sitio web,
             para administrar el acceso a su cuenta y para otros fines descritos en nuestra <a href="">política de
               privacidad</a>.</p>
-          <label for="registration-form" class="registration-form">
-            <input type="checkbox" name="registration-form" value="1"
-              id="registration-form"><span>He leído y acepto la Política de Privacidad*</span>
-            </label>
+          <fieldset class="fieldset">
+            <legend>Privacy Policy checkbox</legend>
+              <label for="registration-form" class="registration-form">
+                <input class="pp-checkbox" type="checkbox" name="registration-form"
+                  id="registration-form"><span>He leído y acepto la Política de Privacidad*</span>
+              </label>
+          </fieldset>
         </div>
 
-        <!-- Login form -->
         <div class="logged-user">
+          <div class="login-title">
+            <h1 class="sign-in-title">Sign In</h1>
+            <i class="fas fa-sign-in-alt"></i>
+          </div>
+          
+          <!-- Login form -->
           <form class="login-form">
-            <div class="login-title">
-              <h1 class="sign-in-title">Sign In</h1>
-              <i class="fas fa-sign-in-alt"></i>
-            </div>
+            <fieldset class="fieldset">
+              <legend>Login email and password</legend>
             
             <div class="login-input">
               <label for="email" class="label-input">Email <br>
-                <input class="email-input" name="email" type="text" id="email" placeholder="Enter you email" required />
+                <input class="email-input input" name="email" type="text" id="email" placeholder="Enter you email" aria-required="true"/>
               </label>
             </div>
 
             <div class="login-input">
               <label for="password" class="label-input">Password <br>
-                <input class="pass-input" name="pass" type="password" id="password" placeholder="********" required />
+                <input class="pass-input input" name="pass" type="password" id="password" placeholder="********" aria-required="true" />
               </label>
             </div>
+          </fieldset>
 
               <button class="btn-login" name="submit" type="button">
                 <span>Start Session </span>
               </button>
           </form>
         </div>
+
+        <!-- Overlay message -->
+      <div class="overlay hidden"></div>
+      <div class="alert-msg hidden"><p>Accept the Privacy policy, please.</p></div>
       </section>
     </main>
   </body>

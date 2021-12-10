@@ -1,10 +1,14 @@
 import * as helper from '../helper.js';
 import * as validationHelper from '../form-validation/validation-helper.js';
 
+const btnSignUp = document.querySelector('.btn-register');
+const overlay = document.querySelector('.overlay');
+const alertMsg = document.querySelector('.alert-msg');
+const checkboxInput = document.querySelector('.pp-checkbox');
+
 const emailInput = document.querySelector('.email-input');
 const passInput = document.querySelector('.pass-input');
 const btnLogin = document.querySelector('.btn-login');
-const btnSignUp = document.querySelector('.btn-register');
 
 export const loginBtnHandler = function (usersArr) {
   if (!btnLogin || !emailInput || !passInput) return;
@@ -32,8 +36,22 @@ const sendMsg = function (checkedUser) {
  * A function to send the user from the login page to the sign up page
  */
 export const sendToSignUpPage = function () {
-  if (!btnSignUp) return;
+  if (!btnSignUp || !checkboxInput || !overlay || !alertMsg) return;
   btnSignUp.addEventListener('click', () => {
-    window.location.replace('signup.html');
+    if (checkboxInput.classList.contains('checked')) {
+      window.location.replace('signup.html');
+    } else {
+      helper.toggleAlertVisibility(overlay, alertMsg);
+      setTimeout(() => {
+        helper.toggleAlertVisibility(overlay, alertMsg);
+      }, 3000);
+    }
+  });
+};
+
+export const checkboxHandler = function () {
+  if (!checkboxInput) return;
+  checkboxInput.addEventListener('click', () => {
+    checkboxInput.classList.toggle('checked');
   });
 };

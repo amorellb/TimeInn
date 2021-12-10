@@ -109,9 +109,10 @@ helper.setLocalStorage([
 ]);
 
 // Login
+loginValidation.checkboxHandler();
+loginValidation.sendToSignUpPage();
 const usersData = helper.getLocalStorage(data.users);
 loginValidation.loginBtnHandler(usersData);
-loginValidation.sendToSignUpPage();
 
 // Signup
 signupValidation.emailFocusHandler(usersData);
@@ -119,7 +120,7 @@ signupValidation.nameFocusHandler();
 
 signupValidation.signupBtnHandler(usersData);
 
-signupValidation.passwFocusHandler(); 
+signupValidation.passwFocusHandler();
 signupValidation.passwMatchFocusHandler();
 
 //Show passw

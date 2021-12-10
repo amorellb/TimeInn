@@ -81,10 +81,10 @@ nav > a:hover {
   cursor: pointer;
 }
 
-/* FIXME: Header styles to fit username on it */
 .user-name {
   color: var(--light-text);
   font-family: var(--multipurpose-font);
+  font-weight: bold;
 }
 
 footer {
@@ -186,6 +186,7 @@ a {
     padding: 0;
     border-radius: 0;
     position: relative;
+    margin-right: 1rem;
 
     flex-direction: row;
     justify-content: space-around;
@@ -212,6 +213,11 @@ a {
 
     align-self: center;
     order: 1;
+  }
+
+  .user-name {
+    margin-right: 1.5rem;
+    order: 2;
   }
 
   .logo {

@@ -34,6 +34,11 @@ export const emptyInputValues = function (input1, input2, input3, input4) {
   input4.value = '';
 };
 
+export const toggleAlertVisibility = function (overlay, alertMsg) {
+  overlay.classList.toggle('hidden');
+  alertMsg.classList.toggle('hidden');
+};
+
 // Set data into the browser's local storage
 export const setLocalStorage = function (usersArr) {
   localStorage.setItem('users', JSON.stringify(usersArr));
