@@ -161,10 +161,12 @@ export const showPassw = function () {
   });
 };
 
+// Get validated data and add it to the data array
 const getUserData = function () {
   if (!usernameInput || !lastnameInput) return;
   userData.user = usernameInput.value;
   userData.lastName = lastnameInput.value;
+  userData.password = passInput.value;
   return userData;
 };
 

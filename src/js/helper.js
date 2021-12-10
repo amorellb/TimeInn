@@ -43,7 +43,7 @@ export const setLocalStorage = function (usersArr) {
 export const getLocalStorage = function (usersArr) {
   const data = JSON.parse(localStorage.getItem('users'));
   if (!data) return;
-  usersArr = data;
+  usersArr = [...data];
   return usersArr;
 };
 
