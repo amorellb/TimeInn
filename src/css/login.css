@@ -90,14 +90,14 @@ main {
 
 .login-title {
   font-family: var(--title-font);
-  width: 50%;
+  width: 100%;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .sign-in-title {
-  width: 50%;
+  margin-right: 2rem;
 }
 
 .fa-sign-in-alt {
@@ -184,21 +184,28 @@ input:focus {
   }
 
   .login-title {
-    flex-direction: column;
+    align-items: center;
   }
 
   .sign-in-title {
-    margin-top: 3rem;
+    margin-right: 1rem;
+
     align-self: center;
+  }
+
+  .fa-sign-in-alt {
+    font-size: 1rem;
   }
 
   .login-input {
     margin: 2rem 0rem 2rem 0rem;
     font-size: 1rem;
   }
+
   .label-input {
     margin-left: 0.8rem;
   }
+
   .email-input,
   .pass-input {
     width: 80%;
