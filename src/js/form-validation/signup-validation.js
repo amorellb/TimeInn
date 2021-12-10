@@ -15,6 +15,8 @@ const eyeBtnRpt = document.querySelector('.repeat');
 const overlay = document.querySelector('.overlay');
 const alertMsg = document.querySelector('.alert-msg');
 
+const alertContainerPasswMatch = document.querySelector('.input-container');
+
 const userData = {
   user: '',
   name: '',
@@ -131,8 +133,10 @@ const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
     userPassRptInput.value
   );
   if (!passwMatch) {
+    let msg = "Passwords don't match";
     userPassRptInput.focus();
-    alert("Passwords don't match");
+    render(alertContainerPasswMatch, generateAlert(msg));
+    console.log(msg);
   }
 };
 
@@ -146,6 +150,20 @@ export const passwMatchFocusHandler = function () {
   } catch (err) {
     console.error(err);
   }
+};
+
+//show error mssg
+
+const generateAlert = function (msg) {
+  return `
+    <div class="alert-container">
+      <p class="alert">${msg}</p>
+    </div>
+    `;
+};
+const render = function (input, markup) {
+  if (!input) return;
+  input.insertAdjacentHTML('afterend', markup);
 };
 
 export const showPassw = function () {
