@@ -95,7 +95,7 @@ input {
   border-radius: 1rem;
   margin-top: 1rem;
   padding-left: 1rem;
-  width: 20vw;
+
   height: 1.5rem;
 }
 
@@ -103,24 +103,30 @@ input:focus {
   outline: none;
 }
 
+.input {
+  width: 20vw;
+}
+
 .input-container {
   background-color: var(--light-text);
   border: 1px solid var(--first-main-color);
   border-radius: 2rem;
   margin-top: 1rem;
+  padding-right: 1rem;
+  width: 20vw;
 
   display: flex;
+  justify-content: space-between;
 }
 
 .signup-pass,
 .signup-pass-rpt {
-  width: 18vw;
   margin: 0;
   border: 0;
+  width: 100%;
 }
 
 .fa-eye {
-  padding-right: 1rem;
   cursor: pointer;
 
   align-self: center;
@@ -163,35 +169,42 @@ input:focus {
 
   .signup-title {
     font-size: 1rem;
+    margin: 0;
+  }
+
+  .signup-container {
+    margin: 0;
   }
 
   .signup-form {
-    margin: 1rem;
-
     display: flex;
     flex-direction: column;
   }
 
   .signup-input {
     margin: 0;
+    width: 65vw;
     flex-direction: column;
   }
 
-  input {
+  .input {
     margin: 0rem 0rem 1rem 0rem;
-    width: 65vw;
+    width: 100%;
   }
 
   .input-container {
     margin: 0rem 0rem 1rem 0rem;
+    padding-right: 1;
     width: 100%;
+
+    display: flex;
+    justify-content: space-between;
   }
 
   .signup-pass,
   .signup-pass-rpt {
     margin: 0;
     border: 0;
-    width: 60vw;
   }
 
   .alert {
