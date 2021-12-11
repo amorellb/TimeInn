@@ -53,8 +53,16 @@ Team: Victoria Pelaez & Antonio Morell
 
 ### Sign up
 
-User name max length: El nombre de usuario tiene una longitud máxima de 10 caracteres.
+- User name max length: El nombre de usuario tiene una longitud máxima de 10 caracteres.
+- User password: La contraseña ha de seguir el siguiente patrón: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+  Debe contener mínimo: 1 minúscula, 1 mayúscula,1 número entre 0 y 9, un carácter especial de los definidos. La contraseña tendrá un mínimo de 8 carácteres y no hemos establecido un máximo, pudiendo ser lo larga que el usuario desee.
+
 
 ### Log in
 
 El log-in genera una cookie de sesión con el nombre de usuario, que permite que se muestre el nombre del usuario en el header. Esta cookie es de sesión y por lo tanto se eliminará cuando caduque la sesión. Esto ocurre cuando se cierra compretamente el navegador que se esté utilizando, no basta solo con cerrar la ventana, se debe cerrar completamente la aplicación para que el propio navegador elimine la cookie.
+
+### _OTHERS_
+
+- Para que el usuario se pueda registrar, debe aceptar la casilla de la politica de Privacidad.
+
