@@ -177,20 +177,22 @@ const render = function (inputCont, alertCont, markup) {
 
 export const showPassw = function () {
   if (!eyeBtn || !eyeBtnRpt) return;
-  eyeBtn.addEventListener('click', () => {
-    if (passInput.type === 'password') {
-      passInput.type = 'text';
-    } else {
-      passInput.type = 'password';
-    }
+  eyeBtn.addEventListener('mousedown', e => {
+    e.stopPropagation();
+    passInput.type = 'text';
+  });
+  eyeBtn.addEventListener('mouseup', e => {
+    e.stopPropagation();
+    passInput.type = 'password';
   });
 
-  eyeBtnRpt.addEventListener('click', () => {
-    if (passRptInput.type === 'password') {
-      passRptInput.type = 'text';
-    } else {
-      passRptInput.type = 'password';
-    }
+  eyeBtnRpt.addEventListener('mousedown', e => {
+    e.stopPropagation();
+    passRptInput.type = 'text';
+  });
+  eyeBtnRpt.addEventListener('mouseup', e => {
+    e.stopPropagation();
+    passRptInput.type = 'password';
   });
 };
 
