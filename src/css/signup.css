@@ -17,14 +17,13 @@
 }
 
 body {
+  background-color: var(--light-shadow);
   margin: auto 0;
 }
 
 .main-container {
-  background-color: var(--light-shadow);
   color: var(--first-main-color);
   font-family: var(--multipurpose-font);
-  height: 100vh;
 
   display: flex;
   flex-flow: column wrap;
@@ -43,29 +42,23 @@ a {
   font-family: var(--title-font);
   font-size: 1.5rem;
   width: 80%;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   display: flex;
   align-self: center;
 }
 
 .signup-container {
-  /* border: var(--first-main-color) 2px solid; */
-  border-radius: 2rem;
   width: 80vw;
+  margin-top: 3rem;
 
   display: flex;
   justify-content: center;
   align-self: center;
 }
 
-.signup-form {
-  width: 100vw;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 fieldset {
+  margin: 0;
   border: 0;
   padding: 0;
   width: 100%;
@@ -91,7 +84,6 @@ legend {
 
   display: flex;
   flex-direction: column;
-  
 }
 
 .label-input {
@@ -112,9 +104,9 @@ input:focus {
 }
 
 .input-container {
+  background-color: var(--light-text);
   border: 1px solid var(--first-main-color);
   border-radius: 2rem;
-  background-color: var(--light-text);
   margin-top: 1rem;
 
   display: flex;
@@ -134,18 +126,18 @@ input:focus {
   align-self: center;
 }
 
-.alert-container{
+.alert-container {
   margin: 0;
   padding: 0;
 }
 
 .alert {
+  font-family: var(--multipurpose-font);
+  color: var(--alert);
+  font-size: 0.7rem;
+  text-align: center;
   margin: 0;
   padding: 0;
-  text-align: center;
-  color: var(--alert);
-  font-family: var(--multipurpose-font);
-  font-size: 0.7rem;
 }
 
 .btn-signup {
@@ -192,7 +184,7 @@ input:focus {
 
   .input-container {
     margin: 0rem 0rem 1rem 0rem;
-    width: 94%;
+    width: 100%;
   }
 
   .signup-pass,
@@ -202,10 +194,11 @@ input:focus {
     width: 60vw;
   }
 
-  .alert{
+  .alert {
     font-size: 0.7rem;
     text-align: start;
   }
+
   .btn-signup {
     margin-top: 1rem;
   }
