@@ -50,7 +50,7 @@ a {
 }
 
 .signup-container {
-  border: var(--first-main-color) 2px solid;
+  /* border: var(--first-main-color) 2px solid; */
   border-radius: 2rem;
   width: 80vw;
 
@@ -182,6 +182,7 @@ input:focus {
 
   .signup-input {
     margin: 0;
+    flex-direction: column;
   }
 
   input {
@@ -201,6 +202,10 @@ input:focus {
     width: 60vw;
   }
 
+  .alert{
+    font-size: 0.7rem;
+    text-align: start;
+  }
   .btn-signup {
     margin-top: 1rem;
   }
