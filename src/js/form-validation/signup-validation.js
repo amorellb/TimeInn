@@ -30,7 +30,6 @@ const userData = {
   password: '',
 };
 
-// FIXME: .focus() only works if the label is clicked
 const sendNameMessage = function (userNameInput) {
   const alertContainer = document.querySelector('.alert-container');
   try {
@@ -42,7 +41,9 @@ const sendNameMessage = function (userNameInput) {
       render(inputContainerName, alertContainer, generateAlert(msg));
     } else {
       userNameInput.classList.remove('wrong-input');
-      alertContainer.outerHTML = '';
+      if (alertContainer) {
+        alertContainer.outerHTML = '';
+      }
       userData.name = userNameInput.value;
     }
   } catch (err) {
@@ -62,7 +63,6 @@ export const nameFocusHandler = function () {
   }
 };
 
-// FIXME: .focus() only works if the label is clicked
 const sendEmailMessage = function (usersData, userEmailInput) {
   const alertContainer = document.querySelector('.alert-container');
   try {
@@ -86,7 +86,9 @@ const sendEmailMessage = function (usersData, userEmailInput) {
       render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else {
       userEmailInput.classList.remove('wrong-input');
-      alertContainer.outerHTML = '';
+      if (alertContainer) {
+        alertContainer.outerHTML = '';
+      }
       userData.email = userEmailInput.value;
     }
     // return msg;
@@ -123,7 +125,9 @@ const sendPasswMessage = function (userPassInput) {
       render(inputContainerPassw, alertContainer, generateAlert(msg));
     } else {
       passInputCont[0].classList.remove('wrong-input');
-      alertContainer.outerHTML = '';
+      if (alertContainer) {
+        alertContainer.outerHTML = '';
+      }
     }
   } catch (err) {
     console.error(err);
@@ -159,7 +163,9 @@ const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
     render(inputContainerPasswMatch, alertContainer, generateAlert(msg));
   } else {
     passInputCont[1].classList.remove('wrong-input');
-    alertContainer.outerHTML = '';
+    if (alertContainer) {
+      alertContainer.outerHTML = '';
+    }
   }
 };
 
@@ -241,6 +247,9 @@ export const signupBtnHandler = function (usersData) {
       helper.toggleAlertVisibility(overlay, alertMsg);
       setTimeout(() => {
         helper.toggleAlertVisibility(overlay, alertMsg);
+        setTimeout(() => {
+          window.location.replace('login.html');
+        }, 1000);
       }, 3000);
     }
     usernameInput.value = '';
