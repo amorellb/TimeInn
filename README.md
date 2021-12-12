@@ -63,5 +63,8 @@ El log-in genera una cookie de sesión con el nombre de usuario, que permite que
 
 ### _OTHERS_
 
+- Se ha implementado que al clickar el icono "usuario" del header, se redireccione hacia la página login que también contiene un botón por si el usuario aún no está logueado, pueda registrase.
 - Para que el usuario se pueda registrar, debe aceptar la casilla de la politica de Privacidad.
 - Los datos de cada usuario se almacenan en el _local storage_ del navegador, de manera que se crea una persistencia de esos datos en el navegador.
+- Se solicitaba mínimo 3 describe (tests) pero se han realizado 6.
+- Cuando el usuario se registra y sale el mensaje de resgistro completado, se redirecciona a la página para logearse. 

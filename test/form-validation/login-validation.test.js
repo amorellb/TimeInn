@@ -18,7 +18,7 @@ const testData = [
   },
 ];
 
-// Test isNameLengthValid
+// Test checkUserData
 describe('Getting user from data given the email and password', () => {
   it('should return the user object', () => {
     const userValidated = validation.checkUserData(
