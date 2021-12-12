@@ -90,24 +90,6 @@ newsSection
   .forEach(news => newsPage.render(newsPage.generateAllNews(news)));
 newsPage.showContent();
 
-// TODO: Test data (delete)
-helper.setLocalStorage([
-  {
-    user: 'ElBerny',
-    name: 'Bernat',
-    lastName: 'Smith',
-    email: 'bernatmail@email.com',
-    password: '1234',
-  },
-  {
-    user: 'ElMikel',
-    name: 'Miquel',
-    lastName: 'Smith',
-    email: 'miquelmail@email.com',
-    password: '1234',
-  },
-]);
-
 // Login
 loginValidation.checkboxHandler();
 loginValidation.sendToSignUpPage();

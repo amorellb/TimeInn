@@ -6,6 +6,9 @@ const footerContainer = document.querySelector('.footer');
  * @returns A string that has the html of the header section of the webpage
  */
 const generateHeaderMarkup = function (userName) {
+  const firstLetter = userName?.slice(0, 1).toUpperCase();
+  const lastLetters = userName?.slice(1, userName?.length);
+  const name = firstLetter?.concat(lastLetters);
   return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
     <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
@@ -20,7 +23,7 @@ const generateHeaderMarkup = function (userName) {
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
     </nav>
-    ${userName ? `<p class="user-name">${userName}</p>` : ''}
+    ${userName ? `<p class="user-name">${name}</p>` : ''}
     `;
 };
 
