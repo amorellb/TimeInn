@@ -37,7 +37,9 @@ const sendNameMessage = function (userNameInput) {
     if (!isValidName) {
       userNameInput.classList.add('wrong-input');
       let msg = 'Not a valid name length!';
-      userNameInput.focus();
+      setTimeout(() => {
+        userNameInput.focus();
+      }, 100);
       render(inputContainerName, alertContainer, generateAlert(msg));
     } else {
       userNameInput.classList.remove('wrong-input');
@@ -77,12 +79,16 @@ const sendEmailMessage = function (usersData, userEmailInput) {
     if (isIntoData) {
       userEmailInput.classList.add('wrong-input');
       let msg = 'The email is already registered';
-      userEmailInput.focus();
+      setTimeout(() => {
+        userEmailInput.focus();
+      }, 100);
       render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else if (!isValidEmail) {
       userEmailInput.classList.add('wrong-input');
       let msg = 'Not a valid email format';
-      userEmailInput.focus();
+      setTimeout(() => {
+        userEmailInput.focus();
+      }, 100);
       render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else {
       userEmailInput.classList.remove('wrong-input');
@@ -121,7 +127,9 @@ const sendPasswMessage = function (userPassInput) {
       passInputCont[0].classList.add('wrong-input');
       let msg =
         'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)';
-      userPassInput.focus();
+      setTimeout(() => {
+        userPassInput.focus();
+      }, 100);
       render(inputContainerPassw, alertContainer, generateAlert(msg));
     } else {
       passInputCont[0].classList.remove('wrong-input');
@@ -159,7 +167,9 @@ const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
   if (!passwMatch) {
     passInputCont[1].classList.add('wrong-input');
     let msg = "Passwords don't match";
-    userPassRptInput.focus();
+    setTimeout(() => {
+      userPassRptInput.focus();
+    }, 100);
     render(inputContainerPasswMatch, alertContainer, generateAlert(msg));
   } else {
     passInputCont[1].classList.remove('wrong-input');
