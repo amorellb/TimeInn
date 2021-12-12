@@ -3,7 +3,8 @@ import * as validationHelper from '../form-validation/validation-helper.js';
 
 const btnSignUp = document.querySelector('.btn-register');
 const overlay = document.querySelector('.overlay');
-const alertMsg = document.querySelector('.alert-msg');
+const alertMsgLogin = document.querySelector('.login-alert');
+const alertMsgPP = document.querySelector('.pp-alert');
 const checkboxInput = document.querySelector('.pp-checkbox');
 
 const emailInput = document.querySelector('.email-input');
@@ -24,8 +25,12 @@ export const loginBtnHandler = function (usersArr) {
 };
 
 const sendMsg = function (checkedUser) {
+  if (!alertMsgLogin) return;
   if (!checkedUser) {
-    alert('The email or password are wrong! Please try again.');
+    helper.toggleAlertVisibility(overlay, alertMsgLogin);
+    setTimeout(() => {
+      helper.toggleAlertVisibility(overlay, alertMsgLogin);
+    }, 3000);
   } else if (checkedUser) {
     helper.setCookie(`user=${checkedUser.name}; path=/; SameSite=Lax;`);
     window.location.replace('index.html');
@@ -36,14 +41,14 @@ const sendMsg = function (checkedUser) {
  * A function to send the user from the login page to the sign up page
  */
 export const sendToSignUpPage = function () {
-  if (!btnSignUp || !checkboxInput || !overlay || !alertMsg) return;
+  if (!btnSignUp || !checkboxInput || !overlay || !alertMsgPP) return;
   btnSignUp.addEventListener('click', () => {
     if (checkboxInput.classList.contains('checked')) {
       window.location.replace('signup.html');
     } else {
-      helper.toggleAlertVisibility(overlay, alertMsg);
+      helper.toggleAlertVisibility(overlay, alertMsgPP);
       setTimeout(() => {
-        helper.toggleAlertVisibility(overlay, alertMsg);
+        helper.toggleAlertVisibility(overlay, alertMsgPP);
       }, 3000);
     }
   });
