@@ -47,8 +47,7 @@ export const setLocalStorage = function (usersArr) {
 // Get the data from the browser's local storage
 export const getLocalStorage = function (usersArr) {
   const data = JSON.parse(localStorage.getItem('users'));
-  if (!data) return;
-  usersArr = [...data];
+  usersArr = data ? [...data] : usersArr;
   return usersArr;
 };
 

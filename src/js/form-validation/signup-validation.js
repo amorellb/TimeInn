@@ -246,12 +246,12 @@ export const signupBtnHandler = function (usersData) {
           window.location.replace('login.html');
         }, 1000);
       }, 3000);
+      usernameInput.value = '';
+      nameInput.value = '';
+      lastnameInput.value = '';
+      emailInput.value = '';
+      passInput.value = '';
+      passRptInput.value = '';
     }
-    usernameInput.value = '';
-    nameInput.value = '';
-    lastnameInput.value = '';
-    emailInput.value = '';
-    passInput.value = '';
-    passRptInput.value = '';
   });
 };

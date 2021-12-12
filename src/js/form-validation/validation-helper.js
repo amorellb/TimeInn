@@ -10,6 +10,7 @@ export const isNameLengthValid = function (userName) {
 
 // Check if email is in local storage
 export const isEmailIntoData = function (usersData, userEmail) {
+  if (!usersData) return;
   try {
     let flag = false;
     const [user] = usersData.filter(user => user.email === userEmail);
@@ -29,6 +30,7 @@ export const isEmailWellFormatted = function (userEmail) {
 
 // Get user with passed email and password
 export const checkUserData = function (emailValue, passValue, usersArr) {
+  if (!usersArr) return;
   const [user] = usersArr.filter(
     user => user.email === emailValue && user.password === passValue
   );
