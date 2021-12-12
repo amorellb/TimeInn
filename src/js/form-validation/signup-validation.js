@@ -1,6 +1,13 @@
 import * as helper from '../helper.js';
 import * as validationHelper from './validation-helper.js';
 
+const inputContainerName = document.querySelector('.name-cont');
+const inputContainerEmail = document.querySelector('.email-cont');
+const inputContainerPassw = document.querySelector('.passw-cont');
+const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
+
+const passInputCont = document.querySelectorAll('.input-container');
+
 const usernameInput = document.querySelector('.signup-user');
 const nameInput = document.querySelector('.signup-name');
 const lastnameInput = document.querySelector('.signup-lastname');
@@ -15,11 +22,6 @@ const eyeBtnRpt = document.querySelector('.repeat');
 const overlay = document.querySelector('.overlay');
 const alertMsg = document.querySelector('.alert-msg');
 
-const inputContainerPasswMatch = document.querySelector('.rpt-passw-cont');
-const inputContainerPassw = document.querySelector('.passw-cont');
-const inputContainerName = document.querySelector('.name-cont');
-const inputContainerEmail = document.querySelector('.email-cont');
-
 const userData = {
   user: '',
   name: '',
@@ -28,21 +30,22 @@ const userData = {
   password: '',
 };
 
-// FIXME: .focus() only works if the label is clicked
 const sendNameMessage = function (userNameInput) {
   const alertContainer = document.querySelector('.alert-container');
   try {
-    // let msg = 'All right!';
     const isValidName = validationHelper.isNameLengthValid(userNameInput.value);
     if (!isValidName) {
+      userNameInput.classList.add('wrong-input');
       let msg = 'Not a valid name length!';
       userNameInput.focus();
       render(inputContainerName, alertContainer, generateAlert(msg));
     } else {
-      alertContainer.outerHTML = '';
+      userNameInput.classList.remove('wrong-input');
+      if (alertContainer) {
+        alertContainer.outerHTML = '';
+      }
       userData.name = userNameInput.value;
     }
-    // return msg;
   } catch (err) {
     console.error(err);
   }
@@ -60,7 +63,6 @@ export const nameFocusHandler = function () {
   }
 };
 
-// FIXME: .focus() only works if the label is clicked
 const sendEmailMessage = function (usersData, userEmailInput) {
   const alertContainer = document.querySelector('.alert-container');
   try {
@@ -73,15 +75,20 @@ const sendEmailMessage = function (usersData, userEmailInput) {
       userEmailInput.value
     );
     if (isIntoData) {
+      userEmailInput.classList.add('wrong-input');
       let msg = 'The email is already registered';
       userEmailInput.focus();
       render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else if (!isValidEmail) {
+      userEmailInput.classList.add('wrong-input');
       let msg = 'Not a valid email format';
       userEmailInput.focus();
       render(inputContainerEmail, alertContainer, generateAlert(msg));
     } else {
-      alertContainer.outerHTML = '';
+      userEmailInput.classList.remove('wrong-input');
+      if (alertContainer) {
+        alertContainer.outerHTML = '';
+      }
       userData.email = userEmailInput.value;
     }
     // return msg;
@@ -104,17 +111,24 @@ export const emailFocusHandler = function (usersData) {
 
 //Password Validation
 const sendPasswMessage = function (userPassInput) {
+  if (!passInputCont) return;
   try {
     const alertContainer = document.querySelector('.alert-container');
     const isValidPassw = validationHelper.isPasswWellFormatted(
       userPassInput.value
     );
     if (!isValidPassw) {
+      passInputCont[0].classList.add('wrong-input');
       let msg =
         'The password must contain at least 8 characters, 1 number, an uppercase, a lowercase and a special character (@ $!% *? &)';
       userPassInput.focus();
       render(inputContainerPassw, alertContainer, generateAlert(msg));
-    } else alertContainer.outerHTML = '';
+    } else {
+      passInputCont[0].classList.remove('wrong-input');
+      if (alertContainer) {
+        alertContainer.outerHTML = '';
+      }
+    }
   } catch (err) {
     console.error(err);
   }
@@ -134,6 +148,7 @@ export const passwFocusHandler = function () {
 
 //Functions to validate if passws match
 const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
+  if (!passInputCont) return;
   const alertContainer = document.querySelector('.alert-container');
   if (!inputContainerPasswMatch) return;
   const passwMatch = validationHelper.verifyPasswordsMatch(
@@ -142,11 +157,15 @@ const sendPasswMatchMessage = function (userPassInput, userPassRptInput) {
   );
 
   if (!passwMatch) {
+    passInputCont[1].classList.add('wrong-input');
     let msg = "Passwords don't match";
     userPassRptInput.focus();
     render(inputContainerPasswMatch, alertContainer, generateAlert(msg));
   } else {
-    alertContainer.outerHTML = '';
+    passInputCont[1].classList.remove('wrong-input');
+    if (alertContainer) {
+      alertContainer.outerHTML = '';
+    }
   }
 };
 
@@ -228,6 +247,9 @@ export const signupBtnHandler = function (usersData) {
       helper.toggleAlertVisibility(overlay, alertMsg);
       setTimeout(() => {
         helper.toggleAlertVisibility(overlay, alertMsg);
+        setTimeout(() => {
+          window.location.replace('login.html');
+        }, 1000);
       }, 3000);
     }
     usernameInput.value = '';
