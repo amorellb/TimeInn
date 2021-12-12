@@ -5,11 +5,14 @@ const footerContainer = document.querySelector('.footer');
  * A function that is used to generate the html of the header
  * @returns A string that has the html of the header section of the webpage
  */
-const generateHeaderMarkup = function () {
+const generateHeaderMarkup = function (userName) {
+  const firstLetter = userName?.slice(0, 1).toUpperCase();
+  const lastLetters = userName?.slice(1, userName?.length);
+  const name = firstLetter?.concat(lastLetters);
   return `
     <a href="index.html"><img class="logo" src="${require('../images/logo.png')}" alt="logo"></img></a>
     <a href="#toCalendar" class="menu-icon"><img class="menu-icon" src="${require('../images/calendar-icon.png')}" alt="icono menu"></a>
-    <img class="menu-icon" src="${require('../images/user-icon.png')}" alt="icono menu">
+    <img class="menu-icon login-icon" src="${require('../images/user-icon.png')}" alt="icono menu">
     <img class="menu-icon" src="${require('../images/cart-icon.png')}" alt="icono menu">
     <img class="nav-btn menu-icon" src="${require('../images/menu-icon.png')}" alt="icono menu">
     <nav class="nav-section">
@@ -20,6 +23,7 @@ const generateHeaderMarkup = function () {
       <a href="About us">About us</a>
       <a href="Contact">Contact</a>
     </nav>
+    ${userName ? `<p class="user-name">${name}</p>` : ''}
     `;
 };
 
@@ -61,9 +65,12 @@ const generateFooterMarkup = function () {
 /**
  * A function that add the header generated html into the header container
  */
-export const renderHeader = function () {
+export const renderHeader = function (userName) {
   if (!headerContainer) return;
-  headerContainer.insertAdjacentHTML('afterbegin', generateHeaderMarkup());
+  headerContainer.insertAdjacentHTML(
+    'afterbegin',
+    generateHeaderMarkup(userName)
+  );
 };
 
 /**
@@ -84,14 +91,22 @@ const toggleMenu = function () {
 };
 
 /**
- * A handler for the menu icon of the header
+ * A handler for the menu icons of the header
  */
 const menuHandler = function () {
   if (!headerContainer) return;
   headerContainer.addEventListener('click', e => {
-    const btn = e.target.closest('.nav-btn');
+    const btn = e.target;
     if (!btn) return;
-    toggleMenu();
+    if (btn.classList.contains('nav-btn')) toggleMenu();
+    if (btn.classList.contains('login-icon')) sendToLoginPage();
   });
 };
 menuHandler();
+
+/**
+ * A function to send the user from the frontpage to the login page
+ */
+const sendToLoginPage = function () {
+  window.location.replace('login.html');
+};

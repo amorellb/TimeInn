@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeInn</title>
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="src/css/signup.css" />
+  <link rel="stylesheet" href="src/css/modal-alert.css" />
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+  <!-- JS -->
+  <script defer type="module" src="src/js/script.js"></script>
+</head>
+
+<body>
+  <main>
+    <section class="main-container">
+      <a href="index.html"><img class="logo" src="./src/images/logo.png" alt="logo"></img></a>
+      <div class="signup-title">
+        <h1>Sign Up</h1>
+        <i class="fas fa-user-plus"></i>
+      </div>
+      <!-- Register form -->
+      <div class="signup-container">
+        <form class="signup-form">
+          <fieldset>
+            <legend>User personal information</legend>
+          <div class="signup-input">
+            <label for="user" class="label-input">User Name<br>
+              <input class="signup-user input" name="user" type="text" placeholder="User Name" id="user" required aria-required="true" />
+            </label>
+          </div>
+          <div class="signup-input name-cont">
+            <label for="name" class="label-input">Name<br>
+              <input class="signup-name input" name="name" type="text" placeholder="Name" id="name" required aria-required="true" />
+            </label>
+          </div>
+          <div class="signup-input">
+            <label for="lastname" class="label-input">Lastname<br>
+              <input class="signup-lastname input" name="lastname" type="text" placeholder="Lastname" id="lastname"
+                required aria-required="true" />
+            </label>
+          </div>
+          <div class="signup-input email-cont">
+            <label for="email" class="label-input">Email<br>
+              <input class="signup-email input" name="email" type="text" placeholder="Email" id="email" required aria-required="true" />
+            </label>
+          </div>
+          <div class="signup-input passw-cont">
+            <label for="password" class="label-input">Password</label>
+            <div class="input-container pass">
+              <input class="signup-pass" name="password" type="password" placeholder="********" id="password"
+                required />
+              <i class="fas fa-eye">
+            </div>
+          </div>
+          <div class="signup-input rpt-passw-cont">
+            <label for="password-rpt" class="label-input">Repeat Password</label>
+            <div class="input-container rpt-pass">
+              <input class="signup-pass-rpt" name="password-rpt" type="password" placeholder="********"
+                id="password-rpt" required />
+              <i class="fas fa-eye repeat"></i>
+            </div>
+          </div>
+        </fieldset>
+        </form>
+      </div>
+      <button class="btn-signup" name="submit">
+        <span>Sign up</span>
+      </button>
+
+      <!-- Overlay message -->
+      <div class="overlay hidden"></div>
+      <div class="alert-msg hidden">
+        <p>Signed up successfully!</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

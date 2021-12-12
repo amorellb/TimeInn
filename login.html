@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeInn</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="src/css/login.css" />
+    <link rel="stylesheet" href="src/css/modal-alert.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS -->
+    <script defer type="module" src="src/js/script.js"></script>
+  </head>
+
+<body>
+  <main>
+    <section class="main-container">
+      <a href="index.html"><img class="logo" src="./src/images/logo.png" alt="logo"></img></a>
+      <div class="login-container">
+
+        <!-- Register -->
+        <div class="register-user">
+          <h4>Are you a new user?</h4>
+          <button class="btn-register" name="submit" type="button">
+            <span>Register </span>
+          </button>
+          <p class="info-register">Sus datos personales se utilizarán para mejorar su experiencia en este sitio web,
+            para administrar el acceso a su cuenta y para otros fines descritos en nuestra <a href="">política de
+              privacidad</a>.</p>
+          <fieldset class="fieldset">
+            <legend>Privacy Policy checkbox</legend>
+              <label for="registration-form" class="registration-form">
+                <input class="pp-checkbox" type="checkbox" name="registration-form"
+                  id="registration-form"><span>He leído y acepto la Política de Privacidad*</span>
+              </label>
+          </fieldset>
+        </div>
+
+        <div class="logged-user">
+          <div class="login-title">
+            <h1 class="sign-in-title">Sign In</h1>
+            <i class="fas fa-sign-in-alt"></i>
+          </div>
+          
+          <!-- Login form -->
+          <form class="login-form">
+            <fieldset class="fieldset">
+              <legend>Login email and password</legend>
+            
+            <div class="login-input">
+              <label for="email" class="label-input">Email <br>
+                <input class="email-input input" name="email" type="text" id="email" placeholder="Enter you email" aria-required="true"/>
+              </label>
+            </div>
+
+            <div class="login-input">
+              <label for="password" class="label-input">Password <br>
+                <input class="pass-input input" name="pass" type="password" id="password" placeholder="********" aria-required="true" />
+              </label>
+            </div>
+          </fieldset>
+
+              <button class="btn-login" name="submit" type="button">
+                <span>Start Session </span>
+              </button>
+          </form>
+        </div>
+
+      <!-- Overlay privacy policy message -->
+      <div class="overlay hidden"></div>
+      <div class="alert-msg pp-alert hidden"><p>Accept the Privacy policy, please.</p></div>
+      <!-- Overlay wrong email or password message -->
+      <div class="overlay hidden"></div>
+      <div class="alert-msg login-alert hidden"><p>The email or password are wrong!</p></div>
+      </section>
+    </main>
+  </body>
+</html>
