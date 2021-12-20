@@ -41,28 +41,30 @@ header {
   transition: transform 0.5s ease-in-out;
 }
 
-nav > img {
-  padding-right: 1rem;
-  padding-bottom: 0rem;
+nav {
+  img {
+    padding-right: 1rem;
+    padding-bottom: 0rem;
 
-  align-self: flex-end;
-}
+    align-self: flex-end;
+  }
 
-nav > a {
-  color: $first-main-color;
-  font-weight: bold;
-}
+  a {
+    color: $first-main-color;
+    font-weight: bold;
 
-nav > a:hover {
-  transform: scale(2);
+    &:hover {
+      transform: scale(2);
+    }
+  }
 }
 
 .menu-icon {
   width: 1.5rem;
-}
 
-.menu-icon:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .user-name {
@@ -96,8 +98,10 @@ footer {
   font-size: 0.6rem;
 }
 
-footer > i {
-  font-size: 0.7rem;
+footer {
+  i {
+    font-size: 0.7rem;
+  }
 }
 
 .footer-refrn {
@@ -142,10 +146,10 @@ a {
   cursor: pointer;
   transition: all 400ms ease;
   transform: scale(0);
-}
 
-.scroll-up-icon:hover {
-  transform: scale(1.3);
+  &:hover {
+    transform: scale(1.3);
+  }
 }
 
 @media (min-width: 900px) {
@@ -173,13 +177,15 @@ a {
     opacity: 0;
   }
 
-  nav > a {
-    color: $light-text;
-    font-family: $multipurpose-font;
-  }
+  nav {
+    a {
+      color: $light-text;
+      font-family: $multipurpose-font;
 
-  nav > a:hover {
-    transform: none;
+      &:hover {
+        transform: none;
+      }
+    }
   }
 
   .menu-icon {
@@ -233,10 +239,10 @@ a {
 
   .contact {
     padding-top: 0.6rem;
-  }
 
-  .contact > p {
-    font-size: 0.8rem;
+    p {
+      font-size: 0.8rem;
+    }
   }
 
   .social-icons {
