@@ -1,18 +1,4 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --title-background: #03481a;
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-  --title-color: #000000;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 .news-section {
   background-image: url(../../images/newspaper.png);
@@ -24,9 +10,9 @@
 }
 
 h2 {
-  background-color: var(--title-background);
-  color: var(--light-text);
-  font-family: var(--title-font);
+  background-color: $title-background;
+  color: $light-text;
+  font-family: $title-font;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: normal;
@@ -38,7 +24,7 @@ h2 {
 }
 
 .news-container {
-  font-family: var(--article-font);
+  font-family: $article-font;
   width: 100%;
 
   display: flex;
@@ -54,8 +40,8 @@ h2 {
 }
 
 .news-info {
-  background-color: var(--light-text);
-  box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
+  background-color: $light-text;
+  box-shadow: 0.3rem 0.3rem 0.7rem $dark-shadow;
   margin: 1rem;
   max-width: 270px;
 
@@ -70,7 +56,7 @@ h2 {
 }
 
 .news-title {
-  color: var(--first-main-color);
+  color: $first-main-color;
   font-size: 0.9rem;
   font-style: italic;
   text-align: -webkit-center;
@@ -88,9 +74,9 @@ h2 {
 }
 
 .all-news-btn {
-  background-color: var(--first-main-color);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -102,10 +88,10 @@ h2 {
   padding-bottom: 1rem;
 
   align-self: center;
-}
 
-.all-news-btn:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 650px) {
@@ -116,10 +102,6 @@ h2 {
   .all-news-btn {
     font-size: 1.2rem;
   }
-
-  /* h2{
-    margin-left: 1rem;
-  } */
 
   .title-news {
     margin-bottom: 1rem;
