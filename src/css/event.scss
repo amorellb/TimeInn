@@ -1,0 +1,103 @@
+@import 'color&fonts';
+
+body {
+  margin: 0;
+}
+
+.event-container {
+  width: 100vw;
+}
+
+.event {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-areas:
+    'title form'
+    'img form'
+    'description description';
+}
+
+.event-title {
+  font-family: $title-font;
+  width: 80%;
+  margin: 0;
+
+  grid-area: title;
+  justify-self: center;
+}
+
+.event-img {
+  width: 80%;
+
+  grid-area: img;
+  justify-self: center;
+}
+
+.event-form {
+  font-family: $multipurpose-font;
+  width: 80%;
+  height: 30vh;
+
+  grid-area: form;
+  align-self: center;
+  justify-self: center;
+
+  form {
+    height: 100%;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.event-form-input {
+  width: 90%;
+  border: 1px solid $border;
+  border-radius: 2rem;
+  padding: 0.2rem;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 1px 1px 3px 2px $light-shadow;
+  }
+}
+
+.event-form-btn {
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
+  width: 8rem;
+  border: 0;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.event-description {
+  font-family: $article-font;
+  width: 80%;
+
+  grid-area: description;
+  justify-self: center;
+
+  h2 {
+    font-family: $title-font;
+    font-size: large;
+  }
+}
+
+@media (min-width: 650px) {
+  .event-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+}
