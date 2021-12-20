@@ -1,0 +1,68 @@
+@import '../color&fonts';
+
+.calendar-section {
+  margin: 2rem 0rem 2rem 0rem;
+  width: 100vw;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-container {
+  border: 1px solid $first-main-color;
+  font-family: $multipurpose-font;
+  width: 91vw;
+}
+
+.month-container {
+  background-color: $first-main-color;
+  color: $light-text;
+  font-family: $title-font;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.week-container {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-btn {
+  background-color: transparent;
+  font-size: 1.5rem;
+  height: 7.3vh;
+  border: 0;
+
+  flex: 1 1 14%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.calendar-28 {
+  background-color: $second-main-color;
+  color: $light-text;
+  font-weight: bolder;
+  border-radius: 2rem;
+
+  &:active {
+    background-color: $first-main-color;
+  }
+}
+
+@media (min-width: 650px) {
+  .calendar-container {
+    width: 600px;
+  }
+}

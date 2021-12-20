@@ -1,31 +1,19 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
+@import 'color&fonts';
 
-  --title-background: #03481a;
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-  --title-color: #000000;
-  --content-back-color: #e6e4df;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
-
-.body-container h1 {
-  background-color: var(--title-background);
-  color: var(--light-text);
-  font-family: var(--title-font);
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: normal;
-  width: 195px;
-  padding: 0.3rem;
-  margin-top: 3rem;
+.body-container {
+  h1 {
+    background-color: $title-background;
+    color: $light-text;
+    font-family: $title-font;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: normal;
+    width: 195px;
+    padding: 0.3rem;
+    margin-top: 3rem;
+  }
 }
 
 .all-news-container {
@@ -36,10 +24,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
 .news-info {
   background-image: url(../images/newspaper.png);
   background-size: cover;
-  box-shadow: 0.3rem 0.3rem 0.7rem var(--dark-shadow);
+  box-shadow: 0.3rem 0.3rem 0.7rem $dark-shadow;
   margin-top: 1rem;
 
   display: flex;
@@ -52,8 +41,8 @@
 }
 
 .news-title {
-  color: var(--first-main-color);
-  font-family: var(--title-font);
+  color: $first-main-color;
+  font-family: $title-font;
   font-size: 0.8rem;
   font-style: italic;
   font-weight: bolder;
@@ -65,7 +54,7 @@
 }
 
 .news-content {
-  font-family: var(--article-font);
+  font-family: $article-font;
   font-size: 1rem;
   font-weight: bold;
   width: 70vw;
@@ -81,7 +70,7 @@
 }
 
 .news-date {
-  font-family: var(--article-font);
+  font-family: $article-font;
   font-weight: bold;
   font-size: 0.8rem;
   padding-right: 0.5rem;
@@ -91,7 +80,7 @@
 
 .btn-readmore {
   background-color: transparent;
-  color: var(--title-background);
+  color: $title-background;
   font-size: 0.8rem;
   font-weight: bold;
   align-self: center;

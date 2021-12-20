@@ -1,36 +1,20 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --title-background: #03481a;
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-  --title-color: #000000;
-  --border: #d3d3d3;
-  --alert: #ff0000;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 body {
-  background-color: var(--light-shadow);
+  background-color: $light-shadow;
   margin: auto 0;
 }
 
 .main-container {
-  color: var(--first-main-color);
-  font-family: var(--multipurpose-font);
+  color: $first-main-color;
+  font-family: $multipurpose-font;
 
   display: flex;
   flex-flow: column wrap;
 }
 
 a {
-  background-color: var(--first-main-color);
+  background-color: $first-main-color;
 }
 
 .logo {
@@ -39,7 +23,7 @@ a {
 }
 
 .signup-title {
-  font-family: var(--title-font);
+  font-family: $title-font;
   font-size: 1.5rem;
   width: 80%;
   margin-top: 3rem;
@@ -92,16 +76,15 @@ legend {
 }
 
 input {
-  border: 1px solid var(--first-main-color);
+  border: 1px solid $first-main-color;
   border-radius: 1rem;
   margin-top: 1rem;
   padding-left: 1rem;
-
   height: 1.5rem;
-}
 
-input:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .input {
@@ -109,8 +92,8 @@ input:focus {
 }
 
 .input-container {
-  background-color: var(--light-text);
-  border: 1px solid var(--first-main-color);
+  background-color: $light-text;
+  border: 1px solid $first-main-color;
   border-radius: 2rem;
   margin-top: 1rem;
   padding-right: 1rem;
@@ -141,21 +124,21 @@ input:focus {
 }
 
 .alert {
-  font-family: var(--multipurpose-font);
-  color: var(--alert);
+  font-family: $multipurpose-font;
+  color: $alert;
   font-size: 0.7rem;
   margin: 0;
   padding: 0;
 }
 
 .wrong-input {
-  border: 1px solid var(--alert);
+  border: 1px solid $alert;
 }
 
 .btn-signup {
-  background-color: var(--first-main-color);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;

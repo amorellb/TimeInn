@@ -1,24 +1,8 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --title-background: #03481a;
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-  --title-color: #000000;
-  --border: #d3d3d3;
-  --alert: #ff0000;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 body {
+  background-color: $first-main-color;
   margin: auto 0;
-  background-color: var(--first-main-color);
 }
 
 main {
@@ -27,9 +11,9 @@ main {
 }
 
 .main-container {
-  background-color: var(--light-shadow);
-  color: var(--first-main-color);
-  font-family: var(--multipurpose-font);
+  background-color: $light-shadow;
+  color: $first-main-color;
+  font-family: $multipurpose-font;
   width: 80vw;
   height: 80vh;
   border-radius: 2rem;
@@ -47,23 +31,25 @@ main {
 }
 
 .login-container {
-  display: flex;
   width: 80vw;
+
+  display: flex;
   justify-content: space-around;
 }
 
 .register-user {
+  width: 50%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
 }
 
 .btn-register {
-  background-color: var(--title-background);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $title-background;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -72,6 +58,7 @@ main {
   width: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
   align-self: center;
 }
 
@@ -89,7 +76,7 @@ main {
 }
 
 .login-title {
-  font-family: var(--title-font);
+  font-family: $title-font;
   width: 100%;
 
   display: flex;
@@ -101,8 +88,8 @@ main {
 }
 
 .fa-sign-in-alt {
+  color: $first-main-color;
   font-size: 2rem;
-  color: var(--first-main-color);
   align-self: center;
 }
 
@@ -127,15 +114,15 @@ legend {
 }
 
 .input {
-  border: 1px solid var(--first-main-color);
+  border: 1px solid $first-main-color;
   border-radius: 1rem;
   padding: 0 1rem 0 1rem;
   height: 1.5rem;
   width: 100%;
-}
 
-input:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .login-form {
@@ -146,9 +133,9 @@ input:focus {
 }
 
 .btn-login {
-  background-color: var(--first-main-color);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -165,16 +152,20 @@ input:focus {
   main {
     margin-top: 2rem;
   }
+
   .main-container {
     margin: 0;
   }
+
   .logo {
     width: 8rem;
   }
+
   .login-container {
     width: 90vw;
     font-size: 0.8rem;
   }
+
   .register-user {
     margin: 0.5rem;
   }

@@ -1,20 +1,4 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --title-background: #03481a;
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-  --title-color: #000000;
-  --border: #d3d3d3;
-  --alert: #ff0000;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
@@ -30,7 +14,7 @@
 
 .alert-msg {
   background-color: white;
-  font-family: var(--multipurpose-font);
+  font-family: $multipurpose-font;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 50%;
