@@ -1,15 +1,4 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 .day-events-container {
   height: 100vh;
@@ -33,8 +22,8 @@
 }
 
 .day-event-info {
-  color: var(--light-text);
-  text-shadow: 1px 1px 1px var(--dark-shadow);
+  color: $light-text;
+  text-shadow: 1px 1px 1px $dark-shadow;
   text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
@@ -46,7 +35,7 @@
 }
 
 .day-event-title {
-  font-family: var(--title-font);
+  font-family: $title-font;
   font-size: 2.5rem;
   margin: 0;
 
@@ -54,7 +43,7 @@
 }
 
 .day-event-type {
-  font-family: var(--article-font);
+  font-family: $article-font;
   font-size: 1.5rem;
   margin: 0;
   margin-left: 3rem;
@@ -63,7 +52,7 @@
 }
 
 .day-event-dates {
-  font-family: var(--article-font);
+  font-family: $article-font;
   margin: 0;
   margin-top: 5rem;
   margin-left: 3rem;
@@ -73,9 +62,9 @@
 }
 
 .day-tickets-btn {
-  background-color: var(--first-main-color);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -86,10 +75,10 @@
   padding-bottom: 1rem;
 
   align-self: center;
-}
 
-.day-tickets-btn:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 650px) {
