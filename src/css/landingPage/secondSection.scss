@@ -1,15 +1,4 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 .week-events-container {
   background-position: center;
@@ -21,9 +10,9 @@
 }
 
 .week-event-info {
-  color: var(--light-text);
+  color: $light-text;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px var(--dark-shadow);
+  text-shadow: 1px 1px 1px $dark-shadow;
   height: 90vh;
   width: 20rem;
   margin: auto;
@@ -35,9 +24,9 @@
 }
 
 .all-events-btn {
-  background-color: var(--first-main-color);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -48,14 +37,14 @@
   margin-bottom: auto;
 
   align-self: center;
-}
 
-.all-events-btn:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .week-event-title {
-  font-family: var(--title-font);
+  font-family: $title-font;
   font-size: 2.5rem;
   margin: 0;
 
@@ -63,20 +52,20 @@
 }
 
 .week-event-type {
-  font-family: var(--article-font);
+  font-family: $article-font;
   font-size: 1.5rem;
   margin: 0;
   margin-left: 3rem;
 }
 
 .week-event-author {
-  font-family: var(--article-font);
+  font-family: $article-font;
   margin: 0;
   margin-left: 3rem;
 }
 
 .week-event-dates {
-  font-family: var(--article-font);
+  font-family: $article-font;
   margin: 0;
   margin-top: 5rem;
   margin-left: 3rem;
@@ -84,9 +73,9 @@
 }
 
 .week-tickets-btn {
-  background-color: var(--first-main-color);
-  color: var(--light-shadow);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-shadow;
+  font-family: $multipurpose-font;
   text-transform: uppercase;
   text-align: center;
   border: 0;
@@ -97,10 +86,10 @@
   padding-bottom: 1rem;
 
   align-self: center;
-}
 
-.week-tickets-btn:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /* Slider */
@@ -109,8 +98,8 @@
   top: 150%;
   z-index: 10;
 
-  background-color: var(--first-main-color);
-  color: var(--light-text);
+  background-color: $first-main-color;
+  color: $light-text;
   font-family: inherit;
   font-size: 1rem;
   border: none;
