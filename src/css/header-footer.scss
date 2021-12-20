@@ -1,28 +1,12 @@
-:root {
-  --first-main-color: #621304;
-  --second-main-color: #b65543;
-
-  --title-background: #03481a;
-  /* --hover-social-icons: rgb(13, 156, 13); */
-
-  --light-text: #ffffff;
-  --light-shadow: #ececec;
-  --dark-shadow: #5c5c5c;
-
-  --border: #d3d3d3;
-
-  --title-font: 'Cinzel', serif;
-  --article-font: 'Crimson Pro', serif;
-  --multipurpose-font: 'Nanum Gothic', sans-serif;
-}
+@import 'color&fonts';
 
 body {
   margin: auto 0;
 }
 
 header {
-  background-color: var(--first-main-color);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  font-family: $multipurpose-font;
   height: 10vh;
 
   display: flex;
@@ -35,7 +19,7 @@ header {
 }
 
 .nav-section {
-  background-color: var(--light-shadow);
+  background-color: $light-shadow;
   overflow: hidden;
   padding-top: 36rem;
   padding-bottom: 0.5rem;
@@ -57,40 +41,42 @@ header {
   transition: transform 0.5s ease-in-out;
 }
 
-nav > img {
-  padding-right: 1rem;
-  padding-bottom: 0rem;
+nav {
+  img {
+    padding-right: 1rem;
+    padding-bottom: 0rem;
 
-  align-self: flex-end;
-}
+    align-self: flex-end;
+  }
 
-nav > a {
-  color: var(--first-main-color);
-  font-weight: bold;
-}
+  a {
+    color: $first-main-color;
+    font-weight: bold;
 
-nav > a:hover {
-  transform: scale(2);
+    &:hover {
+      transform: scale(2);
+    }
+  }
 }
 
 .menu-icon {
   width: 1.5rem;
-}
 
-.menu-icon:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .user-name {
-  color: var(--light-text);
-  font-family: var(--multipurpose-font);
+  color: $light-text;
+  font-family: $multipurpose-font;
   font-weight: bold;
 }
 
 footer {
-  background-color: var(--first-main-color);
-  color: var(--light-text);
-  font-family: var(--multipurpose-font);
+  background-color: $first-main-color;
+  color: $light-text;
+  font-family: $multipurpose-font;
   height: 15vh;
   width: 100vw;
   display: flex;
@@ -112,8 +98,10 @@ footer {
   font-size: 0.6rem;
 }
 
-footer > i {
-  font-size: 0.7rem;
+footer {
+  i {
+    font-size: 0.7rem;
+  }
 }
 
 .footer-refrn {
@@ -144,21 +132,13 @@ footer > i {
   padding-bottom: 0.2rem;
 }
 
-.fa-instagram:hover,
-.fa-facebook:hover,
-.fa-youtube:hover,
-.fa-twitter:hover,
-.fa-rss:hover {
-  color: var(--hover-social-icons);
-}
-
 a {
-  color: var(--second-main-color);
+  color: $second-main-color;
   text-decoration: none;
 }
 
 .scroll-up-icon {
-  background-color: var(--first-main-color);
+  background-color: $first-main-color;
   border-radius: 1rem;
   position: fixed;
   bottom: 5rem;
@@ -166,10 +146,10 @@ a {
   cursor: pointer;
   transition: all 400ms ease;
   transform: scale(0);
-}
 
-.scroll-up-icon:hover {
-  transform: scale(1.3);
+  &:hover {
+    transform: scale(1.3);
+  }
 }
 
 @media (min-width: 900px) {
@@ -179,7 +159,7 @@ a {
   }
 
   .nav-section {
-    background-color: var(--first-main-color);
+    background-color: $first-main-color;
     transform: translateX(0);
     width: 100%;
     height: 10vh;
@@ -197,13 +177,15 @@ a {
     opacity: 0;
   }
 
-  nav > a {
-    color: var(--light-text);
-    font-family: var(--multipurpose-font);
-  }
+  nav {
+    a {
+      color: $light-text;
+      font-family: $multipurpose-font;
 
-  nav > a:hover {
-    transform: none;
+      &:hover {
+        transform: none;
+      }
+    }
   }
 
   .menu-icon {
@@ -257,10 +239,10 @@ a {
 
   .contact {
     padding-top: 0.6rem;
-  }
 
-  .contact > p {
-    font-size: 0.8rem;
+    p {
+      font-size: 0.8rem;
+    }
   }
 
   .social-icons {
