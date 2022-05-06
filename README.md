@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2dec0de1-0855-497e-8b80-cffde481f69e/deploy-status)](https://app.netlify.com/sites/focused-neumann-3c3171/deploys)
+[![wakatime](https://wakatime.com/badge/user/0314f862-a840-4097-a5f5-e3b2f2c099f9/project/4e57ddb0-df3f-49ae-b53d-39f685d3fa91.svg)](https://wakatime.com/badge/user/0314f862-a840-4097-a5f5-e3b2f2c099f9/project/4e57ddb0-df3f-49ae-b53d-39f685d3fa91)
 
 # TimeInn
 
